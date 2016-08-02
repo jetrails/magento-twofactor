@@ -1,0 +1,17 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" >
+
+<table class="jetrails_twofactor_table" cellspacing="0" >
+	<tr>
+		<td>
+			<img height="170" src="<?= $this->_getQRCode () ?>" />
+		</td>
+		<td style="vertical-align:top;" >
+			<div class="jetrails_twofactor_secret" ><?= $this->_getSecret () ?></div>
+			<div class="jetrails_twofactor_space" ></div>
+			<input class="jetrails_twofactor_button" type="button" value="Generate New Secret" onClick="setLocation ('<?= $this->_getGenerateURL () ?>')" />
+			<div class="jetrails_twofactor_space" ></div>
+			<input class="jetrails_twofactor_pin" type="text" name="code" placeholder="6-digit pin" maxlength="6" autocomplete="off" />
+			<input class="jetrails_twofactor_submit" type="button" name="<?= $this->_getVerifyURL () ?>" value="Enable" onClick="submitTwoFactorPin ()" />
+		</td>
+	</tr>
+</table>

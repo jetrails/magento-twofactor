@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<jetrails_twofactor translate="title" module="twofactor" >
+										<title>JetRails TwoFactor Settings</title>
+										<sort_order>15</sort_order>
+									</jetrails_twofactor>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

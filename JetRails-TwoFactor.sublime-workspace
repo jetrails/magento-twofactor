@@ -1,0 +1,1678 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"twof",
+				"twofactor"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"border-",
+				"border-width"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"fla",
+				"float"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"marin",
+				"margin-top"
+			],
+			[
+				"_",
+				"_htmlToText"
+			],
+			[
+				"strip",
+				"strip_tags"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"notif",
+				"notification"
+			],
+			[
+				"stat",
+				"status"
+			],
+			[
+				"add",
+				"address"
+			],
+			[
+				"email",
+				"_emailToUser"
+			],
+			[
+				"PHP",
+				"PHPMailer"
+			],
+			[
+				"valid",
+				"_validSMTP"
+			],
+			[
+				"SM",
+				"SMTPConfig"
+			],
+			[
+				"ema",
+				"emails"
+			],
+			[
+				"emai",
+				"email"
+			],
+			[
+				"host",
+				"host"
+			],
+			[
+				"carbo",
+				"carbonCopy"
+			],
+			[
+				"carb",
+				"carbonCopy"
+			],
+			[
+				"ca",
+				"carbonCopy"
+			],
+			[
+				"subj",
+				"subjectPanel"
+			],
+			[
+				"subje",
+				"subjectPanels"
+			],
+			[
+				"subjec",
+				"subjectPanels"
+			],
+			[
+				"Su",
+				"Subjects"
+			],
+			[
+				"S",
+				"Subjects"
+			],
+			[
+				"file",
+				"filepaths"
+			],
+			[
+				"repo",
+				"reports"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"cell",
+				"cellspacing	Attr"
+			],
+			[
+				"port",
+				"port-table"
+			],
+			[
+				"result",
+				"results"
+			],
+			[
+				"json_",
+				"json_decode"
+			],
+			[
+				"resul",
+				"results"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"totp",
+				"totp_disable"
+			],
+			[
+				"TWO",
+				"TEXT_TWO_STEP_PIN"
+			],
+			[
+				"front",
+				"frontend_model"
+			],
+			[
+				"secu",
+				"securitysuite_twofactor_redirect"
+			],
+			[
+				"conf",
+				"config"
+			],
+			[
+				"Bord",
+				"BorderLayout"
+			],
+			[
+				"Colo",
+				"Color"
+			],
+			[
+				"textField",
+				"textfield"
+			],
+			[
+				"FF",
+				"FF0000"
+			],
+			[
+				"colo",
+				"colorTextField"
+			],
+			[
+				"tex",
+				"textfield"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"subject",
+				"subjectPanel"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"error",
+				"error_reporting"
+			],
+			[
+				"admin",
+				"adminhtml"
+			],
+			[
+				"securitys",
+				"securitysuite"
+			],
+			[
+				"getUser",
+				"getUserId"
+			],
+			[
+				"grid",
+				"gridx"
+			],
+			[
+				"creat",
+				"createColorSwatch"
+			],
+			[
+				"create",
+				"createFormFields"
+			],
+			[
+				"set",
+				"setFocusPainted"
+			],
+			[
+				"cre",
+				"Create"
+			],
+			[
+				"colorS",
+				"colorSelect"
+			],
+			[
+				"Te",
+				"TextField"
+			],
+			[
+				"a",
+				"abbrev"
+			],
+			[
+				"cat",
+				"categories"
+			],
+			[
+				"cate",
+				"categoryTitles"
+			],
+			[
+				"Grid",
+				"GridBagLayout"
+			],
+			[
+				"gri",
+				"gridy"
+			],
+			[
+				"su",
+				"subject"
+			],
+			[
+				"getS",
+				"getSubject"
+			],
+			[
+				"key",
+				"keys"
+			],
+			[
+				"Tas",
+				"Tasker"
+			],
+			[
+				"val",
+				"validateData"
+			],
+			[
+				"get",
+				"getSelectedItem"
+			],
+			[
+				"date",
+				"dateMatcher"
+			],
+			[
+				"plac",
+				"placeholder"
+			],
+			[
+				"fon",
+				"fontColor"
+			],
+			[
+				"pla",
+				"placeholderColor"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"sele",
+				"selectedPair"
+			],
+			[
+				"em",
+				"emptyMessage"
+			],
+			[
+				"Cate",
+				"CategoryHolder"
+			],
+			[
+				"Subj",
+				"SubjectHolder"
+			],
+			[
+				"pri",
+				"priority"
+			],
+			[
+				"com",
+				"comboBox"
+			],
+			[
+				"Drop",
+				"DropDown"
+			],
+			[
+				"Sel",
+				"SelectPair"
+			],
+			[
+				"Se",
+				"Set"
+			],
+			[
+				"pr",
+				"private"
+			],
+			[
+				"re",
+				"removeAllItems"
+			],
+			[
+				"muli",
+				"muliStrike"
+			],
+			[
+				"0X",
+				"0XF0F0F0"
+			],
+			[
+				"C",
+				"Color"
+			],
+			[
+				"setH",
+				"setHorizontalAlignment"
+			],
+			[
+				"sub",
+				"subjectTitle"
+			],
+			[
+				"JSON",
+				"JSONArray"
+			],
+			[
+				"color",
+				"colors"
+			],
+			[
+				"po",
+				"points"
+			],
+			[
+				"tas",
+				"taskDate"
+			],
+			[
+				"categ",
+				"categoryObject"
+			],
+			[
+				"JOSN",
+				"JSONObject"
+			],
+			[
+				"base",
+				"baseDirectory"
+			],
+			[
+				"Cal",
+				"CALENDAR"
+			],
+			[
+				"displ",
+				"displayPanel"
+			],
+			[
+				"Dis",
+				"displayPanel"
+			],
+			[
+				"Bo",
+				"BorderLayout"
+			],
+			[
+				"Mon",
+				"MonthDay"
+			],
+			[
+				"mon",
+				"monthView"
+			],
+			[
+				"day",
+				"daysBefore"
+			],
+			[
+				"Task",
+				"Tasker"
+			],
+			[
+				"ren",
+				"renderContent"
+			],
+			[
+				"page",
+				"pages"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"pag",
+				"pages"
+			],
+			[
+				"Month",
+				"MonthView"
+			],
+			[
+				"pa",
+				"pages"
+			],
+			[
+				"ran",
+				"random"
+			],
+			[
+				"Gra",
+				"Graphics2D"
+			],
+			[
+				"titl",
+				"titleMon"
+			],
+			[
+				"res",
+				"results"
+			],
+			[
+				"patch",
+				"patchVersionChecker"
+			],
+			[
+				"pat",
+				"patches"
+			],
+			[
+				"mu",
+				"mutualFileInstance"
+			],
+			[
+				"Patc",
+				"PatchVersion"
+			],
+			[
+				"Mage",
+				"MagentoVersion"
+			],
+			[
+				"fora",
+				"foreach	foreach …"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/skin/adminhtml/base/default/css/JetRails/TwoFactor/Configuration.css",
+			"settings":
+			{
+				"buffer_size": 2235,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/skin/adminhtml/base/default/js/JetRails/TwoFactor/Form.js",
+			"settings":
+			{
+				"buffer_size": 351,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/design/adminhtml/default/default/template/JetRails/TwoFactor/State-Enabled.phtml",
+			"settings":
+			{
+				"buffer_size": 1081,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/code/community/JetRails/TwoFactor/Block/Adminhtml/Template/Configuration.php",
+			"settings":
+			{
+				"buffer_size": 2410,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/design/adminhtml/default/default/template/JetRails/TwoFactor/State-Verified.phtml",
+			"settings":
+			{
+				"buffer_size": 380,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/skin/adminhtml/base/default/css/JetRails/TwoFactor/Verify.css",
+			"settings":
+			{
+				"buffer_size": 3348,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/code/community/JetRails/TwoFactor/controllers/ConfigurationController.php",
+			"settings":
+			{
+				"buffer_size": 4722,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/code/community/JetRails/TwoFactor/Helper/TOTP.php",
+			"settings":
+			{
+				"buffer_size": 4815,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/code/local/JetRails/SecuritySuite/Block/Adminhtml/Panel/TOTPConfig.php",
+			"settings":
+			{
+				"buffer_size": 6235,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/code/local/JetRails/SecuritySuite/controllers/TotpController.php",
+			"settings":
+			{
+				"buffer_size": 6142,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/code/community/JetRails/TwoFactor/Helper/Data.php",
+			"settings":
+			{
+				"buffer_size": 2599,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 277.0,
+		"last_filter": "upp",
+		"selected_items":
+		[
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"inden",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"trim",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"in",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"inde",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"trime",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"tri",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"whi",
+				"Trimmer: Trim leading whitespace."
+			],
+			[
+				"up",
+				"Convert Case: Upper Case"
+			],
+			[
+				"enable",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"disable",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"linter",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"pre",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"j",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"colapse",
+				"Trimmer: Collapse lines."
+			],
+			[
+				"prett",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"inen",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"hex",
+				"Hex Viewer: Toggle Hex View"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"indein",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"low",
+				"Convert Case: Lower Case"
+			],
+			[
+				"lo",
+				"Convert Case: Lower Case"
+			],
+			[
+				"l",
+				"Convert Case: Lower Case"
+			],
+			[
+				"lowe",
+				"Convert Case: Lower Case"
+			],
+			[
+				"inedn",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"JSON",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"idnen",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"ind",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"theme",
+				"Themr: List themes"
+			],
+			[
+				"ine",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"in ",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"tr",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"INDEN",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"mini",
+				"Pretty JSON: Minify (compress) JSON"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"jsonn",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"LOWE",
+				"Convert Case: Lower Case"
+			],
+			[
+				"lower	",
+				"Convert Case: Lower Case"
+			],
+			[
+				"idne",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"trimm",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"ass",
+				"ASCII Decorator: Font Selector"
+			],
+			[
+				"trimmer",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"trimer",
+				"Trimmer: Remove blank spaces."
+			],
+			[
+				"package",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"as",
+				"ASCII Decorator: Font Selector"
+			],
+			[
+				"sub",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"f#",
+				"Set Syntax: F#"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ali",
+				"Preferences: Alignment Key Bindings – User"
+			],
+			[
+				"scope",
+				"Scope Hunter: Show Scope Under Cursor(s)"
+			],
+			[
+				"gutt",
+				"SublimeLinter: Choose Gutter Theme"
+			],
+			[
+				"gutter",
+				"SublimeLinter: Choose Gutter Theme"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"themr",
+				"Themr: List themes"
+			],
+			[
+				"doc",
+				"DocBlockr: Decorate line comment"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"th",
+				"Themr: List themes"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 172.0,
+		"history":
+		[
+			"import sys",
+			"ll",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Adminhtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Adminhtml/Panel",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Adminhtml/Status",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Adminhtml/Template",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/controllers",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/etc",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Helper",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Model",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Model/Adminhtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Model/Adminhtml/Observer",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/sql/twofactor_setup",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Block",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Block/Adminhtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Block/Adminhtml/Panel",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/controllers",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/controllers/Adminhtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/etc",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Helper",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Model/Adminhtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Model/Adminhtml/Cron",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Model/Adminhtml/Observer",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/sql/securitysuite_setup",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/layout",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/template",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/template/JetRails",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/template/JetRails/TwoFactor",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/etc",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/etc/modules",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/css",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/css/JetRails",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/css/JetRails/TwoFactor",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/images",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/images/JetRails",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/images/JetRails/TwoFactor",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/js",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/js/JetRails",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/js/JetRails/TwoFactor"
+	],
+	"file_history":
+	[
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/etc/system.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/template/JetRails/TwoFactor/State-Enabled.phtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Adminhtml/Panel/Configuration.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/template/JetRails/TwoFactor/State-Verified.phtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/layout/TwoFactor.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/etc/modules/JetRails_TwoFactor.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/README.md",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/template/JetRails/TwoFactor/Verify.phtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/controllers/LoginController.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Model/Adminhtml/Observer/TwoFactor.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/css/JetRails/TwoFactor/Verify.css",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/css/JetRails/TwoFactor/Status.css",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Adminhtml/Status/Enabled.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Adminhtml/Status/Verified.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/etc/config.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Helper/TOTP.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/template/JetRails/TwoFactor/State-Disabled.phtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Helper/Data.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/controllers/TestController.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Adminhtml/Template/Verify.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Helper/Data.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Block/Adminhtml/Panel/VirusResults.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/etc/system.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/etc/config.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Adminhtml/Verify.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Verify.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/controllers/TotpController.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Block/Adminhtml/Panel/TOTPConfig.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Block/Panel/Configuration.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Helper/Totp.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Model/Adminhtml/Observer/untitled.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/Helper/WTFBACKUP OF OBSERVER.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/controllers/{\"secret\":\"\",\"enabled\":true,\"verified\":true}",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/controllers/Adminhtml/TwofactorController.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/design/adminhtml/default/default/template/JetRails/Notification/email/template.phtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/etc/modules/JetRails_SecuritySuite.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/template/twofactor/verify.phtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/skin/adminhtml/base/default/css/JetRails/TwoFactor/Style.css",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/layout/Notification.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/controllers/Adminhtml/TwoFactorController.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/controllers/TwoFactorController.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/controllers/DebugController.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Model/Adminhtml/Observer/TOTP.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Block/Adminhtml/Verify.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/sql/twofactor_setup/mysql4-install-1.0.0.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/Gruntfile.js",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/staging.json",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/sql/securitysuite_setup/mysql4-install-1.0.0.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Model/SecuritySuite.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/local/JetRails/SecuritySuite/Block/Adminhtml/Action/Patches.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/code/community/JetRails/TwoFactor/etc/adminhtml.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/package.json",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-TwoFactor/src/app/design/adminhtml/default/default/layout/twofactor.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/Gruntfile.js",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/code/community/JetRails/Notification/Block/Adminhtml/Template/Email.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/code/community/JetRails/Notification/controllers/TestController.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/code/community/JetRails/Notification/Helper/SMTP.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/code/community/JetRails/Notification/Helper/MailMan.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/design/adminhtml/default/default/template/JetRails/Notification/email/test.phtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/skin/adminhtml/base/default/images/JetRails/Notification/Style.css",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/code/community/JetRails/Notification/Block/Adminhtml/Action/TestEmail.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/package.json",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/code/community/JetRails/Notification/etc/config.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/staging.json",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/design/adminhtml/default/default/layout/Notification.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/README.md",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/JetRails-Notification.sublime-project",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/code/community/JetRails/Notification/Helper/Data.php",
+		"/var/folders/kn/zds0xmk941x2ffpjsy6cx8fr0000gn/T/rsub-ky3o_2/deploy.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/gruntfile.js",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/code/community/JetRails/Notification/etc/adminhtml.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/etc/modules/JetRails_SecuritySuite.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/etc/modules/JetRails_Notification.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/.gitignore",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/app/code/community/JetRails/Notification/etc/system.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/project.sublime-project",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/_.sublime-project",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/Notification.sublime-project",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/TwoFactor/etc/config.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/TwoFactor/etc/system.xml",
+		"/Users/Raffi/GRUNT-TEST/gruntfile.js",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-Notification/src/skin/adminhtml/base/default/js/JetRails/Notification/Validate.js",
+		"/Users/Raffi/GRUNT-TEST/package.json",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/.gitignore",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/build.xml",
+		"/Users/Raffi/GRUNT-TEST/LICENSE",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/etc/modules/JetRails_TwoFactor.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/TwoFactor/Helper/Data.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Helper/Data.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/TwoFactor/etc/adminhtml.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/design/adminhtml/default/default/layout/Notification.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/etc/modules/JetRails_Notification.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/controllers/TestController.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Block/Adminhtml/Status/SMTP.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Block/Adminhtml/Action/TestEmail.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/etc/adminhtml.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/etc/system.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/etc/config.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Helper/MailMan.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Helper/SMTP.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Block/Adminhtml/Template/Email.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/design/adminhtml/default/default/template/JetRails/Notification/email/template.phtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/design/adminhtml/default/default/template/JetRails/Notification/email/test.phtml",
+		"/Users/Raffi/Documents/<?php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Block/Adminhtml/Email/Test.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Block/Adminhtml/Email/Template.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Block/Email.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/local/JetRails/SecuritySuite/templates/email/test_configuration.tpl",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/design/adminhtml/default/default/template/JetRails/Notification/TestEmail.phtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/design/adminhtml/default/default/layout/twofactor.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/design/adminhtml/default/default/template/twofactor/verify.phtml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/skin/adminhtml/base/default/css/JetRails/Notification/Style.css",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Block/Debug.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/local/JetRails/SecuritySuite/controllers/TestController.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/local/JetRails/SecuritySuite/Helper/Mailman.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/skin/adminhtml/base/default/js/JetRails/Notification/Validate.js",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/local/JetRails/SecuritySuite/etc/config.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/community/JetRails/Notification/Model/Adminhtml/Observer/SaveConfig.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/local/JetRails/SecuritySuite/Model/Adminhtml/Observer/AdminActivity.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/local/JetRails/SecuritySuite/Model/Adminhtml/Cron/VirusScan.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/local/JetRails/SecuritySuite/Model/Adminhtml/Observer/TOTP.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/local/JetRails/SecuritySuite/Model/Adminhtml/Cron/PatchNotifier.php",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/design/adminhtml/default/default/layout/notification.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/skin/frontend/base/default/js/jetrails/notification/validate.js",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/skin/frontend/base/default/js/validate.js",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/design/adminhtml/default/default/template/notification/validate.js",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/local/JetRails/SecuritySuite/etc/system.xml",
+		"/Users/Raffi/Google Drive/My Documents/Github/JetRails-SecuritySuite/app/code/local/JetRails/SecuritySuite/Block/Adminhtml/Status/SMTP.php"
+	],
+	"find":
+	{
+		"height": 54.0
+	},
+	"find_in_files":
+	{
+		"height": 154.0,
+		"where_history":
+		[
+			"",
+			"/Users/Raffi/Desktop/bgansu3",
+			"/Users/Raffi/Google Drive/My Documents/Github/RSA-Encryption",
+			"/Users/Raffi/Google Drive/School/UIC/CS491/HW02",
+			"/Users/Raffi/Desktop/bgansu3",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"Notice",
+			"code",
+			"$this->Data",
+			"$this->uid",
+			"#727272",
+			"jetrails-twofactor-",
+			"jetrail-twofactor-",
+			"jetrails_twofactor-",
+			"-",
+			"wide",
+			"'",
+			"$email",
+			"$secret",
+			"notification",
+			"$uid",
+			"Verify",
+			"getTwoFac",
+			"setTwo",
+			"code",
+			"$TOTP",
+			"_getSession",
+			"font-fam",
+			"->get",
+			"$verify",
+			"$key",
+			"jetrailstwofactor/login/verify",
+			"jetrails_twofactor/TwoFactor/verify",
+			"jetrails_twofactor/TwoFactor/test",
+			"adminhtml/TwoFactor/test",
+			"jetrails_twofactor",
+			"JetRails_SecuritySuite_Model_Adminhtml_Observer_TOTP",
+			"securitysuite",
+			"securitysuite_mysql4",
+			"JetRails™",
+			"40",
+			"[0-9]",
+			"notification",
+			"JetRails_Noti",
+			"jetrails_notification",
+			"notification",
+			"jetrails_notification",
+			"JetRails_Notification",
+			"jetrails_notification",
+			"Notification",
+			".  ",
+			"ssl",
+			"tls",
+			"simple",
+			"$message",
+			"status_match",
+			"\"notification",
+			"anattadesign_abandonedcarts",
+			"password",
+			"notificationsettings",
+			"NotificationSettings",
+			"notificationsettings",
+			"JetRails_NotificationSettings",
+			"icationSettings",
+			"notification_settings>",
+			"notificationsettings",
+			"notification_settings>",
+			"notificationsettings",
+			"SecuritySuite",
+			"securitysuite",
+			"_Model_Adminhtml",
+			"securitysuite",
+			"SecuritySuite",
+			"opaque",
+			"setBackground",
+			"securitysuite/notification/notification_notifier",
+			"Mage::getStoreConfig",
+			"activity",
+			"admin",
+			"notifier",
+			"mysql4",
+			"Last Res",
+			"interstitial",
+			"Anti-Virus Install Status",
+			"='color:#EB5E00",
+			"padding: 			10px;",
+			"_Results",
+			"padding: 			10px;",
+			"passcode",
+			"100%",
+			"It advisedi",
+			"passcode",
+			"newForm",
+			"twofactorauth_user_authenticate_after",
+			"twofactorauth_user_tfa_enforce",
+			"$vAction",
+			"$vRedirectUrl",
+			"Mage::getSingleton('adminhtml/session')",
+			"$oResponse",
+			"Cursor",
+			"super.textfield",
+			"Cursor",
+			"interstitial",
+			"twofactorauth",
+			"Mage::helper('twofactorauth/auth')",
+			"auth",
+			"isActive",
+			"_isAuthenticated",
+			"_getUser",
+			"_hasToken",
+			"isForceForBackend()",
+			"$event",
+			"twofactor",
+			"$this->_getAdminhtmlSession()",
+			"Mage::getSingleton('adminhtml/session')",
+			"$this->_getAdminhtmlSession()",
+			"_getAdminhtmlSession()",
+			"_getAdminhtmlSession",
+			"_getCustomerSession",
+			"MageHackDay_TwoFactorAuth",
+			"events",
+			"getAdminhtmlSession",
+			"getSession",
+			"_getSession",
+			"aboy",
+			"// this.add ( Box.createRigidArea ( new Dimension ( 500, 10 ) ), this.constraints );",
+			"create",
+			"delete",
+			"focus",
+			"Cursor",
+			"#",
+			"filler",
+			"colorSize",
+			".setPreferredSize ( new Dimension ( 1000, 50 ) );"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/skin/adminhtml/base/default/css/JetRails/TwoFactor/Configuration.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2235,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								380,
+								380
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/skin/adminhtml/base/default/js/JetRails/TwoFactor/Form.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 351,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27,
+								27
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/app/design/adminhtml/default/default/template/JetRails/TwoFactor/State-Enabled.phtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1081,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								366,
+								366
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 380.0,
+						"translation.y": 71.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/app/code/community/JetRails/TwoFactor/Block/Adminhtml/Template/Configuration.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2410,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								371,
+								371
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/app/design/adminhtml/default/default/template/JetRails/TwoFactor/State-Verified.phtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 380,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								377,
+								377
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/skin/adminhtml/base/default/css/JetRails/TwoFactor/Verify.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2110,
+								2110
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1616.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/app/code/community/JetRails/TwoFactor/controllers/ConfigurationController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4722,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1644,
+								1644
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 329.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/app/code/community/JetRails/TwoFactor/Helper/TOTP.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4815,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1337,
+								1347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 428.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/app/code/local/JetRails/SecuritySuite/Block/Adminhtml/Panel/TOTPConfig.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6235,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3577,
+								3577
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 851.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/app/code/local/JetRails/SecuritySuite/controllers/TotpController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1244,
+								1271
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 12.0,
+						"translation.y": 412.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/app/code/community/JetRails/TwoFactor/Helper/Data.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2599,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1213,
+								1213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 53.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "JetRails-TwoFactor.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"trim",
+				"UIC/CS362/Project/Joystick/node_modules/nan/doc/string_bytes.md"
+			],
+			[
+				"",
+				"UIC/CS473/Projects/PROJ01/Tests/test05.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 392.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

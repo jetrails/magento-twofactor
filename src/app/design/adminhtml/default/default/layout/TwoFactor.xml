@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<layout>
+	<adminhtml_system_config_edit>
+		<reference name="head" >
+			<action method="addItem" >
+				<type>skin_css</type>
+				<name>css/JetRails/TwoFactor/Configuration.css</name>
+			</action>
+			<action method="addItem" >
+				<type>skin_css</type>
+				<name>css/JetRails/TwoFactor/Status.css</name>
+			</action>
+			<action method="addItem" >
+				<type>skin_js</type>
+				<name>js/JetRails/TwoFactor/Form.js</name>
+			</action>
+		</reference>
+	</adminhtml_system_config_edit>
+</layout>
