@@ -17,7 +17,9 @@
 				echo $block->toHtml ();
 			}
 			// Otherwise, print out error
-			echo "TFA is not enabled, please leave.";
+			else {
+				echo "TFA is not enabled, please leave.";
+			}
 		}
 
 		public function verifyAction () {
