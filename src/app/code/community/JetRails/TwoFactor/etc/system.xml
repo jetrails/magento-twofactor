@@ -3,7 +3,7 @@
 <config>
 	<tabs>
 		<extensions translate="label" module="twofactor" >
-			<label>JetRails™</label>
+			<label>JetRails®</label>
 			<sort_order>0</sort_order>
 		</extensions>
 	</tabs>
@@ -25,9 +25,6 @@
 					<show_in_website>0</show_in_website>
 					<show_in_store>0</show_in_store>
 					<expanded>1</expanded>
-					<comment><![CDATA[
-						This will explain everything!!!
-					<br><br>]]></comment>
 					<fields>
 						<enabled translate="label comment" >
 							<label><![CDATA[<b>Enabled Status:</b>]]></label>

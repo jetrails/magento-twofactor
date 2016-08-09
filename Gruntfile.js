@@ -29,17 +29,8 @@ module.exports = function ( grunt ) {
 				exclude: 	[],
 				recursive: 	true
 			}
-			// Initialize the rsync staging options
-			var _rsync_staging = {
-				src: 		"src/*",
-				dest: 		package.staging.dest,
-				host: 		package.staging.user + "@" + package.staging.host
-			}
-			// Save it into grunt
+			// Save it into grunt config
 			grunt.config.set ( "rsync.options", _rsync_options );
-			grunt.config.set ( "rsync.staging.options", _rsync_staging );
-			// Run the task and upload the main source files
-			grunt.task.run ( "rsync:staging" );
 			// Traverse through jetrails dependencies
 			package.jetrailsDependencies.forEach ( function ( dependency ) {
 				// Extract the dependency name
@@ -51,10 +42,20 @@ module.exports = function ( grunt ) {
 					host: 		package.staging.user + "@" + package.staging.host
 				}
 				// Configure the dependency rsync options
-				grunt.config.set ( "rsync.dependencies.options", _rsync_dependencies );
+				grunt.config.set ( "rsync." + name + ".options", _rsync_dependencies );
 				// Run the dependencies task
-				grunt.task.run ( "rsync:dependencies" );
+				grunt.task.run ( "rsync:" + name + "" );
 			});
+			// Initialize the rsync staging options
+			var _rsync_staging = {
+				src: 		"src/*",
+				dest: 		package.staging.dest,
+				host: 		package.staging.user + "@" + package.staging.host
+			}
+			// Save it into grunt config
+			grunt.config.set ( "rsync.staging.options", _rsync_staging );
+			// Run the task and upload the main source files
+			grunt.task.run ( "rsync:staging" );
 		}
 		// Otherwise, report that we cannot deploy
 		else {
@@ -134,9 +135,65 @@ module.exports = function ( grunt ) {
 		}
 	});
 
+	grunt.task.registerTask ( "metadata", "initializes and replaces comment metadata", function () {
+		// Loop through all the php files in source directory
+		grunt.file.expand ("src/**/*.php").forEach ( function ( dir ) {
+			// Extract the file name and the folder above it
+			var filename = dir.split ("/") [ dir.split ("/").length - 1 ];
+			var category = dir.split ("/") [ dir.split ("/").length - 2 ].toLowerCase ();
+			filename = filename.replace ( ".php", "" );
+			category = category.charAt ( 0 ).toUpperCase () + category.slice ( 1 );
+			// Initialize the metadata header
+			var header = "" +
+				"\t * @version         " + package.version + "\n" +
+				"\t * @package         " + package.company + " " + package.name + "\n" +
+				"\t * @category        " + category + "\n" +
+				"\t * @author          " + package.author + " - " + package.company + "\n";
+			// If the package does not contain a copyright
+			if ( package.copyright == null ) {
+				// Append the license to it
+				header += "\t * @license         " + package.license + "\n";
+			}
+			// Otherwise, apply the copyright
+			else {
+				// Append the copyright to the header
+				header += "\t * @copyright       " + package.copyright + "\n";
+			}
+			// Initialize the replacement patterns
+			var _patterns = [
+				{
+					match: 				/(\n[ \t]*\n[ \t]*)([ \t]+class [0-9a-zA-Z_]+(?: extends [0-9a-zA-Z_]+)?[ \t]*\{)/gm,
+					replacement: 		"$1" + "\t/**\n" + "\t * " + filename + ".php - \n" + header + "\t */\n" + "$2"
+				},
+				{
+					match: 				/\t\/\*\*\n\t \* [a-zA-Z]*\.php - ([a-zA-Z\W0-9\.\*]*?)\n\t \* @[a-zA-Z\W0-9\.\*]*\*\/\n\t(class [0-9a-zA-Z_]+(?: extends [0-9a-zA-Z_]+)?[ \t]*\{)/gm,
+					replacement: 		"\t/**\n\t \* " + filename + ".php - $1\n" + header + "\t */\n" + "\t$2"
+				},
+				{
+					match: 				/(\n[ \t]*\n)([ \t]*)([public|protected|private]+ function [a-zA-Z0-9_]+(?: )?\()([a-zA-Z0-9$_, ]*)(\)(?: )?\{)/gm,
+					replacement: 		"$1 $2\/**\n$2 * \n$2 * @return\n$2 *\/\n" + "$2$3$4$5"
+				}
+			];
+			// Initialize which files are effected
+			var _files = [
+				{
+					expand: 			true,
+					flatten: 			false,
+					src: 				[ dir ],
+					dest: 				"."
+				}
+			];
+			// Update the options in grunt config
+			grunt.config.set ( "replace." + category + filename + ".options.patterns", _patterns );
+			grunt.config.set ( "replace." + category + filename + ".files", _files );
+			// Run the replace task
+			grunt.task.run ( "replace:" + category + filename + "" );
+		});
+	});
+
 	grunt.task.registerTask ( "resolve", "downloads jetrails dependency extensions", function () {
-		// Specify which tasks this depends on
-		this.requires ( [ "init" ] );
+		// Run the dependency command
+		grunt.task.run ( "init" );
 		// Loop through all the dependencies
 		package.jetrailsDependencies.forEach ( function ( dependency ) {
 			// Extract the dependency name
@@ -155,8 +212,11 @@ module.exports = function ( grunt ) {
 	});
 
 	grunt.task.registerTask ( "release", "prepares file structure for github release", function () {
-		// Specify which tasks this depends on
-		this.requires ( [ "init", "resolve" ] );
+		// Run the dependency tasks
+		grunt.task.run ( "init" );
+		grunt.task.run ( "resolve" );
+		// Update the metadata in comments
+		grunt.task.run ( "metadata" );
 		// Change version numbers
 		grunt.task.run ( "version" );
 		// Clear dist folder

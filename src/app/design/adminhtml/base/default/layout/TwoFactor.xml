@@ -3,6 +3,14 @@
 <layout>
 	<adminhtml_system_config_edit>
 		<reference name="head" >
+			<action method="addLinkRel" >
+				<rel>stylesheet</rel>
+				<href>//fonts.googleapis.com/css?family=Montserrat</href>
+			</action>
+			<action method="addItem" >
+				<type>skin_css</type>
+				<name>css/JetRails/Elements.css</name>
+			</action>
 			<action method="addItem" >
 				<type>skin_css</type>
 				<name>css/JetRails/TwoFactor/Configuration.css</name>

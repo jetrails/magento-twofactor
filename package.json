@@ -1,8 +1,10 @@
 {
 	"version": "1.0.0",
-	"name": "JetRails-TwoFactor",
+	"name": "TwoFactor",
 	"description": "Two-factor authorization for admin accounts",
-	"license": "UNLICENSED",
+    "author": "Rafael Grigorian",
+    "company": "JetRails®",
+    "copyright": "JetRails®, all rights reserved",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/jetrails/twofactor.git"

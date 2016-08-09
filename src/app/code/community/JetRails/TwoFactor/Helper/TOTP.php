@@ -1,5 +1,13 @@
 <?php
 
+	/**
+	 * TOTP.php - 
+	 * @version         1.0.0
+	 * @package         JetRails® TwoFactor
+	 * @category        Helper
+	 * @author          Rafael Grigorian - JetRails®
+	 * @copyright       JetRails®, all rights reserved
+	 */
 	class JetRails_TwoFactor_Helper_TOTP extends Mage_Core_Helper_Abstract {
 
 		/**
@@ -43,6 +51,10 @@
 			$this->secret = ( $secret == null ? $this->secret ( $this->secretSize ) : $secret );
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		private function decode ( $encoded ) {
 			// Initialize the chunks string
 			$chunks = "";
@@ -100,6 +112,10 @@
 			return str_pad ( $value % $modulo, $this->pinSize, '0', STR_PAD_LEFT );
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function verify ( $pin ) {
 			// Simply calculate the pin, and compare it to the passed in one
 			return $this->pin () == $pin;
@@ -118,6 +134,10 @@
 			return $url;
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function getSecret () {
 			// Simply return the saved secret
 			return $this->secret;

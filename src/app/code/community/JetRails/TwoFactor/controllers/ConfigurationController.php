@@ -1,7 +1,19 @@
 <?php
 
+	/**
+	 * ConfigurationController.php - 
+	 * @version         1.0.0
+	 * @package         JetRails® TwoFactor
+	 * @category        Controllers
+	 * @author          Rafael Grigorian - JetRails®
+	 * @copyright       JetRails®, all rights reserved
+	 */
 	class JetRails_TwoFactor_ConfigurationController extends Mage_Adminhtml_Controller_Action {
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function enableAction () {
 			// Get the user id using the Mage session
 			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();
@@ -42,10 +54,15 @@
 			$this->_redirectReferer ();
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function disableAction () {
 			// Get the user id using the Mage session
 			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();
-			// Initialize the Data helper class and the TOTP helper class
+			// Initialize the Data helper class, the TOTP helper class, and the Cookie class
+			$Cookie = Mage::helper ("twofactor/Cookie");
 			$Data = Mage::helper ("twofactor/Data");
 			$TOTP = Mage::helper ("twofactor/TOTP");
 			// Check to see if it is enabled and verified first
@@ -59,6 +76,8 @@
 					// Disable all items
 					$Data->setEnabled ( $uid, false );
 					$Data->setSecret ( $uid, "" );
+					// Delete cookie if set
+					$Cookie->delete ();
 					// Set a success message
 					Mage::getSingleton ("core/session")->addSuccess (
 						"Successfully disabled two factor authentication."
@@ -83,6 +102,10 @@
 			$this->_redirectReferer ();
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function generateAction () {
 			// Get the user id using the Mage session
 			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();

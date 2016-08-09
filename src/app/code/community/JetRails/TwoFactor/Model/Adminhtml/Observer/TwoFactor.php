@@ -1,7 +1,19 @@
 <?php
 
+	/**
+	 * TwoFactor.php - 
+	 * @version         1.0.0
+	 * @package         JetRails® TwoFactor
+	 * @category        Observer
+	 * @author          Rafael Grigorian - JetRails®
+	 * @copyright       JetRails®, all rights reserved
+	 */
 	class JetRails_TwoFactor_Model_Adminhtml_Observer_TwoFactor {
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function afterAdminAuthenticate ( Varien_Event_Observer $observer ) {
 			// Initialize the user id and the data  and cookie helpers
 			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();
@@ -20,6 +32,10 @@
 			return $this;
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function postAdminHtml ( Varien_Event_Observer $observer ) {
 			// Get the request using the observer
 			$request = $observer->getControllerAction ()->getRequest ();

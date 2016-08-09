@@ -1,7 +1,19 @@
 <?php
 
+	/**
+	 * Data.php - 
+	 * @version         1.0.0
+	 * @package         JetRails® TwoFactor
+	 * @category        Helper
+	 * @author          Rafael Grigorian - JetRails®
+	 * @copyright       JetRails®, all rights reserved
+	 */
 	class JetRails_TwoFactor_Helper_Data extends Mage_Core_Helper_Abstract {
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		private function _getTwoFactor ( $uid ) {
 			// Get the database resource from magento
 			$resource = Mage::getSingleton ("core/resource");
@@ -20,6 +32,10 @@
 			return json_decode ( $results [ 0 ] ["config"] );
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		private function _setTwoFactor ( $uid, $value ) {
 			// Get the database resource from magento
 			$resource = Mage::getSingleton ("core/resource");
@@ -36,6 +52,10 @@
 			$connection->query ( $sql );
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function isEnabled ( $uid ) {
 			// Get the configuration
 			$config = $this->_getTwoFactor ( $uid );
@@ -43,6 +63,10 @@
 			return $config->enabled;
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function getSecret ( $uid ) {
 			// Get the configuration
 			$config = $this->_getTwoFactor ( $uid );
@@ -50,6 +74,10 @@
 			return $config->secret;
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function setEnabled ( $uid, $value ) {
 			// Get the configuration
 			$config = $this->_getTwoFactor ( $uid );
@@ -59,6 +87,10 @@
 			$this->_setTwoFactor ( $uid, json_encode ( $config ) );
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function setSecret ( $uid, $value ) {
 			// Get the configuration
 			$config = $this->_getTwoFactor ( $uid );

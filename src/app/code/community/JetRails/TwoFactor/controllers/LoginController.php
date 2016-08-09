@@ -1,7 +1,19 @@
 <?php
 
+	/**
+	 * LoginController.php - 
+	 * @version         1.0.0
+	 * @package         JetRails® TwoFactor
+	 * @category        Controllers
+	 * @author          Rafael Grigorian - JetRails®
+	 * @copyright       JetRails®, all rights reserved
+	 */
 	class JetRails_TwoFactor_LoginController extends Mage_Adminhtml_Controller_Action {
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function formAction () {
 			// Initialize the user id, TOTP helper, and the Data helper
 			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();
@@ -22,6 +34,10 @@
 			}
 		}
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		public function verifyAction () {
 			// Initialize the user id, TOTP helper, and the Data helper
 			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();

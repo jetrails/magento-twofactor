@@ -1,7 +1,19 @@
 <?php
 
+	/**
+	 * Configuration.php - 
+	 * @version         1.0.0
+	 * @package         JetRails® TwoFactor
+	 * @category        Panel
+	 * @author          Rafael Grigorian - JetRails®
+	 * @copyright       JetRails®, all rights reserved
+	 */
 	class JetRails_TwoFactor_Block_Adminhtml_Panel_Configuration extends Mage_Adminhtml_Block_System_Config_Form_Field {
 
+ 		/**
+		 * 
+		 * @return
+		 */
 		protected function _getElementHtml ( Varien_Data_Form_Element_Abstract $element ) {
 			// Get a generic layout
 			$block = Mage::app ()->getLayout ();
