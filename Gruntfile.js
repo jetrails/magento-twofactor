@@ -183,11 +183,13 @@ module.exports = function ( grunt ) {
 					dest: 				"."
 				}
 			];
+			// Define a temp variable for the grunt name (for async execution)
+			var temp = category.replace ( /_|\.|-/gm, "" ) + filename.replace ( /_|-|\./g, "" );
 			// Update the options in grunt config
-			grunt.config.set ( "replace." + category + filename + ".options.patterns", _patterns );
-			grunt.config.set ( "replace." + category + filename + ".files", _files );
+			grunt.config.set ( "replace." + temp + ".options.patterns", _patterns );
+			grunt.config.set ( "replace." + temp + ".files", _files );
 			// Run the replace task
-			grunt.task.run ( "replace:" + category + filename + "" );
+			grunt.task.run ( "replace:" + temp + "" );
 		});
 	});
 

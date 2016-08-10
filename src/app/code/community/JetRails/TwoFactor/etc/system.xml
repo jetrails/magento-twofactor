@@ -27,7 +27,7 @@
 					<expanded>1</expanded>
 					<fields>
 						<enabled translate="label comment" >
-							<label><![CDATA[<b>Enabled Status:</b>]]></label>
+							<label><![CDATA[Status:]]></label>
 							<frontend_type>button</frontend_type>
 							<frontend_model>twofactor/Adminhtml_Status_Enabled</frontend_model>
 							<sort_order>0</sort_order>
@@ -36,7 +36,7 @@
 							<show_in_store>0</show_in_store>
 						</enabled>
 						<config translate="label comment" >
-							<label><![CDATA[<b>Action Panel:</b>]]></label>
+							<label><![CDATA[Action Panel:]]></label>
 							<frontend_type>text</frontend_type>
 							<frontend_model>twofactor/Adminhtml_Panel_Configuration</frontend_model>
 							<sort_order>1</sort_order>
