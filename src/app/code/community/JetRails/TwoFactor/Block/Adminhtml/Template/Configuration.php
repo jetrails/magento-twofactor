@@ -1,7 +1,10 @@
 <?php
 
 	/**
-	 * Configuration.php - 
+	 * Configuration.php - This class provides useful helper functions for the templates displayed
+	 * in the Action panel in the system configuration page.  It is used to get controller actions
+	 * URLs and retrieving the TOTP secret along with the URL to the QR code image containing the
+	 * user's secret.
 	 * @version         1.0.0
 	 * @package         JetRails® TwoFactor
 	 * @category        Template
@@ -10,36 +13,37 @@
 	 */
 	class JetRails_TwoFactor_Block_Adminhtml_Template_Configuration extends Mage_Adminhtml_Block_Template {
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This function returns the url to the configuration controller with the enable action.
+		 * @return      string                                      URL to configuration/enable
 		 */
-		protected function _getVerifyURL () {
+		protected function _getEnableURL () {
 			// Return the URL to the controller that handles enabling TFA
 			return Mage::helper ("adminhtml")->getUrl ("jetrails_twofactor/configuration/enable");
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This function returns the url to the configuration controller with the generate action.
+		 * @return      string                                      URL to configuration/generate
 		 */
 		protected function _getGenerateURL () {
 			// Return the URL to the controller that handles enabling TFA
 			return Mage::helper ("adminhtml")->getUrl ("jetrails_twofactor/configuration/generate");
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This function returns the url to the configuration controller with the disable action.
+		 * @return      string                                      URL to configuration/disable
 		 */
 		protected function _getDisableURL () {
 			// Return the URL to the controller that handles enabling TFA
 			return Mage::helper ("adminhtml")->getUrl ("jetrails_twofactor/configuration/disable");
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * this function simply returns the current user's secret, using the logged in user id
+		 * stored in the session.
+		 * @return      string                                      The user's TOTP secret
 		 */
 		protected function _getSecret () {
 			// Load the TOTP helper class and the Data class
@@ -63,9 +67,10 @@
 			return $TOTP->getSecret ();
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This function returns a URL to the QR code image that contains the user's secret.  The
+		 * Google charts API is used for this request.
+		 * @return      string                                      URL to QR code image
 		 */
 		protected function _getQRCode () {
 			// Load the TOTP helper class and the Data class

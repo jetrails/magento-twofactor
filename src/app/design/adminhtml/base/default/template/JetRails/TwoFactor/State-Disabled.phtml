@@ -11,7 +11,7 @@
 			<input class="jetrails_twofactor_button" type="button" value="Generate New Secret" onClick="setLocation ('<?= $this->_getGenerateURL () ?>')" />
 			<div class="jetrails_twofactor_space" ></div>
 			<input class="jetrails_twofactor_pin" type="text" name="code" placeholder="6-digit pin" maxlength="6" autocomplete="off" />
-			<input class="jetrails_twofactor_submit" type="button" name="<?= $this->_getVerifyURL () ?>" value="Enable" onClick="submitTwoFactorPin ()" />
+			<input class="jetrails_twofactor_submit" type="button" name="<?= $this->_getEnableURL () ?>" value="Enable" onClick="submitTwoFactorPin ()" />
 		</td>
 	</tr>
 </table>

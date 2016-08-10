@@ -5,8 +5,8 @@
 select[id^="jetrails"] {
 	-webkit-appearance:         none;
 	-moz-appearance:            none;
-	-ms-appearance: 			none;
-    -o-appearance: 				none;
+	-ms-appearance:             none;
+	-o-appearance:              none;
 	appearance:                 none;
 	width:                      100% !important;
 	padding:                    6px;
@@ -22,23 +22,23 @@ select[id^="jetrails"] {
 }
 
 select[id^="jetrails"]:hover {
-	background-color: 				rgba( 0, 0, 0, 0.05 );
+	background-color:               rgba( 0, 0, 0, 0.05 );
 }
 
-input[id^="jetrails"] { 
+input[id^="jetrails"] {
 	font-family:            "Montserrat", sans-serif;
 	width:                  calc( 100% - 14px ) !important;
-	background: 			none;
-	border:					solid 1px #31302B;
-	padding: 				6px;
+	background:             none;
+	border:                 solid 1px #31302B;
+	padding:                6px;
 }
 
-textarea[id^="jetrails"] { 
+textarea[id^="jetrails"] {
 	font-family:            "Montserrat", sans-serif;
 	width:                  calc( 100% - 14px ) !important;
-	background: 			none;
-	border:					solid 1px #31302B;
-	padding: 				6px;
+	background:             none;
+	border:                 solid 1px #31302B;
+	padding:                6px;
 }
 
 label[for^="jetrails"] {
@@ -46,11 +46,11 @@ label[for^="jetrails"] {
 }
 
 fieldset[id^="jetrails"] {
-	font-family:            "Montserrat", sans-serif;	
+	font-family:            "Montserrat", sans-serif;
 }
 
 .entry-edit-head.collapseable a[id^="jetrails"] {
-	padding: 				10px !important;
+	padding:                10px !important;
 }
 
 /**
@@ -144,7 +144,7 @@ fieldset[id^="jetrails"] {
 	text-align:             center;
 	white-space:            nowrap;
 	font-size:              12px !important;
-	min-width: 				150px !important;
+	min-width:              150px !important;
 }
 
 .jetrails-static-table tr td {
@@ -153,7 +153,7 @@ fieldset[id^="jetrails"] {
 	color:                  #31302B;
 	text-align:             center;
 	white-space:            nowrap;
-	min-width: 				150px !important;
+	min-width:              150px !important;
 }
 
 .jetrails-static-short-cell {
@@ -161,7 +161,7 @@ fieldset[id^="jetrails"] {
 }
 
 .jetrails-static-even-half-cell {
-	width: 					50% !important;
+	width:                  50% !important;
 }
 
 .jetrails-static-empty td {
@@ -176,7 +176,7 @@ fieldset[id^="jetrails"] {
 	font-family:            "Montserrat", sans-serif;
 	width:                  100%;
 	font-size:              12px;
-	text-align: 			center;
+	text-align:             center;
 	table-layout:           inherit;
 }
 
@@ -187,20 +187,20 @@ fieldset[id^="jetrails"] {
 }
 
 .jetrails-dynamic-content {
-	max-width:				300px;
-	text-align: 			left !important;
-	overflow:				scroll;
-	background: 			#E9E9E9;
+	max-width:              300px;
+	text-align:             left !important;
+	overflow:               scroll;
+	background:             #E9E9E9;
 }
 
 .jetrails-dynamic-no-padding {
-	padding: 				0px !important;
+	padding:                0px !important;
 }
 
 .jetrails-dynamic-clickable {
-	cursor: 				pointer;
+	cursor:                 pointer;
 }
 
 .jetrails-dynamic-selected {
-	background: 			#E9E9E9 !important;
+	background:             #E9E9E9 !important;
 }

@@ -1,7 +1,9 @@
 <?php
 
 	/**
-	 * LoginController.php - 
+	 * LoginController.php - This controller contains an action to render the Verify page after
+	 * successful user login and also a function that validates the submitted form from the Verify
+	 * page.
 	 * @version         1.0.0
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
@@ -10,9 +12,11 @@
 	 */
 	class JetRails_TwoFactor_LoginController extends Mage_Adminhtml_Controller_Action {
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This action simply determines if the the TFA service is enabled, if it is then it renders
+		 * the Verify page using the appropriate block and template file.  This action is called
+		 * within the TwoFactor observer.
+		 * @return      void
 		 */
 		public function formAction () {
 			// Initialize the user id, TOTP helper, and the Data helper
@@ -34,9 +38,12 @@
 			}
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This action is called within the Verify page as a form action.  This form passes a POST
+		 * with the TOTP pin.  This action validates the pin and completes the login process.  If
+		 * the pin is invalid, it sets an error and redirects back to the verify page where the
+		 * error is displayed.
+		 * @return      void
 		 */
 		public function verifyAction () {
 			// Initialize the user id, TOTP helper, and the Data helper

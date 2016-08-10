@@ -41,7 +41,7 @@
 				</entities>
 			</twofactor_setup>
 		</models>
-		<resources>  
+		<resources>
 			<twofactor_setup>
 				<setup>
 					<module>JetRails_TwoFactor</module>
@@ -51,28 +51,28 @@
 				</connection>
 			</twofactor_setup>
 		</resources>
-        <events>
-            <controller_action_postdispatch_adminhtml>
-                <observers>
-                    <twofactor_redirect>
-                        <class>twofactor/Adminhtml_Observer_TwoFactor</class>
-                        <method>postAdminHtml</method>
-                    </twofactor_redirect>
-                </observers>
-            </controller_action_postdispatch_adminhtml>
-        </events>
+		<events>
+			<controller_action_postdispatch_adminhtml>
+				<observers>
+					<twofactor_redirect>
+						<class>twofactor/Adminhtml_Observer_TwoFactor</class>
+						<method>postAdminHtml</method>
+					</twofactor_redirect>
+				</observers>
+			</controller_action_postdispatch_adminhtml>
+		</events>
 	</global>
 	<adminhtml>
 		<events>
-            <admin_session_user_login_success>
-                <observers>
-                    <twofactor_after_admin_login>
-                        <type>singleton</type>
-                        <class>twofactor/Adminhtml_Observer_TwoFactor</class>
-                        <method>afterAdminAuthenticate</method>
-                    </twofactor_after_admin_login>
-                </observers>
-            </admin_session_user_login_success>
+			<admin_session_user_login_success>
+				<observers>
+					<twofactor_after_admin_login>
+						<type>singleton</type>
+						<class>twofactor/Adminhtml_Observer_TwoFactor</class>
+						<method>afterAdminAuthenticate</method>
+					</twofactor_after_admin_login>
+				</observers>
+			</admin_session_user_login_success>
 		</events>
 		<layout>
 			<updates>

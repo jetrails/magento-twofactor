@@ -1,7 +1,9 @@
 <?php
 
 	/**
-	 * Data.php - 
+	 * Data.php - This helper sets and gets values into the twofactor column in the admin_user table
+	 * in the Magento store's database.  We need this helper class in order to ensure that these
+	 * values get encrypted and decrypted.
 	 * @version         1.0.0
 	 * @package         JetRails® TwoFactor
 	 * @category        Helper
@@ -10,9 +12,11 @@
 	 */
 	class JetRails_TwoFactor_Helper_Data extends Mage_Core_Helper_Abstract {
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This function returns the JSON string stored in the database under the admin_user table.
+		 * This JSON string contains the enabled status as well as the user's TOTP secret.
+		 * @param       int                     uid                 The user id linked to session
+		 * @return      Object                                      JSON object with TOTP config
 		 */
 		private function _getTwoFactor ( $uid ) {
 			// Get the database resource from magento
@@ -28,15 +32,20 @@
 					LIMIT 1";
 			// Execute query and save results
 			$results = $connection->fetchAll ( $sql );
-			// Return the result
-			return json_decode ( $results [ 0 ] ["config"] );
+			// Return the result, decrypted and decoded
+			return json_decode ( Mage::helper ("core")->decrypt ( $results [ 0 ] ["config"] ) );
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This function take in the user id and the json string value and it encrypts it before
+		 * storing it back into the twofactor column in the admin_user table.
+		 * @param       int                     uid                 The user id linked to session
+		 * @param       string                  value               The TOTP config as JSON string
+		 * @return      void
 		 */
 		private function _setTwoFactor ( $uid, $value ) {
+			// Encrypt the value
+			$value = Mage::helper ("core")->encrypt ( $value );
 			// Get the database resource from magento
 			$resource = Mage::getSingleton ("core/resource");
 			// Get the write connection
@@ -52,9 +61,11 @@
 			$connection->query ( $sql );
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This function simply gets the TOTP configuration and evaluated if the TFA service is
+		 * enabled.
+		 * @param       int                     uid                 The user id linked to session
+		 * @return      bool                                        Is TFA service enabled for user?
 		 */
 		public function isEnabled ( $uid ) {
 			// Get the configuration
@@ -63,9 +74,9 @@
 			return $config->enabled;
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This function simply gets the TOTP configuration and returns the user's secret.
+		 * @return      string                                      TOTP secret for user
 		 */
 		public function getSecret ( $uid ) {
 			// Get the configuration
@@ -74,9 +85,12 @@
 			return $config->secret;
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This function takes in a user id and a value for whether the TFA service is enabled for
+		 * said user, then stores the configuration back into the database.
+		 * @param       int                     uid                 The user id linked to session
+		 * @param       bool                    value               Set TFA service enabled?
+		 * @return      void
 		 */
 		public function setEnabled ( $uid, $value ) {
 			// Get the configuration
@@ -87,9 +101,12 @@
 			$this->_setTwoFactor ( $uid, json_encode ( $config ) );
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This function takes in a user id and a string value for the TOTP secret.  It then saves
+		 * it back into the database for said user.
+		 * @param       int                     uid                 The user id linked to session
+		 * @param       string                  value               New TOTP secret
+		 * @return      void
 		 */
 		public function setSecret ( $uid, $value ) {
 			// Get the configuration

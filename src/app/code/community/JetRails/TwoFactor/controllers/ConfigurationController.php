@@ -1,7 +1,9 @@
 <?php
 
 	/**
-	 * ConfigurationController.php - 
+	 * ConfigurationController.php - This controller offers actions that aid in turning the TFA
+	 * service on and off, as well as re-generate the user's secret.  It is used within the action
+	 * panel in the system configuration panel in Magento.
 	 * @version         1.0.0
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
@@ -10,9 +12,10 @@
 	 */
 	class JetRails_TwoFactor_ConfigurationController extends Mage_Adminhtml_Controller_Action {
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This action enables the TFA given that TFA is currently disabled and the passed TOTP pin
+		 * is valid, thus proving that the user has successfully set up their TFA account.
+		 * @return      void
 		 */
 		public function enableAction () {
 			// Get the user id using the Mage session
@@ -54,9 +57,11 @@
 			$this->_redirectReferer ();
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This action disables TFA for the current logged in user, given the fact that TFA is
+		 * currently enabled and that passed TOTP pin is valid, thus proving that it is the
+		 * authorized user requesting to disable this service.
+		 * @return      void
 		 */
 		public function disableAction () {
 			// Get the user id using the Mage session
@@ -102,9 +107,10 @@
 			$this->_redirectReferer ();
 		}
 
- 		/**
-		 * 
-		 * @return
+		/**
+		 * This action simply generated a new secret using the TOTP helper class, given the fact
+		 * that the service is currently disabled.
+		 * @return      void
 		 */
 		public function generateAction () {
 			// Get the user id using the Mage session

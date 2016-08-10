@@ -1,112 +1,112 @@
 /**
- * 
+ * This style sheet is used for the action panel in the system configuration page.
  */
 
 ::-webkit-input-placeholder {
-	color: 						#11100B;
-	text-align: 				center;
-	letter-spacing: 			normal;
+	color:                      #11100B;
+	text-align:                 center;
+	letter-spacing:             normal;
 }
 
 :-moz-placeholder {
-	color: 						#11100B;
-	text-align: 				center;  
-	letter-spacing: 			normal;
+	color:                      #11100B;
+	text-align:                 center;
+	letter-spacing:             normal;
 }
 
 ::-moz-placeholder {
-	color: 						#11100B;
-	text-align: 				center;  
-	letter-spacing: 			normal;
+	color:                      #11100B;
+	text-align:                 center;
+	letter-spacing:             normal;
 }
 
 :-ms-input-placeholder {
-	color: 						#11100B;
-	text-align: 				center;  
-	letter-spacing: 			normal;
+	color:                      #11100B;
+	text-align:                 center;
+	letter-spacing:             normal;
 }
 
 .jetrails_twofactor_table {
-	background:             	#FFFFFF;
-	color:                  	#31302B;
-	font-family:				"Montserrat", sans-serif;
-	font-size: 					12px;
-    text-align: 				justify;
-    padding: 					7.5px;
+	background:                 #FFFFFF;
+	color:                      #31302B;
+	font-family:                "Montserrat", sans-serif;
+	font-size:                  12px;
+	text-align:                 justify;
+	padding:                    7.5px;
 }
 
 .jetrails_twofactor_table tr td {
-	padding: 					7.5px;
+	padding:                    7.5px;
 }
 
 .jetrails_twofactor_secret {
-	position: 					relative;
-	display: 					inline;
-	float: 						left;
-	text-decoration: 			none;
-	color: 						#31302B;
-	padding: 					15px;
-	background: 				#FFFFFF;
-	height: 					calc( 100% - 32px );
-	width: 						calc( 100% - 32px );
-	border: 					solid 1px #31302B;
-	text-align:					center;
-	letter-spacing: 			6px;
+	position:                   relative;
+	display:                    inline;
+	float:                      left;
+	text-decoration:            none;
+	color:                      #31302B;
+	padding:                    15px;
+	background:                 #FFFFFF;
+	height:                     calc( 100% - 32px );
+	width:                      calc( 100% - 32px );
+	border:                     solid 1px #31302B;
+	text-align:                 center;
+	letter-spacing:             6px;
 }
 
 .jetrails_twofactor_pin {
-	position: 					relative;
-	display: 					inline;
-	float: 						left;
-	width: 						calc( 50% - 32px );
-	min-width: 					68px;
-	height: 					14px;
-	border: 					solid 1px #31302B;
-	margin:						0px;
-	padding: 					15px;
-	background: 				#FFFFFF;
-	outline: 					none;
-	font-family:				"Montserrat", sans-serif;
-	font-size: 					12px;
-	text-align: 				left;
-	color: 						#31302B;
-	letter-spacing: 			2px;
+	position:                   relative;
+	display:                    inline;
+	float:                      left;
+	width:                      calc( 50% - 32px );
+	min-width:                  68px;
+	height:                     14px;
+	border:                     solid 1px #31302B;
+	margin:                     0px;
+	padding:                    15px;
+	background:                 #FFFFFF;
+	outline:                    none;
+	font-family:                "Montserrat", sans-serif;
+	font-size:                  12px;
+	text-align:                 left;
+	color:                      #31302B;
+	letter-spacing:             2px;
 }
 
 .jetrails_twofactor_submit,
 .jetrails_twofactor_button {
-	position:               	relative;
-	display:                	inline;
-	float:                  	left;
-	height:                 	46px;
-	width:                  	50%;
-	min-width: 					100px;
-	margin:						0px;
-	padding: 					10px;
-	border:						0px;
-	background: 				#31302B;
-	color: 						#FFFFFF;
-	font-family:				"Montserrat", sans-serif;
-	font-size: 					12px;
-	cursor: 					pointer;
+	position:                   relative;
+	display:                    inline;
+	float:                      left;
+	height:                     46px;
+	width:                      50%;
+	min-width:                  100px;
+	margin:                     0px;
+	padding:                    10px;
+	border:                     0px;
+	background:                 #31302B;
+	color:                      #FFFFFF;
+	font-family:                "Montserrat", sans-serif;
+	font-size:                  12px;
+	cursor:                     pointer;
 }
 
 .jetrails_twofactor_button {
 
-	width: 						100%;
+	width:                      100%;
 }
 
 .jetrails_twofactor_submit:hover,
 .jetrails_twofactor_submit:focus,
 .jetrails_twofactor_button:hover,
 .jetrails_twofactor_button:focus {
-	background: 				#11100B;
+	background:                 #11100B;
 }
 
 .jetrails_twofactor_space {
-	position: 					relative;
-	display: 					inline;
-	float: 						left;
-	width: 						100%;
-	height: 					15px;
+	position:                   relative;
+	display:                    inline;
+	float:                      left;
+	width:                      100%;
+	height:                     15px;
 }
