@@ -12,11 +12,7 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks ("grunt-mkdir");
 	grunt.loadNpmTasks ("grunt-rsync");
 
-	grunt.task.registerTask ( "default", "preform a full build", [
-		"init",
-		"resolve",
-		"release"
-	]);
+	grunt.task.registerTask ( "default", "preform a full build", [ "release" ]);
 
 	grunt.task.registerTask ( "deploy", "upload src contents to staging environment", function () {
 		// Make sure that staging object is set in package JSON file
@@ -25,9 +21,9 @@ module.exports = function ( grunt ) {
 		&& package.staging.dest.trim () != "" ) {
 			// Initialize the rsync option object
 			var _rsync_options = {
-				args: 		[ "-az", "-o", "-g", "-e 'ssh -p " + package.staging.port + "'" ],
-				exclude: 	[],
-				recursive: 	true
+				args:       [ "-az", "-o", "-g", "-e 'ssh -p " + package.staging.port + "'" ],
+				exclude:    [],
+				recursive:  true
 			}
 			// Save it into grunt config
 			grunt.config.set ( "rsync.options", _rsync_options );
@@ -37,9 +33,9 @@ module.exports = function ( grunt ) {
 				var name = dependency.match (/\/([a-zA-Z0-9-]*)\.git$/) [ 1 ].toLowerCase ();
 				// Initialize the rsync dependencies options
 				var _rsync_dependencies = {
-					src: 		"lib/" + name + "/src/*",
-					dest: 		package.staging.dest,
-					host: 		package.staging.user + "@" + package.staging.host
+					src:        "lib/" + name + "/src/*",
+					dest:       package.staging.dest,
+					host:       package.staging.user + "@" + package.staging.host
 				}
 				// Configure the dependency rsync options
 				grunt.config.set ( "rsync." + name + ".options", _rsync_dependencies );
@@ -48,9 +44,9 @@ module.exports = function ( grunt ) {
 			});
 			// Initialize the rsync staging options
 			var _rsync_staging = {
-				src: 		"src/*",
-				dest: 		package.staging.dest,
-				host: 		package.staging.user + "@" + package.staging.host
+				src:        "src/*",
+				dest:       package.staging.dest,
+				host:       package.staging.user + "@" + package.staging.host
 			}
 			// Save it into grunt config
 			grunt.config.set ( "rsync.staging.options", _rsync_staging );
@@ -76,21 +72,21 @@ module.exports = function ( grunt ) {
 		// Initialize the replacement patterns
 		var _patterns = [
 			{
-				match: 				/^(\s*\*\s+@version\s+)([0-9]+\.[0-9]+\.[0-9]+)(\s*)$/gm,
-				replacement: 		"$1" + package.version + "$3"
+				match:              /^(\s*\*\s+@version\s+)([0-9]+\.[0-9]+\.[0-9]+)(\s*)$/gm,
+				replacement:        "$1" + package.version + "$3"
 			},
 			{
-				match: 				/^(\s*<version>)([0-9]+\.[0-9]+\.[0-9]+)(<\/version>\s*)$/gm,
-				replacement: 		"$1" + package.version + "$3"
+				match:              /^(\s*<version>)([0-9]+\.[0-9]+\.[0-9]+)(<\/version>\s*)$/gm,
+				replacement:        "$1" + package.version + "$3"
 			}
 		];
 		// Initialize which files are effected
 		var _files = [
 			{
-				expand: 			true,
-				flatten: 			false,
-				src: 				[ "src/**/*.php", "src/**/*.phtml", "src/**/*.xml" ],
-				dest: 				"."
+				expand:             true,
+				flatten:            false,
+				src:                [ "src/**/*.php", "src/**/*.phtml", "src/**/*.xml" ],
+				dest:               "."
 			}
 		];
 		// Update the options in grunt config
@@ -162,25 +158,25 @@ module.exports = function ( grunt ) {
 			// Initialize the replacement patterns
 			var _patterns = [
 				{
-					match: 				/(\n[ \t]*\n[ \t]*)([ \t]+class [0-9a-zA-Z_]+(?: extends [0-9a-zA-Z_]+)?[ \t]*\{)/gm,
-					replacement: 		"$1" + "\t/**\n" + "\t * " + filename + ".php - \n" + header + "\t */\n" + "$2"
+					match:              /(\n[ \t]*\n[ \t]*)([ \t]+class [0-9a-zA-Z_]+(?: extends [0-9a-zA-Z_]+)?[ \t]*\{)/gm,
+					replacement:        "$1" + "\t/**\n" + "\t * " + filename + ".php - \n" + header + "\t */\n" + "$2"
 				},
 				{
-					match: 				/\t\/\*\*\n\t \* [a-zA-Z]*\.php - ([a-zA-Z\W0-9\.\*]*?)\n\t \* @[a-zA-Z\W0-9\.\*]*\*\/\n\t(class [0-9a-zA-Z_]+(?: extends [0-9a-zA-Z_]+)?[ \t]*\{)/gm,
-					replacement: 		"\t/**\n\t \* " + filename + ".php - $1\n" + header + "\t */\n" + "\t$2"
+					match:              /\t\/\*\*\n\t \* [a-zA-Z]*\.php - ([a-zA-Z\W0-9\.\*]*?)\n\t \* @[a-zA-Z\W0-9\.\*]*\*\/\n\t(class [0-9a-zA-Z_]+(?: extends [0-9a-zA-Z_]+)?[ \t]*\{)/gm,
+					replacement:        "\t/**\n\t \* " + filename + ".php - $1\n" + header + "\t */\n" + "\t$2"
 				},
 				{
-					match: 				/(\n[ \t]*\n)([ \t]*)([public|protected|private]+ function [a-zA-Z0-9_]+(?: )?\()([a-zA-Z0-9$_, ]*)(\)(?: )?\{)/gm,
-					replacement: 		"$1 $2\/**\n$2 * \n$2 * @return\n$2 *\/\n" + "$2$3$4$5"
+					match:              /(\n[ \t]*\n)([ \t]*)([public|protected|private]+ function [a-zA-Z0-9_]+(?: )?\()([a-zA-Z0-9$_\:\/="', ]*)(\)(?: )?\{)/gm,
+					replacement:        "$1 $2\/**\n$2 * \n$2 * @return\n$2 *\/\n" + "$2$3$4$5"
 				}
 			];
 			// Initialize which files are effected
 			var _files = [
 				{
-					expand: 			true,
-					flatten: 			false,
-					src: 				[ dir ],
-					dest: 				"."
+					expand:             true,
+					flatten:            false,
+					src:                [ dir ],
+					dest:               "."
 				}
 			];
 			// Define a temp variable for the grunt name (for async execution)
@@ -225,9 +221,9 @@ module.exports = function ( grunt ) {
 		grunt.task.run ( "nuke:dist" );
 		// Initialize the files array for compression
 		var files = [{
-			cwd: 			"src",
-			expand: 		true,
-			src: 			["**"]
+			cwd:            "src",
+			expand:         true,
+			src:            ["**"]
 		}];
 		// Traverse through jetrails dependencies
 		package.jetrailsDependencies.forEach ( function ( dependency ) {
@@ -235,9 +231,9 @@ module.exports = function ( grunt ) {
 			var name = dependency.match (/\/([a-zA-Z0-9-]*)\.git$/) [ 1 ].toLowerCase ();
 			// Append to the files array
 			files.push ({
-				cwd: 			"lib/" + name + "/src",
-				expand: 		true,
-				src: 			["**"]
+				cwd:            "lib/" + name + "/src",
+				expand:         true,
+				src:            ["**"]
 			});
 		});
 		// Define the output file
