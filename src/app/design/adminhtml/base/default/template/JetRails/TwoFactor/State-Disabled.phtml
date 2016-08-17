@@ -1,17 +1,26 @@
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" >
-
 <table class="jetrails_twofactor_table" cellspacing="0" >
 	<tr>
-		<td>
-			<img height="170" src="<?= $this->_getQRCode () ?>" />
+		<td rowspan="3" >
+			<img height="180" src="<?= $this->_getQRCode () ?>" />
+			<div class="jetrails_twofactor_badge" style="margin-top:-197px;margin-left:-12px;" >2</div>
 		</td>
-		<td style="vertical-align:top;" >
+		<td>
 			<div class="jetrails_twofactor_secret" ><?= $this->_getSecret () ?></div>
-			<div class="jetrails_twofactor_space" ></div>
+			<div class="jetrails_twofactor_badge" >3</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
 			<input class="jetrails_twofactor_button" type="button" value="Generate New Secret" onClick="setLocation ('<?= $this->_getGenerateURL () ?>')" />
-			<div class="jetrails_twofactor_space" ></div>
-			<input class="jetrails_twofactor_pin" type="text" name="code" placeholder="6-digit pin" maxlength="6" autocomplete="off" />
+			<div class="jetrails_twofactor_badge" >1</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input class="jetrails_twofactor_pin" type="text" name="code" placeholder="6-digit pin" maxlength="6" autocomplete="off" autofocus />
 			<input class="jetrails_twofactor_submit" type="button" name="<?= $this->_getEnableURL () ?>" value="Enable" onClick="submitTwoFactorPin ()" />
+			<div class="jetrails_twofactor_badge" >4</div>
+			<div class="jetrails_twofactor_badge" style="margin-left:120px;" >5</div>
 		</td>
 	</tr>
 </table>

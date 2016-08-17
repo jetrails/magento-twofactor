@@ -16,10 +16,6 @@
 				<name>css/JetRails/TwoFactor/Configuration.css</name>
 			</action>
 			<action method="addItem" >
-				<type>skin_css</type>
-				<name>css/JetRails/TwoFactor/Status.css</name>
-			</action>
-			<action method="addItem" >
 				<type>skin_js</type>
 				<name>js/JetRails/TwoFactor/Form.js</name>
 			</action>

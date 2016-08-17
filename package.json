@@ -1,5 +1,5 @@
 {
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"name": "TwoFactor",
 	"description": "Two-factor authorization for admin accounts",
 	"author": "Rafael Grigorian",

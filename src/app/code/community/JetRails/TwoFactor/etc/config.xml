@@ -3,7 +3,7 @@
 <config>
 	<modules>
 		<JetRails_TwoFactor>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
 		</JetRails_TwoFactor>
 	</modules>
 	<admin>
@@ -76,9 +76,9 @@
 		</events>
 		<layout>
 			<updates>
-				<jetrails_twofactor>
+				<twofactor>
 					<file>TwoFactor.xml</file>
-				</jetrails_twofactor>
+				</twofactor>
 			</updates>
 		</layout>
 	</adminhtml>

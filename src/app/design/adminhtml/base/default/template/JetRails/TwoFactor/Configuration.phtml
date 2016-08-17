@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="<?= $this->getSkinUrl ("css/JetRails/TwoFactor/Configuration.css") ?>" />
+<script src="<?= $this->getSkinUrl ("js/JetRails/TwoFactor/Form.js") ?>" ></script>
+
+<center>
+	<div class="jetrails_twofactor_description" >
+	<? if ( !$this->_isEnabled () ) { ?>
+		<b>Steps to enable two factor authentication:</b>
+		<ol class="jetrails_ordered_list" >
+			<li>(Optional) Generate a new secret and a new barcode.</li>
+			<li>Scan barcode into two step authentication apps such as
+			<u>Google Authenticator</u> or <u>Authy</u>. You will not see this barcode again.</li>
+			<li>Save secret code in a safe place.  This secret code can be entered in manually into your authentication app.</li>
+			<li>After setting up an account with your favorite authentication app, enter in the time sensitive pin into this text field.</li>
+			<li>Click <u>Enable</u> to authenticate the time sensitive pin, and enable two factor authentication on your Magento admin account.</li>
+		</ol>
+	<? } else { ?>
+		<b>Steps to disable two factor authentication:</b>
+		<ol class="jetrails_ordered_list" >
+			<li>Enter in the current time sensitive pin into the text field.</li>
+			<li>Click the <u>Disable</u> button to authenticate pin and disable two factor authentication.</li>
+		</ol>
+	<? } ?>
+	</div>
+	<br>
+	<?= $this->_loadContents () ?>
+</center>

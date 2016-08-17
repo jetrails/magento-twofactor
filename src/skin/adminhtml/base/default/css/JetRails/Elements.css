@@ -62,6 +62,11 @@ fieldset[id^="jetrails"] {
 	font-weight:            bold;
 }
 
+.jetrails-warning-green {
+	color:                  #B2DA88;
+	font-weight:            bold;
+}
+
 /**
  * This style is for action buttons
  */
@@ -112,16 +117,31 @@ fieldset[id^="jetrails"] {
 	font-weight:            normal;
 	width:                  100%;
 	background:             none !important;
-	border:                 solid 1px #31302B;
+	border:                 solid 1px #B2DA88;
 	padding:                5px;
 	cursor:                 default;
-	color:                  #31302B;
+	color:                  #B2DA88;
 }
 
 .jetrails-status-fail {
 	background:             none !important;
 	border:                 solid 1px #FF0000;
 	color:                  #FF0000;
+}
+
+/**
+ * This style is for information panels, that don't change
+ */
+
+.jetrails-info-panel {
+	font-family:            "Montserrat", sans-serif;
+	font-weight:            normal;
+	width:                  100%;
+	background:             #E5E5E5 !important;
+	border:                 0px;
+	padding:                6px;
+	cursor:                 default;
+	color:                  #81807B;
 }
 
 /**

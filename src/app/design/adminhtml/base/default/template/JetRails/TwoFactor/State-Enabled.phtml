@@ -1,17 +1,10 @@
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" >
-
-<input
-	type="text"
-	class="jetrails_twofactor_pin"
-	placeholder="6-digit pin"
-	maxlength="6"
-	autocomplete="off"
-/>
-<input
-	type="button"
-	value="Disable"
-	class="jetrails_twofactor_submit"
-	name="<?= $this->_getDisableURL () ?>"
-	autocomplete="off"
-	onClick="submitTwoFactorPin ()"
-/>
+<table class="jetrails_twofactor_table" cellspacing="0" >
+	<tr>
+		<td>
+			<input type="text" class="jetrails_twofactor_pin" placeholder="6-digit pin" maxlength="6" autocomplete="off" />
+			<input type="button" value="Disable" class="jetrails_twofactor_submit" name="<?= $this->_getDisableURL () ?>" autocomplete="off" onClick="submitTwoFactorPin ()" autofocus />
+			<div class="jetrails_twofactor_badge" >1</div>
+			<div class="jetrails_twofactor_badge" style="margin-left:125px;" >2</div>
+		</td>
+	</tr>
+</table>

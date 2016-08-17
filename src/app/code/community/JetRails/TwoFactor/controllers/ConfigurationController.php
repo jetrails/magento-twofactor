@@ -3,14 +3,34 @@
 	/**
 	 * ConfigurationController.php - This controller offers actions that aid in turning the TFA
 	 * service on and off, as well as re-generate the user's secret.  It is used within the action
-	 * panel in the system configuration panel in Magento.
-	 * @version         1.0.0
+	 * panel in the system configuration panel in Magento.  There is also the "render" action that
+	 * will render out the configuration menu when it is clicked under the admin menu tab.  This
+	 * exists for admins that are not allowed to access the configuration page.
+	 * @version         1.0.1
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®
 	 * @copyright       JetRails®, all rights reserved
 	 */
 	class JetRails_TwoFactor_ConfigurationController extends Mage_Adminhtml_Controller_Action {
+
+		/**
+		 * This action will render out the configuration options when the option is selected under
+		 * the JetRails admin menu tab.
+		 * @return      void
+		 */
+		public function renderAction () {
+			// Load the layout, and set the twofactor tab to be selected
+			$this->loadLayout ()->_setActiveMenu ("twofactor_menu");
+			// Create the custom block that we will insert
+			$custom = $this->getLayout ()
+				->createBlock ("twofactor/Adminhtml_Template_Configuration")
+				->setTemplate ("JetRails/TwoFactor/Configuration.phtml");
+			// Add the contents to the body
+			$this->_addContent ( $custom );
+			// Render the layout
+			$this->renderLayout ();
+		}
 
 		/**
 		 * This action enables the TFA given that TFA is currently disabled and the passed TOTP pin

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <config>
+    <menu>
+        <twofactor_menu module="twofactor" translate="title" >
+            <title>JetRails®</title>
+            <sort_order>100</sort_order>
+			<children>
+				<twofactorauthentication module="twofactor" translate="title" >
+                    <title>Two Factor Authentication</title>
+                    <sort_order>0</sort_order>
+                    <action>jetrails_twofactor/configuration/render</action>
+                </twofactorauthentication>
+			</children>
+        </twofactor_menu>
+    </menu>
 	<acl>
 		<resources>
 			<admin>
