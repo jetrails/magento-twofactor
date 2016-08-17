@@ -5,6 +5,7 @@
 	<div class="jetrails_twofactor_description" >
 	<? if ( !$this->_isEnabled () ) { ?>
 		<b>Steps to enable two factor authentication:</b>
+		<br><br>
 		<ol class="jetrails_ordered_list" >
 			<li>(Optional) Generate a new secret and a new barcode.</li>
 			<li>Scan barcode into two step authentication apps such as
@@ -13,12 +14,17 @@
 			<li>After setting up an account with your favorite authentication app, enter in the time sensitive pin into this text field.</li>
 			<li>Click <u>Enable</u> to authenticate the time sensitive pin, and enable two factor authentication on your Magento admin account.</li>
 		</ol>
+		<br>
+		<b>Account Email:</b> <?= Mage::getSingleton ("admin/session")->getUser ()->getEmail () ?>
 	<? } else { ?>
 		<b>Steps to disable two factor authentication:</b>
+		<br><br>
 		<ol class="jetrails_ordered_list" >
 			<li>Enter in the current time sensitive pin into the text field.</li>
 			<li>Click the <u>Disable</u> button to authenticate pin and disable two factor authentication.</li>
 		</ol>
+		<br>
+		<b>Account Email:</b> <?= Mage::getSingleton ("admin/session")->getUser ()->getEmail () ?>
 	<? } ?>
 	</div>
 	<br>
