@@ -1,0 +1,14 @@
+<table class="jetrails_twofactor_description" cellspacing="0" cellpadding="0" >
+	<tr>
+		<td><div class="jetrails_twofactor_step" >Step 1</div></td>
+		<td>Scan barcode into two step authentication apps such as <u>Google Authenticator</u> or <u>Authy</u>.  Your secret is <u><?= $this->_getSecret () ?></u>.  Store it somewhere safe in case of need for future account setup.</td>
+	</tr>
+	<tr>
+		<td><div class="jetrails_twofactor_step" >Step 2</div></td>
+		<td>In order to confirm that you set up your account successfully, enter in the time sensitive pin associated with your new account into the text field.</td>
+	</tr>
+	<tr>
+		<td><div class="jetrails_twofactor_step" >Step 3</div></td>
+		<td>Complete two factor authentication for <u><?= Mage::getSingleton ("admin/session")->getUser ()->getEmail () ?></u> by clicking the <u>Enable</u> button.</td>
+	</tr>
+</table>

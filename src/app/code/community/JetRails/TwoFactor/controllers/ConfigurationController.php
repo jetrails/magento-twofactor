@@ -6,7 +6,7 @@
 	 * panel in the system configuration panel in Magento.  There is also the "render" action that
 	 * will render out the configuration menu when it is clicked under the admin menu tab.  This
 	 * exists for admins that are not allowed to access the configuration page.
-	 * @version         1.0.1
+	 * @version         1.0.2
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®
@@ -121,39 +121,6 @@
 				// Set a notice message
 				Mage::getSingleton ("core/session")->addError (
 					"Two factor authentication is not enabled."
-				);
-			}
-			// Go back to the referrer page
-			$this->_redirectReferer ();
-		}
-
-		/**
-		 * This action simply generated a new secret using the TOTP helper class, given the fact
-		 * that the service is currently disabled.
-		 * @return      void
-		 */
-		public function generateAction () {
-			// Get the user id using the Mage session
-			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();
-			// Initialize the Data helper class and the TOTP helper class
-			$Data = Mage::helper ("twofactor/Data");
-			$TOTP = Mage::helper ("twofactor/TOTP");
-			// Check to see if it is enabled and verified first
-			if ( !$Data->isEnabled ( $uid ) ) {
-				// Initialize the TOTP class
-				$TOTP->initialize ();
-				// Save the secret into the database
-				$Data->setSecret ( $uid, $TOTP->getSecret () );
-				// Set a success message
-				Mage::getSingleton ("core/session")->addSuccess (
-					"Successfully re-generated two factor authentication secret."
-				);
-			}
-			// Otherwise, it is enabled
-			else {
-				// Set a notice message
-				Mage::getSingleton ("core/session")->addError (
-					"Two factor authentication is enabled, cannot re-generate secret at this state."
 				);
 			}
 			// Go back to the referrer page

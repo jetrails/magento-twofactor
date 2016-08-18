@@ -25,28 +25,21 @@
 					<show_in_website>0</show_in_website>
 					<show_in_store>0</show_in_store>
 					<expanded>1</expanded>
-					<comment><![CDATA[
-						<b>Steps to enable two factor authentication:</b>
-						<ol class="jetrails_ordered_list" >
-							<li>(Optional) Generate a new secret and a new barcode.</li>
-							<li>Scan barcode into two step authentication apps such as
-							<u>Google Authenticator</u> or <u>Authy</u>. You will not see this barcode again.</li>
-							<li>Save secret code in a safe place.  This secret code can be entered in manually into your authentication app.</li>
-							<li>After setting up an account with your favorite authentication app, enter in the time sensitive pin into this text field.</li>
-							<li>Click <u>Enable</u> to authenticate the time sensitive pin, and enable two factor authentication on your Magento admin account.</li>
-						</ol>
-						<br><b>Steps to disable two factor authentication:</b>
-						<ol class="jetrails_ordered_list" >
-							<li>Enter in the current time sensitive pin into the text field.</li>
-							<li>Click the <u>Disable</u> button to authenticate pin and disable two factor authentication.</li>
-						</ol>
-					<br><br>]]></comment>
 					<fields>
+						<description translate="label comment" >
+							<label><![CDATA[Steps To Take:]]></label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>twofactor/Adminhtml_Panel_Description</frontend_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</description>
 						<enabled translate="label comment" >
 							<label><![CDATA[Status:]]></label>
 							<frontend_type>button</frontend_type>
 							<frontend_model>twofactor/Adminhtml_Status_Enabled</frontend_model>
-							<sort_order>0</sort_order>
+							<sort_order>1</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>0</show_in_website>
 							<show_in_store>0</show_in_store>
@@ -55,7 +48,7 @@
 							<label><![CDATA[Account Email:]]></label>
 							<frontend_type>button</frontend_type>
 							<frontend_model>twofactor/Adminhtml_Info_Account</frontend_model>
-							<sort_order>1</sort_order>
+							<sort_order>2</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>0</show_in_website>
 							<show_in_store>0</show_in_store>
@@ -64,7 +57,7 @@
 							<label><![CDATA[Action Panel:]]></label>
 							<frontend_type>text</frontend_type>
 							<frontend_model>twofactor/Adminhtml_Panel_Configuration</frontend_model>
-							<sort_order>2</sort_order>
+							<sort_order>3</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>0</show_in_website>
 							<show_in_store>0</show_in_store>

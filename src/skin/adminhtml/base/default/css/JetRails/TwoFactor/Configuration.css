@@ -39,21 +39,6 @@
 	padding:                    7.5px;
 }
 
-.jetrails_twofactor_secret {
-	position:                   relative;
-	display:                    inline;
-	float:                      left;
-	text-decoration:            none;
-	color:                      #31302B;
-	padding:                    15px;
-	background:                 transparent;
-	height:                     calc( 100% - 32px );
-	width:                      calc( 100% - 32px );
-	border:                     solid 1px #31302B;
-	text-align:                 center;
-	letter-spacing:             6px;
-}
-
 .jetrails_twofactor_pin {
 	position:                   relative;
 	display:                    inline;
@@ -102,6 +87,17 @@
 	background:                 #11100B;
 }
 
+.jetrails_twofactor_step {
+	height: 					20px;
+	width: 						50px;
+	background: 				#B2DA88;
+	color: 						#FFFFFF;
+	text-align: 				center;
+	border-radius: 				10px;
+	font-size: 					10px;
+	line-height: 				20px;
+}
+
 .jetrails_twofactor_badge {
 	position: 					absolute;
 	margin-top: 				-10px;
@@ -116,14 +112,15 @@
 	line-height: 				21px;
 }
 
-.jetrails_ordered_list li {
-	list-style-type: 			decimal;
-	margin-left: 				30px !important;
-}
-
 .jetrails_twofactor_description {
 	width: 						500px;
 	text-align: 				left;
-    background: #E6E6E6;
-    padding: 15px;
+}
+
+.jetrails_twofactor_description tr td {
+	padding: 					5px;
+}
+
+.jetrails_twofactor_description tr td:nth-child(1) {
+	padding-left: 					0px !important;
 }

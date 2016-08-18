@@ -5,7 +5,7 @@
 	 * in the Action panel in the system configuration page.  It is used to get controller actions
 	 * URLs and retrieving the TOTP secret along with the URL to the QR code image containing the
 	 * user's secret.
-	 * @version         1.0.1
+	 * @version         1.0.2
 	 * @package         JetRails® TwoFactor
 	 * @category        Template
 	 * @author          Rafael Grigorian - JetRails®
@@ -20,15 +20,6 @@
 		protected function _getEnableURL () {
 			// Return the URL to the controller that handles enabling TFA
 			return Mage::helper ("adminhtml")->getUrl ("jetrails_twofactor/configuration/enable");
-		}
-
-		/**
-		 * This function returns the url to the configuration controller with the generate action.
-		 * @return      string                                      URL to configuration/generate
-		 */
-		protected function _getGenerateURL () {
-			// Return the URL to the controller that handles enabling TFA
-			return Mage::helper ("adminhtml")->getUrl ("jetrails_twofactor/configuration/generate");
 		}
 
 		/**
@@ -52,18 +43,15 @@
 			// Load the uid from Mage session
 			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();
 			// Check to see if a secret is already set
-			if ( trim ( $Data->getSecret ( $uid ) ) == "" ) {
-				// Initialize a new secret
-				$TOTP->initialize ();
-				// Store it in the database
-				$Data->setSecret ( $uid, $TOTP->getSecret () );
+			if ( $Data->isEnabled ( $uid ) ) {
+				// Return the secret
+				return $Data->getSecret ( $uid );
 			}
-			// Otherwise, we will use the already generated secret
-			else {
-				// Initialize with the stored secret
-				$TOTP->initialize ( $Data->getSecret ( $uid ) );
-			}
-			// Return the secret
+			// Initialize TOTP helper
+			$TOTP->initialize ();
+			// Store it in the database
+			$Data->setSecret ( $uid, $TOTP->getSecret () );
+			// Return a new secret
 			return $TOTP->getSecret ();
 		}
 
@@ -101,6 +89,30 @@
 			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();
 			// Return whether it is enabled
 			return $Data->isEnabled ( $uid );
+		}
+
+		/**
+		 * This function, depending on the enable status of the two factor service, returns either
+		 * the enabled or disabled description.
+		 * @return      string                                      Description describing form
+		 */
+		protected function _loadDescription () {
+			// Get a generic layout
+			$block = Mage::app ()->getLayout ();
+			// Create a block that will help all the templates
+			$block = $block->createBlock ("twofactor/Adminhtml_Template_Description");
+			// Check to see if the state is enabled
+			if ( !$this->_isEnabled () ) {
+				// Load the template that describes the enabled description
+				$block = $block->setTemplate ("JetRails/TwoFactor/Description-Disabled.phtml");
+			}
+			// If the state is disabled
+			else {
+				// Load the template that describes the disabled description
+				$block = $block->setTemplate ("JetRails/TwoFactor/Description-Enabled.phtml");
+			}
+			// Return the HTML
+			return $block->toHtml ();
 		}
 
 		/**

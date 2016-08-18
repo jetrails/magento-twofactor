@@ -1,26 +1,18 @@
 <table class="jetrails_twofactor_table" cellspacing="0" >
-	<tr>
-		<td rowspan="3" >
+	<tr style="height:50px;" >
+		<td rowspan="4" >
 			<img height="180" src="<?= $this->_getQRCode () ?>" />
-			<div class="jetrails_twofactor_badge" style="margin-top:-197px;margin-left:-12px;" >2</div>
+			<div class="jetrails_twofactor_badge" style="margin-top:-197px;margin-left:-12px;" >1</div>
 		</td>
-		<td>
-			<div class="jetrails_twofactor_secret" ><?= $this->_getSecret () ?></div>
-			<div class="jetrails_twofactor_badge" >3</div>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<input class="jetrails_twofactor_button" type="button" value="Generate New Secret" onClick="setLocation ('<?= $this->_getGenerateURL () ?>')" />
-			<div class="jetrails_twofactor_badge" >1</div>
-		</td>
-	</tr>
-	<tr>
 		<td>
 			<input class="jetrails_twofactor_pin" type="text" name="code" placeholder="6-digit pin" maxlength="6" autocomplete="off" autofocus />
+			<div class="jetrails_twofactor_badge" >2</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
 			<input class="jetrails_twofactor_submit" type="button" name="<?= $this->_getEnableURL () ?>" value="Enable" onClick="submitTwoFactorPin ()" />
-			<div class="jetrails_twofactor_badge" >4</div>
-			<div class="jetrails_twofactor_badge" style="margin-left:120px;" >5</div>
+			<div class="jetrails_twofactor_badge" >3</div>
 		</td>
 	</tr>
 </table>

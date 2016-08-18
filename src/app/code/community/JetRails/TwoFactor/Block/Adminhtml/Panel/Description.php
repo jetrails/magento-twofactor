@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	 * Configuration.php - This class extends the system config form field class and it overrides a
+	 * Description.php - This class extends the system config form field class and it overrides a
 	 * function that is responsible for retrieving HTML that represents the internally defined form
 	 * field.  We override the function to supply custom HTML within the form field's space.
 	 * @version         1.0.2
@@ -10,7 +10,7 @@
 	 * @author          Rafael Grigorian - JetRails®
 	 * @copyright       JetRails®, all rights reserved
 	 */
-	class JetRails_TwoFactor_Block_Adminhtml_Panel_Configuration extends Mage_Adminhtml_Block_System_Config_Form_Field {
+	class JetRails_TwoFactor_Block_Adminhtml_Panel_Description extends Mage_Adminhtml_Block_System_Config_Form_Field {
 
 		/**
 		 * This function overrides a function from the parent class, which is responsible for
@@ -23,19 +23,19 @@
 			// Get a generic layout
 			$block = Mage::app ()->getLayout ();
 			// Create a block that will help all the templates
-			$block = $block->createBlock ("twofactor/Adminhtml_Template_Configuration");
+			$block = $block->createBlock ("twofactor/Adminhtml_Template_Description");
 			// Load the Data helper as well as the uid, so we can determine which template to load
 			$Data = Mage::helper ("twofactor/Data");
 			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();
 			// Check to see if the state is enabled
 			if ( !$Data->isEnabled ( $uid ) ) {
 				// Load the template that describes the enabled state
-				$block = $block->setTemplate ("JetRails/TwoFactor/State-Disabled.phtml");
+				$block = $block->setTemplate ("JetRails/TwoFactor/Description-Disabled.phtml");
 			}
 			// If the state is disabled
 			else {
 				// Load the template that describes the disabled state
-				$block = $block->setTemplate ("JetRails/TwoFactor/State-Enabled.phtml");
+				$block = $block->setTemplate ("JetRails/TwoFactor/Description-Enabled.phtml");
 			}
 			// Return the HTML
 			return $block->toHtml ();
