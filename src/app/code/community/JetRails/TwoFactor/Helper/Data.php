@@ -4,7 +4,7 @@
 	 * Data.php - This helper sets and gets values into the twofactor column in the admin_user table
 	 * in the Magento store's database.  We need this helper class in order to ensure that these
 	 * values get encrypted and decrypted.
-	 * @version         1.0.2
+	 * @version         1.0.3
 	 * @package         JetRails® TwoFactor
 	 * @category        Helper
 	 * @author          Rafael Grigorian - JetRails®

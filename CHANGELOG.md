@@ -14,3 +14,6 @@
 - 	Made description a dynamically loaded block, depending on configuration status
 - 	Updated Two Factor Authentication tab to dynamically load the description
 - 	Updated two factor stylesheet
+
+## Version 1.0.3
+- 	On TFA enable, log user out

@@ -4,7 +4,7 @@
 	 * TwoFactor.php - This observer redirects a logged in user to the Verify page if TFA is
 	 * enabled.  Also if the user tries to redirect out of the Verify page, they will be redirected
 	 * back until verification is complete.
-	 * @version         1.0.2
+	 * @version         1.0.3
 	 * @package         JetRails® TwoFactor
 	 * @category        Observer
 	 * @author          Rafael Grigorian - JetRails®

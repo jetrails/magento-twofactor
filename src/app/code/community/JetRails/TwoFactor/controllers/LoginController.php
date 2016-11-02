@@ -4,7 +4,7 @@
 	 * LoginController.php - This controller contains an action to render the Verify page after
 	 * successful user login and also a function that validates the submitted form from the Verify
 	 * page.
-	 * @version         1.0.2
+	 * @version         1.0.3
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®

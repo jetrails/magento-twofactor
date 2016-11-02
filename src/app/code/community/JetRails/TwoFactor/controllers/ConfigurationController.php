@@ -6,7 +6,7 @@
 	 * panel in the system configuration panel in Magento.  There is also the "render" action that
 	 * will render out the configuration menu when it is clicked under the admin menu tab.  This
 	 * exists for admins that are not allowed to access the configuration page.
-	 * @version         1.0.2
+	 * @version         1.0.3
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®
@@ -57,6 +57,12 @@
 					Mage::getSingleton ("core/session")->addSuccess (
 						"Successfully enabled two factor authentication."
 					);
+					// Log user out on enable and redirect user to login page
+					$session = Mage::getSingleton ("admin/session");
+					$session->unsetAll ();
+					$session->getCookie ()->delete ( $session->getSessionName () );
+					$this->_redirect ("adminhtml");
+					return;
 				}
 				// Otherwise if the pin is incorrect
 				else {
