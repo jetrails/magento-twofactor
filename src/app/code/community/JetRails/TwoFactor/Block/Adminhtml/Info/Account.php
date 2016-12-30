@@ -4,7 +4,7 @@
 	 * Account.php - This class extends the system config form field class and it overrides a
 	 * function that is responsible for retrieving HTML that represents the internally defined form
 	 * field.  We override the function to supply custom HTML within the form field's space.
-	 * @version         1.0.3
+	 * @version         1.0.4
 	 * @package         JetRails® TwoFactor
 	 * @category        Info
 	 * @author          Rafael Grigorian - JetRails®

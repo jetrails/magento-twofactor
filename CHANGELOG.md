@@ -17,3 +17,6 @@
 
 ## Version 1.0.3
 - 	On TFA enable, log user out
+
+## Version 1.0.4
+- 	Removed TFA tab on admin page because of redundancy.
