@@ -5,7 +5,7 @@
 	 * in the Action panel in the system configuration page.  It is used to get controller actions
 	 * URLs and retrieving the TOTP secret along with the URL to the QR code image containing the
 	 * user's secret.
-	 * @version         1.0.4
+	 * @version         1.0.5
 	 * @package         JetRails® TwoFactor
 	 * @category        Template
 	 * @author          Rafael Grigorian - JetRails®

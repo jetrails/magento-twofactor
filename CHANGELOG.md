@@ -20,3 +20,6 @@
 
 ## Version 1.0.4
 - 	Removed TFA tab on admin page because of redundancy.
+
+## Version 1.0.5
+- 	SUPEE-6285 changed functionality of the _isAllowed method in admin controllers.

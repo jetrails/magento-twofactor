@@ -4,7 +4,7 @@
 	 * LoginController.php - This controller contains an action to render the Verify page after
 	 * successful user login and also a function that validates the submitted form from the Verify
 	 * page.
-	 * @version         1.0.4
+	 * @version         1.0.5
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®
@@ -90,6 +90,19 @@
 				// Set redirect to start page
 				$this->_redirect ("adminhtml");
 			}
+		}
+
+		/**
+		 * This method needs to be overridden because of the way Magento decided to change the
+		 * functionality of this method.  Affective after SUPEE-6285, this method only returns true
+		 * if the user has full administrative access.  This means that users with assign roles that
+		 * are restrictive will not have access to this controller.  That is why we override this
+		 * controller and always allow access to it.
+		 * @return 		boolean 								Does the user have access?
+		 */
+		protected function _isAllowed () {
+			// Allow all backend users access to this controller		
+			return true;
 		}
 
 	}

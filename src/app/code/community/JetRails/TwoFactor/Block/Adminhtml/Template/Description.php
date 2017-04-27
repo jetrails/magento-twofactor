@@ -3,7 +3,7 @@
 	/**
 	 * Description.php - This class provides useful helper functions for the templates displayed
 	 * in the configuration panel and serves the appropriate descriptions based on enabled state.
-	 * @version         1.0.4
+	 * @version         1.0.5
 	 * @package         JetRails® TwoFactor
 	 * @category        Template
 	 * @author          Rafael Grigorian - JetRails®

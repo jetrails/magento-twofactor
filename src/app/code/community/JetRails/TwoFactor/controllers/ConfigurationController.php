@@ -6,7 +6,7 @@
 	 * panel in the system configuration panel in Magento.  There is also the "render" action that
 	 * will render out the configuration menu when it is clicked under the admin menu tab.  This
 	 * exists for admins that are not allowed to access the configuration page.
-	 * @version         1.0.4
+	 * @version         1.0.5
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®
@@ -131,6 +131,19 @@
 			}
 			// Go back to the referrer page
 			$this->_redirectReferer ();
+		}
+
+		/**
+		 * This method needs to be overridden because of the way Magento decided to change the
+		 * functionality of this method.  Affective after SUPEE-6285, this method only returns true
+		 * if the user has full administrative access.  This means that users with assign roles that
+		 * are restrictive will not have access to this controller.  That is why we override this
+		 * controller and always allow access to it.
+		 * @return 		boolean 								Does the user have access?
+		 */
+		protected function _isAllowed () {
+			// Allow all backend users access to this controller		
+			return true;
 		}
 
 	}
