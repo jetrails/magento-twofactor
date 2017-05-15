@@ -5,10 +5,10 @@
 	// Start the setup process
 	$installer->startSetup ();
 	// Initialize the default JSON that will be displayed (encrypted)
-	$json = Mage::helper ("core")->encrypt ( json_encode ([
+	$json = Mage::helper ("core")->encrypt ( json_encode ( array (
 		"secret"        =>      "",
 		"enabled"       =>      false
-	]));
+	)));
 	// Run the following command to set up the database
 	$installer->run ("
 		ALTER TABLE admin_user
@@ -16,5 +16,3 @@
 	");
 	// Finish the setup process
 	$installer->endSetup ();
-
-?>

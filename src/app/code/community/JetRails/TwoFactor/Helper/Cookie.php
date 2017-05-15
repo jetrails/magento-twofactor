@@ -23,8 +23,8 @@
 			// Extract the information using the admin user model
 			$info = Mage::getModel ("admin/user")
 				->getCollection ()
-				->addFieldToSelect ( [ "user_id", "email", "created" ] )
-				->addFieldToFilter ( "user_id", [ "eq" => $uid ] )
+				->addFieldToSelect ( array ( "user_id", "email", "created" ) )
+				->addFieldToFilter ( "user_id", array ( "eq" => $uid ) )
 				->getData () [ 0 ];
 			// Initialize the salt and data
 			$salt = $info ["created"];
@@ -56,11 +56,11 @@
 		 */
 		public function create ( $time, $pin, $address ) {
 			// Create the content for the cookie
-			$value = Mage::helper ("core")->encrypt ( json_encode ([
+			$value = Mage::helper ("core")->encrypt ( json_encode ( array (
 				"timestamp"     =>      $time,
 				"pin"           =>      $pin,
 				"address"       =>      $address
-			]));
+			)));
 			// Create cookie hash for identity
 			Mage::getSingleton ("core/cookie")->set (
 				$this->_createUserHash (),
@@ -121,5 +121,3 @@
 		}
 
 	}
-
-?>

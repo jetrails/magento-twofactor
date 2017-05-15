@@ -30,11 +30,11 @@
 				// Set the template for this block
 				$block->setTemplate ("JetRails/TwoFactor/Verify.phtml");
 				// Output the HTML
-				echo $block->toHtml ();
+				file_put_contents ( "php://output", $block->toHtml () );
 			}
 			// Otherwise, print out error
 			else {
-				echo "TFA is not enabled, please leave.";
+				file_put_contents ( "php://output", "TFA is not enabled, please leave." );
 			}
 		}
 
@@ -106,5 +106,3 @@
 		}
 
 	}
-
-?>
