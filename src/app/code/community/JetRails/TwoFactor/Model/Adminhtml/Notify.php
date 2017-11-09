@@ -4,7 +4,7 @@
 	 * Notify.php - This class contains methods that help log and communicate messages.  Messages
 	 * can be logged into a custom log file, the logged in admin user can be notified, or all admin
 	 * users in the 'Administrators' role can be notified.
-	 * @version         1.0.6
+	 * @version         1.0.7
 	 * @package         JetRails® TwoFactor
 	 * @category        Model
 	 * @author          Rafael Grigorian - JetRails®

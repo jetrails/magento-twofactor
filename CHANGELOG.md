@@ -35,3 +35,6 @@
 - 	Backup codes are available on setup
 - 	Changed the look and feel of the skin (MaterializeCSS)
 - 	New logo for jetrails
+
+## Version 1.0.7
+- 	On install, invalidate logged in sessions.

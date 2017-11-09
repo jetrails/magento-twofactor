@@ -4,7 +4,7 @@
 	 * Admin.php - This block is meant to be used inline with the email template file.  It simply
 	 * has a method that is called to fill the plain text body portion of the HTML email.  This
 	 * block describes the message that the admin users within the 'Administrators' role will see.
-	 * @version         1.0.6
+	 * @version         1.0.7
 	 * @package         JetRails® TwoFactor
 	 * @category        Email
 	 * @author          Rafael Grigorian - JetRails®
