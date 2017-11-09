@@ -4,7 +4,7 @@
 	 * Cookie.php - This helper class contains functions that deal with cookie creation, deletion,
 	 * and authentication.  This cookie class is used to aid in the "remember for 7 days"
 	 * functionality.
-	 * @version         1.0.5
+	 * @version         1.0.6
 	 * @package         JetRails® TwoFactor
 	 * @category        Helper
 	 * @author          Rafael Grigorian - JetRails®
@@ -92,22 +92,24 @@
 			$cookie = $this->_load ();
 			// Check to see if that the cookie exists
 			if ( $cookie !== false ) {
-				// Decrypt the contents
-				$value = json_decode ( Mage::helper ("core")->decrypt ( $cookie ) );
+				// Decrypt the contents of cookie
+				$cached = json_decode ( Mage::helper ("core")->decrypt ( $cookie ) );
 				// Check to see that the IP address still matches
-				if ( Mage::helper ("core/http")->getRemoteAddr () === $value->address ) {
+				if ( Mage::helper ("core/http")->getRemoteAddr () === $cached->address ) {
 					// Calculate the timestamp for 7 days after creation
-					$now = ( new DateTime () )->setTimestamp ( time () );
-					$set = ( new DateTime () )->setTimestamp ( $value->timestamp );
-					$set = $set->add ( new DateInterval ("P7D") );
+					$current = new Zend_Date ();
+					$expires = new Zend_Date ( $cached->timestamp );
+					$expires->addDay ( 7 );
 					// See if the cookie lived for more than needed
-					if ( $now <= $set ) {
-						// Initialize the helper classes
-						$Data = Mage::helper ("twofactor/Data");
-						$TOTP = Mage::helper ("twofactor/TOTP");
-						$TOTP->initialize ( $Data->getSecret ( $uid ) );
+					if ( $current->compare ( $expires ) <= 0 ) {
+						// Initialize authentication model and TOTP helper class
+						$auth = Mage::getSingleton ("twofactor/auth");
+						$totp = Mage::helper ("twofactor/totp");
+						// Initialize TOTP instance and parse cached timestamp
+						$totp->initialize ( $auth->getSecret () );
+						$timestamp = ( new Zend_Date ( $cached->timestamp ) )->getTimestamp ();
 						// Check to see that the pin is valid given the secret
-						if ( $TOTP->pin ( $value->timestamp ) == $value->pin ) {
+						if ( intval ( $totp->pin ( $timestamp ) ) === intval ( $cached->pin ) ) {
 							// Then, and only then, return true
 							return true;
 						}

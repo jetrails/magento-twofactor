@@ -22,4 +22,16 @@
 - 	Removed TFA tab on admin page because of redundancy.
 
 ## Version 1.0.5
-- 	SUPEE-6285 changed functionality of the _isAllowed method in admin controllers.
+- 	SUPEE-6285 changed functionality of the \_isAllowed method in admin controllers.
+
+## Version 1.0.6
+- 	Total overhaul in structure and TFA process
+- 	Blocks users once too many attempts have been made
+- 	Once user is blocked, emails are sent to account owner and admins
+- 	Blocks expire after a set amount of minutes
+- 	TFA is setup on account login instead of config area
+- 	TFA is enforced through the ACL and binded to roles
+- 	Reset TFA is possible through admin system config section
+- 	Backup codes are available on setup
+- 	Changed the look and feel of the skin (MaterializeCSS)
+- 	New logo for jetrails

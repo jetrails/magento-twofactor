@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title><?php echo $this->__("JetRails - Two Factor Authentication") ?></title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+		<link rel="stylesheet" href="<?php echo $this->getSkinUrl ('css/twofactor/style.css') ?>" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" ></script>
+		<script src="<?php echo $this->getSkinUrl ('js/twofactor/functions.js') ?>" ></script>
+	</head>
+	<body>
+		<?php echo $this->getChildHtml ("logout"); ?>
+		<?php echo $this->getChildHtml ("content"); ?>
+		<?php echo $this->getChildHtml ("message"); ?>
+	</body>
+</html>

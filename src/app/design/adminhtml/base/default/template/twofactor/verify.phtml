@@ -1,0 +1,87 @@
+<div class="twofactor-container row center" >
+	<div class="card col s12" >
+		<div class="card-content center">
+			<object
+				class="twofactor-logo"
+				type="image/svg+xml"
+				data="<?php echo $this->getSkinUrl ('images/twofactor/logo.svg') ?>" >
+				<img src="<?php echo $this->getSkinUrl ('images/twofactor/logo.png') ?>" >
+			</object>
+		</div>
+		<div class="card-tabs">
+			<ul class="tabs tabs-fixed-width" >
+				<li
+					class="tab"
+					onclick="requireInput ('#verification-pin'); changeAuthType ('backup-code');" >
+					<a class="active" href="#form-pin" ><?php echo $this->__("6 Digit Pin") ?></a>
+				</li>
+				<li
+					class="tab"
+					onclick="requireInput ('#backup-code'); changeAuthType ('verification-pin'); " >
+					<a href="#form-code" ><?php echo $this->__("Backup Code") ?></a>
+				</li>
+			</ul>
+		</div>
+		<div class="card-content" >
+			<form
+				id="form"
+				class="row"
+				method="POST"
+				target="_self"
+				action="<?php echo $this->getFormUrl () ?>"
+				autocomplete="off" >
+				<input type="hidden" name="form_key" value="<?php echo $this->getFormKey () ?>" />
+				<div id="form-pin" class="row" >
+					<div class="input-field col s12" >
+						<input
+							id="verification-pin"
+							name="pin"
+							type="text"
+							pattern="[0-9]{6}"
+							maxlength="6"
+							oninvalid="this.setCustomValidity ('Verification pin contains 6 numerical digits')"
+							oninput="this.value = this.value.replace ( /[^0-9]/, '' ); this.setCustomValidity ('');"
+							required
+						/>
+						<label for="verification-pin"><?php echo $this->__("Verification Pin") ?></label>
+					</div>
+				</div>
+				<div id="form-code" class="row" >
+					<div class="input-field col s12" >
+						<input
+							id="backup-code"
+							name="code"
+							type="text"
+							pattern="[0-9]{8}"
+							maxlength="8"
+							oninvalid="this.setCustomValidity ('Backup code contains 8 numerical digits')"
+							oninput="this.value = this.value.replace ( /[^0-9]/, '' ); this.setCustomValidity ('');"
+						/>
+						<label for="backup-code"><?php echo $this->__("Backup Code") ?></label>
+					</div>
+				</div>
+				<div class="row" >
+					<p class="col s12" >
+						<input
+							class="filled-in light-blue darken-1"
+							type="checkbox"
+							name="remember"
+							id="remember"
+						/>
+						<label for="remember" >
+							<?php echo $this->__("Remember for 7 days") ?>
+						</label>
+					</p>
+				</div>
+				<div class="row" >
+					<button
+						class="btn waves-effect waves-light col s12 light-blue darken-1"
+						type="submit"
+						name="action" >
+						<?php echo $this->__("Verify") ?>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

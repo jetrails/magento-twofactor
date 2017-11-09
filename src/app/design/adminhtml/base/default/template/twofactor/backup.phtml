@@ -1,0 +1,67 @@
+<script>
+	window.location.hash = "step-4";
+</script>
+<div class="twofactor-container row center" >
+	<div class="card col s12" >
+		<div class="card-content center">
+			<object
+				class="twofactor-logo"
+				type="image/svg+xml"
+				data="<?php echo $this->getSkinUrl ('images/twofactor/logo.svg') ?>" >
+				<img src="<?php echo $this->getSkinUrl ('images/twofactor/logo.png') ?>" >
+			</object>
+		</div>
+		<div class="card-tabs">
+			<ul class="tabs tabs-fixed-width" >
+				<li class="tab disabled" >
+					<a href="#step-1" ><?php echo $this->__("Step 1") ?></a>
+				</li>
+				<li class="tab disabled" >
+					<a href="#step-2" ><?php echo $this->__("Step 2") ?></a>
+				</li>
+				<li class="tab disabled" >
+					<a href="#step-3" ><?php echo $this->__("Step 3") ?></a>
+				</li>
+				<li class="tab disabled" >
+					<a class="active" href="#step-4" ><?php echo $this->__("Step 4") ?></a>
+				</li>
+			</ul>
+		</div>
+		<div class="card-content center" >
+			<div id="step-4" >
+				<div class="row" >
+					<p class="left-align" >
+						<?php echo $this->__(
+							"The 8-digit codes below serve as backup codes.  If you lose access t" .
+							"o your authentication device, you can still get into your account us" .
+							"ing these codes.  Please print out these codes and keep them in a sa" .
+							"fe location.  Each code can be utilized one time only."
+						) ?>
+					</p>
+				</div>
+				<div class="row grey lighten-4" >
+					<?php foreach ( $this->getBackupCodes () as $code ): ?>
+						<div class="col s6" ><?php echo $code . "\r\n" ?></div>
+					<?php endforeach ?>
+				</div>
+				<form
+					class="row"
+					method="POST"
+					target="_self"
+					action="<?php echo $this->getFormUrl () ?>" >
+					<input
+						type="hidden"
+						name="form_key"
+						value="<?php echo $this->getFormKey () ?>"
+					/>
+					<button
+						class="btn waves-effect waves-light col s12 light-blue darken-1"
+						type="submit"
+						name="action" >
+						<?php echo $this->__("Complete Setup") ?>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

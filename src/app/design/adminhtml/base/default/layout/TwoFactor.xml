@@ -1,24 +1,72 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <layout>
-	<adminhtml_system_config_edit>
-		<reference name="head" >
-			<action method="addLinkRel" >
-				<rel>stylesheet</rel>
-				<href>//fonts.googleapis.com/css?family=Montserrat</href>
-			</action>
-			<action method="addItem" >
-				<type>skin_css</type>
-				<name>css/JetRails/Elements.css</name>
-			</action>
-			<action method="addItem" >
-				<type>skin_css</type>
-				<name>css/JetRails/TwoFactor/Configuration.css</name>
-			</action>
-			<action method="addItem" >
-				<type>skin_js</type>
-				<name>js/JetRails/TwoFactor/Form.js</name>
-			</action>
-		</reference>
-	</adminhtml_system_config_edit>
+	<jetrails_twofactor_login_verify>
+		<block
+			name="root"
+			type="core/template"
+			template="twofactor/page.phtml" >
+			<block
+				name="message"
+				type="core/template"
+				template="twofactor/message.phtml" />
+			<block
+				name="logout"
+				type="core/template"
+				template="twofactor/logout.phtml" />
+			<block
+				name="content"
+				type="twofactor/adminhtml_template_verify"
+				template="twofactor/verify.phtml" />
+		</block>
+	</jetrails_twofactor_login_verify>
+	<jetrails_twofactor_login_blocked>
+		<block
+			name="root"
+			type="core/template"
+			template="twofactor/page.phtml" >
+			<block
+				name="logout"
+				type="core/template"
+				template="twofactor/logout.phtml" />
+			<block
+				name="content"
+				type="twofactor/adminhtml_template_blocked"
+				template="twofactor/blocked.phtml" />
+		</block>
+	</jetrails_twofactor_login_blocked>
+	<jetrails_twofactor_setup_scan>
+		<block
+			name="root"
+			type="core/template"
+			template="twofactor/page.phtml" >
+			<block
+				name="message"
+				type="core/template"
+				template="twofactor/message.phtml" />
+			<block
+				name="logout"
+				type="core/template"
+				template="twofactor/logout.phtml" />
+			<block
+				name="content"
+				type="twofactor/adminhtml_template_scan"
+				template="twofactor/scan.phtml" />
+		</block>
+	</jetrails_twofactor_setup_scan>
+	<jetrails_twofactor_setup_backup>
+		<block
+			name="root"
+			type="core/template"
+			template="twofactor/page.phtml" >
+			<block
+				name="logout"
+				type="core/template"
+				template="twofactor/logout.phtml" />
+			<block
+				name="content"
+				type="twofactor/adminhtml_template_backup"
+				template="twofactor/backup.phtml" />
+		</block>
+	</jetrails_twofactor_setup_backup>
 </layout>

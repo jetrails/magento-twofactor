@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <config>
 	<modules>
 		<JetRails_TwoFactor>
-			<version>1.0.5</version>
+			<version>1.0.6</version>
 		</JetRails_TwoFactor>
 	</modules>
 	<admin>
@@ -12,7 +12,7 @@
 				<use>admin</use>
 				<args>
 					<module>JetRails_TwoFactor</module>
-					<frontName>jetrails_twofactor</frontName>
+					<frontName>twofactor</frontName>
 				</args>
 			</jetrails_twofactor>
 		</routers>
@@ -30,54 +30,45 @@
 		</helpers>
 		<models>
 			<twofactor>
-				<class>JetRails_TwoFactor_Model</class>
-				<resourceModel>twofactor_setup</resourceModel>
+				<class>JetRails_TwoFactor_Model_Adminhtml</class>
+				<resourceModel>twofactor_resource</resourceModel>
 			</twofactor>
-			<twofactor_setup>
+			<twofactor_resource>
+				<class>JetRails_TwoFactor_Model_Adminhtml_Resource</class>
 				<entities>
-					<twofactor>
-						<table>admin_user</table>
-					</twofactor>
+					<auth>
+						<table>jetrails_twofactor_auth</table>
+					</auth>
 				</entities>
-			</twofactor_setup>
+			</twofactor_resource>
 		</models>
 		<resources>
-			<twofactor_setup>
+			<jetrails_twofactor_setup>
 				<setup>
 					<module>JetRails_TwoFactor</module>
 				</setup>
 				<connection>
 					<use>core_setup</use>
 				</connection>
-			</twofactor_setup>
+			</jetrails_twofactor_setup>
 		</resources>
-		<events>
-			<controller_action_postdispatch_adminhtml>
-				<observers>
-					<twofactor_redirect>
-						<class>twofactor/Adminhtml_Observer_TwoFactor</class>
-						<method>postAdminHtml</method>
-					</twofactor_redirect>
-				</observers>
-			</controller_action_postdispatch_adminhtml>
-		</events>
 	</global>
 	<adminhtml>
 		<events>
-			<admin_session_user_login_success>
+			<controller_action_predispatch>
 				<observers>
-					<twofactor_after_admin_login>
+					<twofactor_redirect>
 						<type>singleton</type>
-						<class>twofactor/Adminhtml_Observer_TwoFactor</class>
-						<method>afterAdminAuthenticate</method>
-					</twofactor_after_admin_login>
+						<class>twofactor/observer</class>
+						<method>preAdminHtml</method>
+					</twofactor_redirect>
 				</observers>
-			</admin_session_user_login_success>
+			</controller_action_predispatch>
 		</events>
 		<layout>
 			<updates>
 				<twofactor>
-					<file>TwoFactor.xml</file>
+					<file>twofactor.xml</file>
 				</twofactor>
 			</updates>
 		</layout>

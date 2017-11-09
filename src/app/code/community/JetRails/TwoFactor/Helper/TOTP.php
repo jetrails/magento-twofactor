@@ -5,7 +5,7 @@
 	 * pins.  It is very flexible and can be initialized to different sized secrets and pins.
 	 * Although the default values conform to the generally accepted configuration for TFA.  Apps
 	 * such as Authy and Google Authenticator use the default configuration.
-	 * @version         1.0.5
+	 * @version         1.0.6
 	 * @package         JetRails® TwoFactor
 	 * @category        Helper
 	 * @author          Rafael Grigorian - JetRails®
@@ -123,7 +123,7 @@
 			// extract the offset from the hash
 			$offset = ord ( substr ( $hash, -1 ) ) & 0x0F;
 			// Grab 4 bytes of the result
-			$target = substr($hash, $offset, 4);
+			$target = substr ( $hash, $offset, 4 );
 			// Unpack binary value as unsigned long
 			$value = unpack ( "N", $target );
 			$value = $value [ 1 ];
@@ -167,6 +167,31 @@
 			$url .= "&chld=H|0";
 			// Return the URL to the QR barcode
 			return $url;
+		}
+
+		/**
+		 * This method takes in an integer and returns an array populated with randomly generated
+		 * backup codes.  The amount that is passed matches the resulting array's size that is
+		 * returned.
+		 * @param       integer             amount              Number of codes (default is 10)
+		 * @return      array                                   Generated random codes
+		 */
+		public function generateBackupCodes ( $amount = 10 ) {
+			// Initialize an empty array
+			$codes = array ();
+			// Loop until the required amount is made
+			while ( $amount > 0 ) {
+				// Create a random code
+				$code = "";
+				for ( $i = 0; $i < 8; $i++ ) {
+					$code .= rand ( 0, 9 );
+				}
+				// Push into result array, and decrement counter
+				array_push ( $codes, $code );
+				$amount--;
+			}
+			// Return resulting codes
+			return $codes;
 		}
 
 		/**

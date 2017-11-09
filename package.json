@@ -1,5 +1,5 @@
 {
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"name": "TwoFactor",
 	"description": "Two-factor authorization for admin accounts",
 	"author": "Rafael Grigorian",
@@ -21,9 +21,9 @@
 	},
 	"jetrailsDependencies": [],
 	"staging": {
-		"port": "2223",
-		"user": "magento",
-		"host": "jetrails.raffi.io",
-		"dest": "/var/www/html/magento"
+		"port": "22",
+		"user": "raffi",
+		"host": "localhost.com",
+		"dest": "/Users/raffi/Staging/magento/www"
 	}
 }

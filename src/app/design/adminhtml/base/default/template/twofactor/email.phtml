@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+	<body style="
+			background:     #F1F1F1;
+			margin:         0px;
+			padding:        100px;
+		" >
+		<table
+			style="
+				margin-left:    auto;
+				margin-right:   auto;
+				width:          500px;
+				background:     #FFF;
+				border:         solid 1px #D2D2D2;
+			" >
+			<tr>
+				<td style="padding: 50px 50px 0 50px;" >
+					<center>
+						<img
+							style="width: 200px;"
+							src="<?php echo $this->getSkinUrl ('images/twofactor/logo.png') ?>"
+						/>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 50px;" >
+					<?php echo $this->getMessage () ?>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

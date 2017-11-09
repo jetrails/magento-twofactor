@@ -1,0 +1,142 @@
+<div class="twofactor-container row center" >
+	<div class="card col s12" >
+		<div class="card-content center">
+			<object
+				class="twofactor-logo"
+				type="image/svg+xml"
+				data="<?php echo $this->getSkinUrl ('images/twofactor/logo.svg') ?>" >
+				<img src="<?php echo $this->getSkinUrl ('images/twofactor/logo.png') ?>" >
+			</object>
+		</div>
+		<div class="card-tabs">
+			<ul class="tabs tabs-fixed-width" >
+				<li class="tab disabled" ><a class="active" href="#step-1" ><?php echo $this->__("Step 1") ?></a></li>
+				<li class="tab disabled" ><a href="#step-2" ><?php echo $this->__("Step 2") ?></a></li>
+				<li class="tab disabled" ><a href="#step-3" ><?php echo $this->__("Step 3") ?></a></li>
+				<li class="tab disabled" ><a href="#step-4" ><?php echo $this->__("Step 4") ?></a></li>
+			</ul>
+		</div>
+		<div class="card-content" >
+			<div id="step-1" class="row" >
+				<div class="row" >
+					<p class="col s12 left-align" >
+						<?php echo sprintf (
+							$this->__(
+								"In order to setup two-factor authentication for this account, do" .
+								"wnload and install an authentication app.  We suggest %s which i" .
+								"s available for both %s and %s."
+							),
+							"<b>Google Authenticator</b>",
+							"<a target='_blank' href='https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2' >Android</a>",
+							"<a target='_blank' href='https://itunes.apple.com/us/app/google-authenticator/id388497605' >iPhone</a>"
+						) ?>
+					</p>
+				</div>
+				<div class="row" >
+					<button
+						class="btn waves-effect waves-light col s12 light-blue darken-1"
+						type="button"
+						name="action"
+						onclick="changeStep ( 2 )" >
+						<?php echo $this->__("Continue") ?>
+					</button>
+				</div>
+			</div>
+			<div id="step-2" class="row" >
+				<div class="row" >
+					<img class="col s6" src="<?php echo $this->getQRCode () ?>" />
+					<div class="col s6 left-align" >
+						<?php echo sprintf (
+							$this->__(
+								"Open your authentication app and add a new account by scanning t" .
+								"he QR code or entering in %s manually. Continue to the next step" .
+								" to verify setup."
+							),
+							"<b>" . $this->getSecret () . "</b>"
+						) ?>
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col s6">
+						<button
+							class="btn waves-effect waves-light col s12 light-blue darken-1"
+							type="button"
+							name="action"
+							onclick="changeStep ( 1 )" >
+							<?php echo $this->__("Back") ?>
+						</button>
+					</div>
+					<div class="col s6">
+						<button
+							class="btn waves-effect waves-light col s12 light-blue darken-1"
+							type="button"
+							name="action"
+							onclick="changeStep ( 3 )" >
+							<?php echo $this->__("Continue") ?>
+						</button>
+					</div>
+				</div>
+			</div>
+			<form
+				id="step-3"
+				class="row"
+				method="POST"
+				target="_self"
+				action="<?php echo $this->getFormURL () . "#step-3" ?>"
+				autocomplete="off" >
+				<input type="hidden" name="form_key" value="<?php echo $this->getFormKey () ?>" />
+				<div class="row" >
+					<p class="col s12 left-align">
+						<?php echo $this->__(
+							"To confirm that you set up your authentication successfully, enter i" .
+							"n the 6-digit time sensitive pin associated with your account."
+						) ?>
+					</p>
+				</div>
+				<div id="form-pin" class="row" >
+					<div class="row" >
+					<div class="input-field col s12" >
+						<input
+							id="verification-pin"
+							name="pin"
+							type="text"
+							pattern="[0-9]{6}"
+							maxlength="6"
+							oninvalid="this.setCustomValidity ('Verification pin contains 6 numerical digits')"
+							oninput="this.value = this.value.replace ( /[^0-9]/, '' ); this.setCustomValidity ('');"
+							required
+						/>
+						<label
+							data-error="Incorrect verification pin, please try again"
+							for="verification-pin" >
+							<?php echo $this->__("Verification Pin") ?>
+						</label>
+					</div>
+					</div>
+					<div class="col s6">
+						<button
+							class="btn waves-effect waves-light col s12 light-blue darken-1"
+							type="button"
+							name="action"
+							onclick="changeStep ( 2 )" >
+							<?php echo $this->__("Back") ?>
+						</button>
+					</div>
+					<div class="col s6">
+						<button
+							class="btn waves-effect waves-light col s12 light-blue darken-1"
+							type="submit"
+							name="action" >
+							<?php echo $this->__("Continue") ?>
+						</button>
+					</div>
+				</div>
+			</form>
+			<div id="step-4" class="row" >
+				<p class="col s12" >
+					Stop trying to skip steps. Go back to step 3.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

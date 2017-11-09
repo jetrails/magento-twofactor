@@ -1,11 +1,10 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <config>
 	<modules>
 		<JetRails_TwoFactor>
 			<active>true</active>
 			<codePool>community</codePool>
-			<version>1.0.5</version>
 		</JetRails_TwoFactor>
 	</modules>
 </config>

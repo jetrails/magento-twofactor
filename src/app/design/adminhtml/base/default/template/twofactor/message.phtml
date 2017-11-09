@@ -1,0 +1,3 @@
+<?php foreach ( $this->getMessagesBlock ()->getMessages () as $message ): ?>
+	<script>addError ( "<?php echo addslashes ( $message->getText () ) ?>" );</script>
+<?php endforeach ?>

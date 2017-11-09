@@ -1,0 +1,78 @@
+/* JetRails TwoFactor Authentication - Element Classes */
+
+body {
+	background:                         #F1F1F1;
+}
+
+.twofactor-logo {
+	width:                              50%;
+	margin-top:                         30px;
+}
+
+.twofactor-logout {
+	position:                           absolute;
+	top:                                30px;
+	right:                              30px;
+}
+
+.twofactor-container {
+	width:                              465px;
+	height:                             500px;
+	margin-top:                         100px;
+	box-sizing:                         border-box !important;
+}
+
+/* Change MaterializeCSS colors */
+
+.form-tab {
+	color:                              #039BE5 !important;
+}
+
+.tabs .indicator {
+	background-color:                   #039BE5;
+}
+
+.tabs .tab a.active {
+	color:                              #039BE5;
+}
+
+.tabs .tab a:hover {
+	color:                              #039BE5;
+}
+
+.tabs .tab a {
+	color:                              #039BE5;
+}
+
+.tabs .tab.disabled a,
+.tabs .tab.disabled a:hover {
+	color:                              #039BE5;
+}
+
+.tabs-fixed-width {
+	width:          370px;
+}
+
+.input-field textarea:focus + label {
+	color:                              #039BE5 !important;
+}
+
+.row .input-field textarea:focus {
+	border-bottom:                      1px solid #039BE5 !important;
+	box-shadow:                         0 1px 0 0 #039BE5 !important
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+	border-bottom:                      1px solid #039BE5;
+	-webkit-box-shadow:                 0 1px 0 0 #039BE5;
+	box-shadow:                         0 1px 0 0 #039BE5;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+	color:                              #039BE5;
+}
+
+[type="checkbox"].filled-in:checked+label:after {
+	border:                             2px solid #039BE5;
+	background-color:                   #039BE5;
+}
