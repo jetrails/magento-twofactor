@@ -38,3 +38,9 @@
 
 ## Version 1.0.7
 - 	On install, invalidate logged in sessions.
+
+## Version 1.0.8
+-	Only kept English translations
+- 	Changed/Added text translations throughout module
+- 	Enabled translations to work in Adminhtml area
+- 	Added MIT license

@@ -4,7 +4,7 @@
 	 * Admin.php - This block is meant to be used inline with the email template file.  It simply
 	 * has a method that is called to fill the plain text body portion of the HTML email.  This
 	 * block describes the message that the admin users within the 'Administrators' role will see.
-	 * @version         1.0.7
+	 * @version         1.0.8
 	 * @package         JetRails® TwoFactor
 	 * @category        Email
 	 * @author          Rafael Grigorian - JetRails®
@@ -25,11 +25,11 @@
 			// Return the formated message that will appear in the email body
 			return sprintf (
 				$this->__(
-					"%d unsuccessful two factor authentication attempts have been made for '%s' w" .
-					"ith a user id of '%d'.  Last detected authentication attempt was detected on" .
-					" '%s' at '%s UTC'.  A %d minute block has been set to the account.  The acco" .
-					"unt in question and all other admins in the 'Administrator' role have been n" .
-					"otified about this block."
+					"%d unsuccessful two-factor authentication attempts have been made for '%s' w" .
+					"ith a user id of '%d'. Last detected authentication attempt was detected fro" .
+					"m '%s' at '%s UTC'. A %d minute block has been set to the account. The accou" .
+					"nt in question and all other admins in the 'Administrator' role have been no" .
+					"tified about this block."
 				),
 				$auth::MAX_ATTEMPTS,
 				$user->getEmail (),

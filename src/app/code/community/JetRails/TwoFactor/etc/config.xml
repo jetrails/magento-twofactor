@@ -3,7 +3,7 @@
 <config>
 	<modules>
 		<JetRails_TwoFactor>
-			<version>1.0.7</version>
+			<version>1.0.8</version>
 		</JetRails_TwoFactor>
 	</modules>
 	<admin>
@@ -72,5 +72,14 @@
 				</twofactor>
 			</updates>
 		</layout>
+		<translate>
+			<modules>
+				<JetRails_TwoFactor>
+					<files>
+						<default>JetRails_TwoFactor.csv</default>
+					</files>
+				</JetRails_TwoFactor>
+			</modules>
+		</translate>
 	</adminhtml>
 </config>

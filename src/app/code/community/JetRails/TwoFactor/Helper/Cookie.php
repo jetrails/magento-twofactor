@@ -4,7 +4,7 @@
 	 * Cookie.php - This helper class contains functions that deal with cookie creation, deletion,
 	 * and authentication.  This cookie class is used to aid in the "remember for 7 days"
 	 * functionality.
-	 * @version         1.0.7
+	 * @version         1.0.8
 	 * @package         JetRails® TwoFactor
 	 * @category        Helper
 	 * @author          Rafael Grigorian - JetRails®

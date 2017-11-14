@@ -16,9 +16,9 @@
 				<p class="col s12 left-align" >
 					<?php echo sprintf (
 						$this->__(
-							"You failed to enter in a valid verification pin and/or backup code. " .
-							"The maximum number of failed attempts that is allowed is %s in a spa" .
-							"n of %s minutes."
+							"You failed to enter a valid verification pin and/or backup code. The" .
+							" maximum number of failed attempts that is allowed is %s in a span o" .
+							"f %s minutes."
 						),
 						$this->getMaxAttempts (),
 						$this->getBlockTime ()
@@ -29,10 +29,9 @@
 				<p class="col s12 left-align" >
 					<?php echo sprintf (
 						$this->__(
-							"If you are the genuine owner of this account and you got blocked, it" .
-							"'s okay! Just wait %s minutes and you can try to authenticate again." .
-							" Please remember that this is for your own good, it's better to be s" .
-							"afe than sorry."
+							"If you are the owner of this account and you are accidentally blocke" .
+							"d, it's okay! Just wait %s minutes and you can try to authenticate a" .
+							"gain."
 						),
 						$this->getBlockTime ()
 					)?>
