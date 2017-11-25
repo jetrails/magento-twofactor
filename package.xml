@@ -1,0 +1,149 @@
+<?xml version="1.0" ?>
+
+<package>
+	<name>JetRails_TwoFactor</name>
+	<version>1.0.9</version>
+	<stability>stable</stability>
+	<license uri="https://opensource.org/licenses/MIT" >MIT License (MIT)</license>
+	<channel>community</channel>
+	<extends/>
+	<summary>Two Factor is a Magento extension that enables two factor authentication for Magento admin users. This extension is meant to be used with authentication apps such as Google Authenticator. The JetRails TFA plugin helps to ensure that all log-ins are authorized.</summary>
+	<description>The JetRails TFA plugin comes with the following features:&#xD;
+	&#xD;
+	- Backup codes as an alternate authentication method&#xD;
+	- Force TFA usage based on Magento role&#xD;
+	- Remember authentication for 7 days&#xD;
+	- Send email to account owner and admins on account block&#xD;
+	- Brute force protection (10 min. block between 10 failed attempts)</description>
+	<notes>N/A</notes>
+	<authors>
+		<author>
+			<name>Rafael Grigorian</name>
+			<user>rdogg312</user>
+			<email>rafael.g@eboundhost.com</email>
+		</author>
+	</authors>
+	<date>2017-11-25</date>
+	<time>06:14:42</time>
+	<contents>
+		<target name="magecommunity" >
+			<dir name="JetRails" >
+				<dir name="TwoFactor" >
+					<dir name="Block" >
+						<dir name="Adminhtml" >
+							<dir name="Button" >
+								<file name="Reset.php" hash="c25ee946990e14c8d3db651eeaf6d546" />
+							</dir>
+							<dir name="Email" >
+								<file name="Admin.php" hash="62c1304dba2115ea56a29e9a27c4e403" />
+								<file name="User.php" hash="a15641af146108e08110b04dfeb293b5" />
+							</dir>
+							<dir name="Template" >
+								<file name="Backup.php" hash="8c134cb92e1f05b7ce05417a7488e741" />
+								<file name="Blocked.php" hash="8ce03286066e31f9cf6f0d7821bd5989" />
+								<file name="Scan.php" hash="2541b0f50aa69af0253b18fd45a90949" />
+								<file name="Verify.php" hash="ba2aab4aa228942cba661c5c9cd7b914" />
+							</dir>
+						</dir>
+					</dir>
+					<dir name="Helper" >
+						<file name="Cookie.php" hash="0817b06bd80320964464c42d86b1227c" />
+						<file name="Data.php" hash="aa4577a367c4a57e0631865fc5fdb95b" />
+						<file name="TOTP.php" hash="67d45697b67f9c90c4cf88ba0c54a4ab" />
+					</dir>
+					<dir name="Model" >
+						<dir name="Adminhtml" >
+							<file name="Auth.php" hash="ddcbe8dba5cbd29506451838aef516b6" />
+							<file name="Notify.php" hash="eafbd28cc84c46ad02a2c4d039f2d05a" />
+							<file name="Observer.php" hash="d41f09b8e00d93d235a2d435d5ee9765" />
+							<file name="Page.php" hash="56c7ba9d9855b993c17a0b7e23561cad" />
+							<dir name="Resource" >
+								<file name="Auth.php" hash="add7b70ec79ba66753e18469f1d2b269" />
+							</dir>
+						</dir>
+					</dir>
+					<dir name="controllers" >
+						<file name="LoginController.php" hash="ce5bc615cb9cdf9d8d43f6dda4a91b6d" />
+						<file name="SetupController.php" hash="a0f1417f5cc3a715bf3f2254e271f526" />
+					</dir>
+					<dir name="etc" >
+						<file name="adminhtml.xml" hash="8c3bc25001943f8adfba5165d86dad75" />
+						<file name="config.xml" hash="ab10337b886239aedad81efc5c9a5c04" />
+						<file name="system.xml" hash="ce36ce24a9c2f5cc3c1f0bfa69a01865" />
+					</dir>
+					<dir name="sql" >
+						<dir name="jetrails_twofactor_setup" >
+							<file name="install-1.0.0.php" hash="b541731551b85e4af6a6543eafdc98da" />
+						</dir>
+					</dir>
+				</dir>
+			</dir>
+		</target>
+		<target name="magedesign" >
+			<dir name="adminhtml" >
+				<dir name="base" >
+					<dir name="default" >
+						<dir name="layout" >
+							<file name="twofactor.xml" hash="7d55b104e565600e5de30d96cd4bfd07" />
+						</dir>
+						<dir name="template" >
+							<dir name="twofactor" >
+								<file name="backup.phtml" hash="54956b6e2d857f38f4073cf51a60f9d4" />
+								<file name="blocked.phtml" hash="df6cc59c5856d89593f44b10e72650e0" />
+								<file name="email.phtml" hash="f50b32280dad12231b65a88212f0445f" />
+								<file name="logout.phtml" hash="b709b156b478bc6f5e22c0dcde368076" />
+								<file name="message.phtml" hash="2aa6c87c8879763584353c9e3f769553" />
+								<file name="page.phtml" hash="d7a7842cda59d3d70ab7911b2176a953" />
+								<file name="scan.phtml" hash="4fe963d76c743fa61ca1e6be7e4c2baf" />
+								<file name="verify.phtml" hash="8ad0e0e3485e99b7dfd41304a34eebf6" />
+							</dir>
+						</dir>
+					</dir>
+				</dir>
+			</dir>
+		</target>
+		<target name="mageetc" >
+			<dir name="modules" >
+				<file name="JetRails_TwoFactor.xml" hash="961b142a2296369463931d0262e66bd5" />
+			</dir>
+		</target>
+		<target name="magelocale" >
+			<dir name="en_US" >
+				<file name="JetRails_TwoFactor.csv" hash="cf405db357209370ce4a38c4534ee76f" />
+			</dir>
+		</target>
+		<target name="mageskin" >
+			<dir name="adminhtml" >
+				<dir name="base" >
+					<dir name="default" >
+						<dir name="css" >
+							<dir name="twofactor" >
+								<file name="style.css" hash="aa323edd356da93d5de836cb30b6fbfa" />
+							</dir>
+						</dir>
+						<dir name="js" >
+							<dir name="twofactor" >
+								<file name="functions.js" hash="7709682c7bfe9c07cf3adce12b3238bc" />
+							</dir>
+						</dir>
+						<dir name="images" >
+							<dir name="twofactor" >
+								<file name="logo.png" hash="5ab953a16a402b9b98cc7a89e9bd1970" />
+								<file name="logo.svg" hash="4935f97c66ed7940447d7176315ddebd" />
+							</dir>
+						</dir>
+					</dir>
+				</dir>
+			</dir>
+		</target>
+	</contents>
+	<compatible/>
+	<dependencies>
+		<required>
+			<php>
+				<min>5.1.0</min>
+				<max>5.6.0</max>
+			</php>
+		</required>
+	</dependencies>
+</package>

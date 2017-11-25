@@ -160,11 +160,16 @@ module.exports = function ( grunt ) {
 		// Clear dist folder
 		grunt.task.run ( "nuke:dist" );
 		// Initialize the files array for compression
-		var files = [{
-			cwd:            "src",
-			expand:         true,
-			src:            ["**"]
-		}];
+		var files = [
+			{
+				cwd:            "src",
+				expand:         true,
+				src:            ["**"]
+			},
+			{
+				src: 			[ "package.xml"]
+			}
+		];
 		// Traverse through jetrails dependencies
 		package.jetrailsDependencies.forEach ( function ( dependency ) {
 			// Extract the dependency name
