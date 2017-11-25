@@ -156,7 +156,8 @@
 				// Only attach an error if we aren't on our last attempt
 				if ( $auth->getAttempts () < $auth::MAX_ATTEMPTS ) {
 					// Attach fail message to session
-					$type = !empty ( $this->getRequest ()->getPost ("pin") ) ? "pin" : "code";
+					$pin = $this->getRequest ()->getPost ("pin");
+					$type = !empty ( $pin ) ? "pin" : "code";
 					$attempts = $auth::MAX_ATTEMPTS - $auth->getAttempts ();
 					$value = intval ( $this->getRequest ()->getPost ( $type ) );
 					$value = str_pad ( $value, $type === "pin" ? 6 : 8, "0", STR_PAD_LEFT );

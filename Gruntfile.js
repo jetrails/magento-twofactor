@@ -184,7 +184,8 @@ module.exports = function ( grunt ) {
 		// Define the output file
 		var company = package.company.replace ( "®", "" );
 		var name = package.name.replace ( "-", "_" );
-		var _output = company + "_" + name + ".tgz";
+		var version = package.version;
+		var _output = company + "_" + name + "-" + version + ".tgz";
 		// Define other options
 		grunt.config.set ( "compress.module.options.archive", "dist/" + _output );
 		grunt.config.set ( "compress.module.options.mode", "tgz" );

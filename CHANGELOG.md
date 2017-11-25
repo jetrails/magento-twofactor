@@ -58,3 +58,4 @@
 - 	Removed "metadata" command from Grunt file
 - 	Added a compatibility list
 - 	Changed release to be 'tgz' instead of 'zip'
+- 	Fixed "PHP syntax error: Can't use method return value in write context"
