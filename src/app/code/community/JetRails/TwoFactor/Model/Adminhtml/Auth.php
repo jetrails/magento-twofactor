@@ -7,7 +7,7 @@
 	 * passed TOTP pin, and registers failed authentication attempts.  In addition the constants
 	 * that are defined within this class are used throughout the module and are accessed
 	 * statically.
-	 * @version         1.0.8
+	 * @version         1.0.9
 	 * @package         JetRails® TwoFactor
 	 * @category        Model
 	 * @author          Rafael Grigorian - JetRails®
@@ -120,7 +120,7 @@
 				return json_decode ( $codes );
 			}
 			// Otherwise, return an empty array
-			return [];
+			return array ();
 		}
 
 		/**

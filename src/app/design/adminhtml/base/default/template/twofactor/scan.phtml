@@ -1,3 +1,4 @@
+<div class="twofactor-badge" >TFA</div>
 <div class="twofactor-container row center" >
 	<div class="card col s12" >
 		<div class="card-content center">
@@ -27,8 +28,8 @@
 								"s available for both %s and %s."
 							),
 							"<b>Google Authenticator</b>",
-							"<a target='_blank' href='https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2' >Android</a>",
-							"<a target='_blank' href='https://itunes.apple.com/us/app/google-authenticator/id388497605' >iPhone</a>"
+							"<u><a target='_blank' href='https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2' >Android</a></u>",
+							"<u><a target='_blank' href='https://itunes.apple.com/us/app/google-authenticator/id388497605' >iPhone</a></u>"
 						) ?>
 					</p>
 				</div>
@@ -44,8 +45,43 @@
 			</div>
 			<div id="step-2" class="row" >
 				<div class="row" >
+					<div class="row col s12 left-align" >
+						<?php echo $this->__(
+							"Open your authentication application and add a new account by scanni" .
+							"ng the QR code or entering in the TOTP secret manually. Continue to " .
+							"the next step to verify setup."
+						) ?>
+					</div>
 					<img class="col s6" src="<?php echo $this->getQRCode () ?>" />
-					<div class="col s6 left-align" >
+					<div class="col s6" >
+						<div class="row col s12 left-align" >
+							<b>TOTP Secret:</b>
+							<?php echo $this->getSecret () ?>
+						</div>
+						<div class="row col s12" >
+							<button
+								class="btn waves-effect waves-light col s12 light-blue darken-1"
+								type="button"
+								name="action"
+								onclick="changeStep ( 1 )" >
+								<?php echo $this->__("Back") ?>
+							</button>
+						</div>
+						<div class="col s12" >
+							<button
+								class="btn waves-effect waves-light col s12 light-blue darken-1"
+								type="button"
+								name="action"
+								onclick="changeStep ( 3 )" >
+								<?php echo $this->__("Continue") ?>
+							</button>
+						</div>
+					</div>
+				</div>
+
+<!-- 				<div class="row" >
+					<img class="col s6" src="<?php echo $this->getQRCode () ?>" />
+					<div class="col s6 left-align" style="font-size: 0.9em;line-height: 1.9;" >
 						<?php echo sprintf (
 							$this->__(
 								"Open your authentication app and add a new account by scanning t" .
@@ -75,7 +111,8 @@
 							<?php echo $this->__("Continue") ?>
 						</button>
 					</div>
-				</div>
+				</div> -->
+
 			</div>
 			<form
 				id="step-3"
@@ -133,9 +170,20 @@
 				</div>
 			</form>
 			<div id="step-4" class="row" >
-				<p class="col s12" >
-					Stop trying to skip steps. Go back to step 3.
-				</p>
+				<div class="row col s12" >
+					<p class="col s12" >
+						Stop trying to skip steps. Go back to step 3.
+					</p>
+				</div>
+				<div class="row col s12" >
+					<button
+						class="btn waves-effect waves-light col s12 light-blue darken-1"
+						type="button"
+						name="action"
+						onclick="changeStep ( 3 )" >
+						<?php echo $this->__("Back") ?>
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>

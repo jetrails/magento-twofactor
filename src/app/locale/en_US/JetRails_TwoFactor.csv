@@ -15,7 +15,7 @@
 "JetRails TwoFactor","JetRails TwoFactor"
 "JetRails®","JetRails®"
 "Logout","Logout"
-"Open your authentication app and add a new account by scanning the QR code or entering in %s manually. Continue to the next step to verify setup.","Open your authentication app and add a new account by scanning the QR code or entering in %s manually. Continue to the next step to verify setup."
+"Open your authentication application and add a new account by scanning the QR code or entering in the TOTP secret manually. Continue to the next step to verify setup.","Open your authentication application and add a new account by scanning the QR code or entering in the TOTP secret manually. Continue to the next step to verify setup."
 "Remember for 7 days","Remember for 7 days"
 "Reset Two Factor Authentication","Reset Two Factor Authentication"
 "Reset","Reset"

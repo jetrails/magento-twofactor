@@ -131,64 +131,6 @@ module.exports = function ( grunt ) {
 		}
 	});
 
-	grunt.task.registerTask ( "metadata", "initializes and replaces comment metadata", function () {
-		// Loop through all the php files in source directory
-		grunt.file.expand ("src/**/*.php").forEach ( function ( dir ) {
-			// Extract the file name and the folder above it
-			var filename = dir.split ("/") [ dir.split ("/").length - 1 ];
-			var category = dir.split ("/") [ dir.split ("/").length - 2 ].toLowerCase ();
-			filename = filename.replace ( ".php", "" );
-			category = category.charAt ( 0 ).toUpperCase () + category.slice ( 1 );
-			// Initialize the metadata header
-			var header = "" +
-				"\t * @version         " + package.version + "\n" +
-				"\t * @package         " + package.company + " " + package.name + "\n" +
-				"\t * @category        " + category + "\n" +
-				"\t * @author          " + package.author + " - " + package.company + "\n";
-			// If the package does not contain a copyright
-			if ( package.copyright == null ) {
-				// Append the license to it
-				header += "\t * @license         " + package.license + "\n";
-			}
-			// Otherwise, apply the copyright
-			else {
-				// Append the copyright to the header
-				header += "\t * @copyright       " + package.copyright + "\n";
-			}
-			// Initialize the replacement patterns
-			var _patterns = [
-				{
-					match:              /(\n[ \t]*\n[ \t]*)([ \t]+class [0-9a-zA-Z_]+(?: extends [0-9a-zA-Z_]+)?[ \t]*\{)/gm,
-					replacement:        "$1" + "\t/**\n" + "\t * " + filename + ".php - \n" + header + "\t */\n" + "$2"
-				},
-				{
-					match:              /\t\/\*\*\n\t \* [a-zA-Z]*\.php - ([a-zA-Z\W0-9\.\*]*?)\n\t \* @[a-zA-Z\W0-9\.\*]*\*\/\n\t(class [0-9a-zA-Z_]+(?: extends [0-9a-zA-Z_]+)?[ \t]*\{)/gm,
-					replacement:        "\t/**\n\t \* " + filename + ".php - $1\n" + header + "\t */\n" + "\t$2"
-				},
-				{
-					match:              /(\n[ \t]*\n)([ \t]*)([public|protected|private]+ function [a-zA-Z0-9_]+(?: )?\()([a-zA-Z0-9$_\:\/="', ]*)(\)(?: )?\{)/gm,
-					replacement:        "$1 $2\/**\n$2 * \n$2 * @return\n$2 *\/\n" + "$2$3$4$5"
-				}
-			];
-			// Initialize which files are effected
-			var _files = [
-				{
-					expand:             true,
-					flatten:            false,
-					src:                [ dir ],
-					dest:               "."
-				}
-			];
-			// Define a temp variable for the grunt name (for async execution)
-			var temp = category.replace ( /_|\.|-/gm, "" ) + filename.replace ( /_|-|\./g, "" );
-			// Update the options in grunt config
-			grunt.config.set ( "replace." + temp + ".options.patterns", _patterns );
-			grunt.config.set ( "replace." + temp + ".files", _files );
-			// Run the replace task
-			grunt.task.run ( "replace:" + temp + "" );
-		});
-	});
-
 	grunt.task.registerTask ( "resolve", "downloads jetrails dependency extensions", function () {
 		// Run the dependency command
 		grunt.task.run ( "init" );
@@ -213,8 +155,6 @@ module.exports = function ( grunt ) {
 		// Run the dependency tasks
 		grunt.task.run ( "init" );
 		grunt.task.run ( "resolve" );
-		// Update the metadata in comments
-		grunt.task.run ( "metadata" );
 		// Change version numbers
 		grunt.task.run ( "version" );
 		// Clear dist folder
@@ -237,10 +177,12 @@ module.exports = function ( grunt ) {
 			});
 		});
 		// Define the output file
-		var _output = package.name.replace ( "-", "_" ) + ".zip";
+		var company = package.company.replace ( "®", "" );
+		var name = package.name.replace ( "-", "_" );
+		var _output = company + "_" + name + ".tgz";
 		// Define other options
 		grunt.config.set ( "compress.module.options.archive", "dist/" + _output );
-		grunt.config.set ( "compress.module.options.mode", "zip" );
+		grunt.config.set ( "compress.module.options.mode", "tgz" );
 		grunt.config.set ( "compress.module.files", files );
 		// Compress the module
 		grunt.task.run ( "compress:module" );

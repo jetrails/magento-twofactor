@@ -1,11 +1,11 @@
 /* JetRails TwoFactor Authentication - Element Classes */
 
 body {
-	background:                         #F1F1F1;
+	background:                         #EDECEC;
 }
 
 .twofactor-logo {
-	width:                              50%;
+	width:                              75%;
 	margin-top:                         30px;
 }
 
@@ -13,6 +13,8 @@ body {
 	position:                           absolute;
 	top:                                30px;
 	right:                              30px;
+	background: 						#58595B !important;
+	font-weight: 						600;
 }
 
 .twofactor-container {
@@ -22,57 +24,97 @@ body {
 	box-sizing:                         border-box !important;
 }
 
+.twofactor-badge {
+    position:							absolute;
+    font-size:							1em;
+    height:								1em;
+    width:								50px;
+    line-height:						1em;
+    padding:							10px;
+    box-sizing:							content-box;
+    text-align:							center;
+    font-weight:						600;
+    transform:							rotate(-90deg);
+    left:								50%;
+    margin-left:						-284px;
+    margin-top:							75px;
+    color:								#FFF;
+    background:							#58595B;
+    box-shadow:							0 2px 2px 0 rgba( 0, 0, 0, 0.14 ),
+    									0 1px 5px 0 rgba( 0, 0, 0, 0.12 ),
+    									0 3px 1px -2px rgba( 0, 0, 0, 0.2 );
+}
+
 /* Change MaterializeCSS colors */
 
+html {
+	font-family: 						"Open Sans", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: 			antialiased;
+	-moz-osx-font-smoothing: 			grayscale;
+	line-height: 						1.75em;
+	font-weight: 						400;
+}
+
+a {
+	color:                              #58595B;
+	font-weight: 						600;
+}
+
+.light-blue.darken-1 {
+	background:                         #89BB40 !important;
+	font-weight: 						600;
+}
+
 .form-tab {
-	color:                              #039BE5 !important;
+	color:                              #58595B !important;
 }
 
 .tabs .indicator {
-	background-color:                   #039BE5;
+	background-color:                   #58595B;
 }
 
 .tabs .tab a.active {
-	color:                              #039BE5;
+	color:                              #58595B;
 }
 
 .tabs .tab a:hover {
-	color:                              #039BE5;
+	color:                              #58595B;
 }
 
 .tabs .tab a {
-	color:                              #039BE5;
+	color:                              #58595B;
+	font-weight: 						600;
 }
 
 .tabs .tab.disabled a,
 .tabs .tab.disabled a:hover {
-	color:                              #039BE5;
+	color:                              #58595B;
 }
 
 .tabs-fixed-width {
-	width:          370px;
+	width:          					370px;
 }
 
 .input-field textarea:focus + label {
-	color:                              #039BE5 !important;
+	color:                              #58595B !important;
 }
 
 .row .input-field textarea:focus {
-	border-bottom:                      1px solid #039BE5 !important;
-	box-shadow:                         0 1px 0 0 #039BE5 !important
+	border-bottom:                      1px solid #58595B !important;
+	box-shadow:                         0 1px 0 0 #58595B !important
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly]) {
-	border-bottom:                      1px solid #039BE5;
-	-webkit-box-shadow:                 0 1px 0 0 #039BE5;
-	box-shadow:                         0 1px 0 0 #039BE5;
+	border-bottom:                      1px solid #58595B;
+	-webkit-box-shadow:                 0 1px 0 0 #58595B;
+	box-shadow:                         0 1px 0 0 #58595B;
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly])+label {
-	color:                              #039BE5;
+	color:                              #58595B;
 }
 
 [type="checkbox"].filled-in:checked+label:after {
-	border:                             2px solid #039BE5;
-	background-color:                   #039BE5;
+	border:                             2px solid #58595B;
+	background-color:                   #58595B;
 }

@@ -3,7 +3,7 @@
 	/**
 	 * Scan.php - This template block is used in hand with the associated template file and it
 	 * is used to prepare information for the template file.
-	 * @version         1.0.8
+	 * @version         1.0.9
 	 * @package         JetRails® TwoFactor
 	 * @category        Template
 	 * @author          Rafael Grigorian - JetRails®

@@ -5,7 +5,7 @@
 	 * checks to see if the logged in admin user should be authenticated.  Since the ACL permission
 	 * is currently located in the system configuration section, it may change in the future and it
 	 * can be changed in one place.
-	 * @version         1.0.8
+	 * @version         1.0.9
 	 * @package         JetRails® TwoFactor
 	 * @category        Helper
 	 * @author          Rafael Grigorian - JetRails®

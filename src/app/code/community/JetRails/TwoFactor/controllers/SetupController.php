@@ -4,7 +4,7 @@
 	 * SetupController.php - This controller contains all actions that relate to setting up the two
 	 * factor authentication on an admin user's account.  Actions that render both the scan and
 	 * backup pages for setup, as well as an action that resets the whole process for an admin user.
-	 * @version         1.0.8
+	 * @version         1.0.9
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®
@@ -49,11 +49,11 @@
 				}
 				else {
 					// Set an error message and render page again
-					$message = [
+					$message = array (
 						"type" => "pin",
 						"value" => intval ( $this->getRequest ()->getPost ("pin") ),
 						"message" => $this->__("verification pin didn't match, try again")
-					];
+					);
 					Mage::getSingleton ("core/session")->addError ( json_encode ( $message ) );
 				}
 			}

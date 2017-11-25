@@ -5,7 +5,7 @@
 	 * their two factor authentication account.  Actions that render the verification page as well
 	 * as the blocked page that a user will see on failed login are all encapsulated within this
 	 * controller.
-	 * @version         1.0.8
+	 * @version         1.0.9
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®
@@ -110,6 +110,7 @@
 							$cookie = Mage::helper ("twofactor/cookie");
 							$time = ( new Zend_Date () )->toString ();
 							$pin = intval ( $this->getRequest ()->getPost ("pin") );
+							$pin = str_pad ( $pin, 6, "0", STR_PAD_LEFT );
 							$address = Mage::helper ("core/http")->getRemoteAddr ();
 							$cookie->create ( $time, $pin, $address );
 						}
@@ -126,6 +127,7 @@
 				else if ( $this->getRequest ()->getPost ("code") ) {
 					// Clean supplied code, and get available codes
 					$code = intval ( $this->getRequest ()->getPost ("code") );
+					$code = str_pad ( $code, 8, "0", STR_PAD_LEFT );
 					$codes = $auth->getBackupCodes ();
 					// Check to see if the code exists
 					if ( in_array ( "$code", $codes ) ) {
@@ -137,6 +139,7 @@
 							$cookie = Mage::helper ("twofactor/cookie");
 							$time = ( new Zend_Date () )->toString ();
 							$pin = intval ( $totp->pin () );
+							$pin = str_pad ( $pin, 6, "0", STR_PAD_LEFT );
 							$address = Mage::helper ("core/http")->getRemoteAddr ();
 							$cookie->create ( $time, $pin, $address );
 						}
@@ -153,15 +156,17 @@
 				// Only attach an error if we aren't on our last attempt
 				if ( $auth->getAttempts () < $auth::MAX_ATTEMPTS ) {
 					// Attach fail message to session
-					$type = $this->getRequest ()->getPost ("pin") ? "pin" : "code";
+					$type = !empty ( $this->getRequest ()->getPost ("pin") ) ? "pin" : "code";
 					$attempts = $auth::MAX_ATTEMPTS - $auth->getAttempts ();
+					$value = intval ( $this->getRequest ()->getPost ( $type ) );
+					$value = str_pad ( $value, $type === "pin" ? 6 : 8, "0", STR_PAD_LEFT );
 					$message = $this->__("invalid authentication attempt, %d attempt(s) left");
 					$message = sprintf ( $message, $attempts );
-					$message = [
+					$message = array (
 						"type" => $type,
-						"value" => intval ( $this->getRequest ()->getPost ( $type ) ),
+						"value" => $value,
 						"message" => $message
-					];
+					);
 					Mage::getSingleton ("core/session")->addError ( json_encode ( $message ) );
 				}
 			}

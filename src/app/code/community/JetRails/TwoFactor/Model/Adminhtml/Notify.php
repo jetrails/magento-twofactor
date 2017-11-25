@@ -4,7 +4,7 @@
 	 * Notify.php - This class contains methods that help log and communicate messages.  Messages
 	 * can be logged into a custom log file, the logged in admin user can be notified, or all admin
 	 * users in the 'Administrators' role can be notified.
-	 * @version         1.0.8
+	 * @version         1.0.9
 	 * @package         JetRails® TwoFactor
 	 * @category        Model
 	 * @author          Rafael Grigorian - JetRails®
@@ -45,13 +45,13 @@
 			// Get the role ID for administrator role
 			$roleId = $role
 				->getCollection ()
-				->addFieldToFilter ( "role_name", [ "eq" => "Administrators" ] )
+				->addFieldToFilter ( "role_name", array ( "eq" => "Administrators" ) )
 				->getFirstItem ()
 				->getId ();
 			// Get the users that belong to the administrator role
 			$roleUsers = $role
 				->getCollection ()
-				->addFieldToFilter ( "parent_id", [ "eq" => $roleId ] );
+				->addFieldToFilter ( "parent_id", array ( "eq" => $roleId ) );
 			// Loop through all the users belonging to the role
 			foreach ( $roleUsers as $roleUser ) {
 				// Based on the admin user, format their full name

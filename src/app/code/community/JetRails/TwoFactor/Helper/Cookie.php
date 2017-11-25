@@ -4,7 +4,7 @@
 	 * Cookie.php - This helper class contains functions that deal with cookie creation, deletion,
 	 * and authentication.  This cookie class is used to aid in the "remember for 7 days"
 	 * functionality.
-	 * @version         1.0.8
+	 * @version         1.0.9
 	 * @package         JetRails® TwoFactor
 	 * @category        Helper
 	 * @author          Rafael Grigorian - JetRails®
@@ -13,7 +13,7 @@
 	class JetRails_TwoFactor_Helper_Cookie extends Mage_Core_Helper_Abstract {
 
 		/**
-		 * This function generates a unique user hash using the MD5 algorithm and uses various
+		 * This function generates a unique user hash using the SHA512 algorithm and uses various
 		 * database variables to salt user information.  This is used as the cookie name.
 		 * @return      string                                      Unique hash for cookie name
 		 */
@@ -28,9 +28,9 @@
 				->getData () [ 0 ];
 			// Initialize the salt and data
 			$salt = $info ["created"];
-			$data = md5 ( $info ["email"] . $info ["user_id"] );
+			$data = hash ( "sha512", $info ["email"] . $info ["user_id"] );
 			// Return the unique hash encrypted
-			return md5 ( md5 ( $salt . ":" . $data ) . ":" . $salt );
+			return hash ( "sha512", hash ( "sha512", $salt . ":" . $data ) . ":" . $salt );
 		}
 
 		/**

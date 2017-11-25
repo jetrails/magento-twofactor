@@ -1,3 +1,4 @@
+<div class="twofactor-badge" >TFA</div>
 <div class="twofactor-container row center" >
 	<div class="card col s12" >
 		<div class="card-content center">
@@ -12,12 +13,12 @@
 			<ul class="tabs tabs-fixed-width" >
 				<li
 					class="tab"
-					onclick="requireInput ('#verification-pin'); changeAuthType ('backup-code');" >
+					onclick="changeAuthType ('backup-code');" >
 					<a class="active" href="#form-pin" ><?php echo $this->__("6 Digit Pin") ?></a>
 				</li>
 				<li
 					class="tab"
-					onclick="requireInput ('#backup-code'); changeAuthType ('verification-pin'); " >
+					onclick="changeAuthType ('verification-pin'); " >
 					<a href="#form-code" ><?php echo $this->__("Backup Code") ?></a>
 				</li>
 			</ul>
@@ -77,7 +78,8 @@
 					<button
 						class="btn waves-effect waves-light col s12 light-blue darken-1"
 						type="submit"
-						name="action" >
+						name="action"
+						onclick="changeRequired ()" >
 						<?php echo $this->__("Verify") ?>
 					</button>
 				</div>

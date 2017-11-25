@@ -44,3 +44,17 @@
 - 	Changed/Added text translations throughout module
 - 	Enabled translations to work in Adminhtml area
 - 	Added MIT license
+
+## Version 1.0.9
+-	Changed hashing algorithm to use SHA512 (cookie)
+- 	Removed short array syntax (MEQP1)
+- 	Updated logo and color scheme
+-	Fixed small bug when trying to change auth type after failing
+- 	Changed font to "Open Sans"
+- 	Changed layout on scan stage step-2
+- 	Fixed bug with verification pin/backup code having leading zero (intval)
+- 	Fixed "input is not focusable" bug on submit after error
+- 	Added User Guide
+- 	Removed "metadata" command from Grunt file
+- 	Added a compatibility list
+- 	Changed release to be 'tgz' instead of 'zip'
