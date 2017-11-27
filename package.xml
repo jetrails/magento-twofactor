@@ -6,14 +6,14 @@
     <license uri="https://opensource.org/licenses/MIT">MIT License (MIT)</license>
     <channel>community</channel>
     <extends/>
-    <summary>Two Factor is a Magento extension that enables two factor authentication for Magento admin users. This extension is meant to be used with authentication apps such as Google Authenticator. The JetRails TFA plugin helps to ensure that all log-ins are authorized.</summary>
-    <description>The JetRails TFA plugin comes with the following features:&#xD;
-&#xD;
-- Backup codes as an alternate authentication method&#xD;
-- Force TFA usage based on Magento role&#xD;
-- Remember authentication for 7 days&#xD;
-- Send email to account owner and admins on account block&#xD;
-- Brute force protection (10 min. block between 10 failed attempts)</description>
+    <summary>The JetRails TFA plugin adds an extra layer of security to your Magento store.  Role based TFA enablement ensures that admin users are following best security practices.</summary>
+    <description>
+        - Role based TFA enablement
+        - Remember authentication for 7 days
+        - Backup codes as an alternate authentication method
+        - Send email to account owner and admins on account block
+        - Brute force protection (10 min. block between 10 failed attempts)
+    </description>
     <notes>N/A</notes>
     <authors><author><name>Rafael Grigorian</name><user>rdogg312</user><email>rdogg312@gmail.com</email></author></authors>
     <date>2017-11-25</date>
