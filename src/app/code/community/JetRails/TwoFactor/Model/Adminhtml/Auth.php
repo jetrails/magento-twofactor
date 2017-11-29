@@ -25,6 +25,14 @@
 		const STATE_BLOCKED = 3;
 
 		/**
+		 * These constants define the admin users preference whether to use 2FA or not.  Note that
+		 * if the role that the user is in is forced to use 2FA, then the admins preference does not
+		 * matter.
+		 */
+		const PREFERENCE_DISABLED = 0;
+		const PREFERENCE_ENABLED = 1;
+
+		/**
 		 * These constants define some un-configurable options that are possible with this module.
 		 * The max number of failed authentication attempts that are allowed before blocking a user
 		 * is defined here, as well as the number of minutes the block lasts.

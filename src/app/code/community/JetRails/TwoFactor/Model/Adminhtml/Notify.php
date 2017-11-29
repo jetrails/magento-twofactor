@@ -85,7 +85,7 @@
 			// Initialize email object and send it after setting options
 			$mail = new Zend_Mail ();
 			$mail->setSubject (
-				Mage::helper ("twofactor")->__("Account blocked, failed two factor authentication")
+				Mage::helper ("twofactor")->__("Account blocked, failed two-factor authentication")
 			);
 			$mail->setBodyHtml ( $message );
 			$mail->setFrom (

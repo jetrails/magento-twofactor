@@ -6,9 +6,9 @@
     <license uri="https://opensource.org/licenses/MIT">MIT License (MIT)</license>
     <channel>community</channel>
     <extends/>
-    <summary>The JetRails TFA plugin adds an extra layer of security to your Magento store.  Role based TFA enablement ensures that admin users are following best security practices.</summary>
+    <summary>The JetRails 2FA plugin adds an extra layer of security to your Magento store.  Role based 2FA enablement ensures that admin users are following best security practices.</summary>
     <description>
-        - Role based TFA enablement
+        - Role based 2FA enablement
         - Remember authentication for 7 days
         - Backup codes as an alternate authentication method
         - Send email to account owner and admins on account block

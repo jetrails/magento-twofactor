@@ -10,15 +10,68 @@
 							<config>
 								<children>
 									<jetrails_twofactor translate="title" module="twofactor" >
-										<title>Two Factor Authentication</title>
+										<title>Two-Factor Authentication</title>
 										<sort_order>0</sort_order>
 									</jetrails_twofactor>
 								</children>
 							</config>
 						</children>
 					</system>
+					<jetrails translate="title" module="twofactor" >
+						<title>JetRails</title>
+						<sort_order>0</sort_order>
+						<children>
+							<twofactor translate="title" module="twofactor" >
+								<title>Two-Factor Authentication</title>
+								<sort_order>0</sort_order>
+								<children>
+									<configure translate="title" module="twofactor" >
+										<title>Configure 2FA</title>
+										<sort_order>0</sort_order>
+									</configure>
+									<enforce translate="title" module="twofactor" >
+										<title>Enforce 2FA</title>
+										<sort_order>1</sort_order>
+									</enforce>
+									<reset translate="title" module="twofactor" >
+										<title>Reset 2FA</title>
+										<sort_order>2</sort_order>
+									</reset>
+								</children>
+							</twofactor>
+						</children>
+					</jetrails>
 				</children>
 			</admin>
 		</resources>
 	</acl>
+	<menu>
+		<jetrails translate="title" module="twofactor" >
+			<title>JetRails</title>
+			<sort_order>1000</sort_order>
+			<children>
+				<twofactor translate="title" module="twofactor" >
+					<title>Two-Factor Authentication</title>
+					<sort_order>0</sort_order>
+					<children>
+						<configure translate="title" module="twofactor" >
+							<title>Configure 2FA</title>
+							<sort_order>0</sort_order>
+							<action>twofactor/configure/index</action>
+						</configure>
+						<enforce translate="title" module="twofactor" >
+							<title>Enforce 2FA</title>
+							<sort_order>1</sort_order>
+							<action>twofactor/enforce/index</action>
+						</enforce>
+						<reset translate="title" module="twofactor" >
+							<title>Reset 2FA</title>
+							<sort_order>2</sort_order>
+							<action>twofactor/reset/index</action>
+						</reset>
+					</children>
+				</twofactor>
+			</children>                
+		</jetrails>
+	</menu>
 </config>

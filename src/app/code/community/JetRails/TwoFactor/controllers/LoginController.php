@@ -2,7 +2,7 @@
 
 	/**
 	 * LoginController.php - This controller contains all actions that relate to authenticating
-	 * their two factor authentication account.  Actions that render the verification page as well
+	 * their two-factor authentication account.  Actions that render the verification page as well
 	 * as the blocked page that a user will see on failed login are all encapsulated within this
 	 * controller.
 	 * @version         1.0.9
@@ -87,7 +87,7 @@
 
 		/**
 		 * This action ultimately renders out a page using the layout defined in twofactor.xml. This
-		 * page is the page that is seen once two factor authentication is setup and the user is
+		 * page is the page that is seen once two-factor authentication is setup and the user is
 		 * trying to login.  The authentication page is displayed and the user is prompted to
 		 * authenticate using their setup authentication account.  It also handles the form
 		 * submission for said page.

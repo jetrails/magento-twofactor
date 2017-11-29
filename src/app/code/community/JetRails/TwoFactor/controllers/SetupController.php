@@ -66,7 +66,7 @@
 		/**
 		 * This action ultimately renders out a page using the layout defined in twofactor.xml. This
 		 * page is the second page that an admin will see in the setup process.  This page shows
-		 * backup codes after the user successfully proved that they setup their TFA account. It
+		 * backup codes after the user successfully proved that they setup their 2FA account. It
 		 * also handles the form submission for said page.
 		 * @return      void
 		 */
@@ -111,6 +111,31 @@
 			$admin->unsetAll ();
 			$admin->getCookie ()->delete ( $admin->getSessionName () );
 			return $this->_redirect ( $url );
+		}
+
+		public function enableAction () {
+			// Set the user preference to enable
+			$auth = Mage::getSingleton ("twofactor/auth");
+			$auth->setPreference ( $auth::PREFERENCE_ENABLE );
+			$auth->save ();
+			// Log user out and try to redirect to startup page
+			$session = Mage::getSingleton ("admin/session");
+			$url = $session->getUser ()->getStartupPageUrl ();
+			$admin = Mage::getSingleton ("admin/session");
+			$admin->unsetAll ();
+			$admin->getCookie ()->delete ( $admin->getSessionName () );
+			return $this->_redirect ( $url );
+		}
+
+		public function disableAction () {
+			// Set the user preference to enable
+			$auth = Mage::getSingleton ("twofactor/auth");
+			$auth->setPreference ( $auth::PREFERENCE_DISABLE );
+			$auth->setBackupCodes ( array () );
+			$auth->setAttempts ( 0 );
+			$auth->setSecret ("");
+			$auth->setState ( $auth::STATE_SCAN );
+			$auth->save ();
 		}
 
 	}

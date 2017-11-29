@@ -53,7 +53,7 @@
 				$route = "$frontname/$controller/$action";
 				// Allow the admin logout action
 				if ( $route === "admin/index/logout" ) return;
-				// If two factor is not forced on role, then ignore everything
+				// If two-factor is not forced on role, then ignore everything
 				if ( !Mage::helper ("twofactor")->isAllowed () ) return;
 				// Get instances of objects
 				$admin = Mage::getSingleton ("admin/session");
@@ -73,6 +73,8 @@
 					$auth->save ();
 					$admin->setTwoFactorSetup ( true );
 				}
+				// Set a boolean for routes that are allowed when authenticated
+				$allowedOnAuthed = !in_array ( $route, [ $page::PAGE_SETUP_RESET, $page::PAGE_SETUP_ENABLE, $page::PAGE_SETUP_DISABLE ] ) && !in_array ( $controller, [ "configure", "enforce", "reset" ] );
 				// Session is not authenticated, or is authenticated but not in verify state
 				if ( $admin->getTwoFactorAllow () !== true || $state != $auth::STATE_VERIFY ) {
 					// Allow state based routes to allow for state based pages
@@ -88,12 +90,72 @@
 					$redirectRoute = $page->getPageFromState ( $state );
 					$this->_redirectByRoute ( $observer, $redirectRoute );
 				}
-				// Session is authenticated, state is verify, and route is not reset
-				else if ( $frontname === "twofactor" && $route != $page::PAGE_SETUP_RESET ) {
+				// Session is authenticated, state verified, allow reset and admin config controller
+				else if ( $frontname === "twofactor" && $allowedOnAuthed ) {
 					// Redirect user to their saved startup page
 					$redirectRoute = $admin->getUser ()->getStartupPageUrl ();
 					$this->_redirectByRoute ( $observer, $redirectRoute );
 				}
+			}
+		}
+
+		public function appendTwoFactorToMyAccount ( Varien_Event_Observer $observer ) {
+			// Get block from observer
+			$block = $observer->getEvent ()->getBlock ();
+			// If the block is the one form in the "My Account" page
+			if ( isset ( $block ) && $block->getType () == "adminhtml/system_account_edit_form" ) {
+				// Get the form element
+				$form = $block->getForm ();
+
+				$auth = Mage::getSingleton ("twofactor/auth");
+
+				$page = Mage::getSingleton ("twofactor/page");
+				$enableUrl  = Mage::helper("adminhtml")->getUrl ( $page::PAGE_SETUP_ENABLE );
+				$disableUrl = Mage::helper("adminhtml")->getUrl ( $page::PAGE_SETUP_DISABLE );
+				$resetUrl   = Mage::helper("adminhtml")->getUrl ( $page::PAGE_SETUP_RESET );
+
+				// Create a field set
+				$fieldset = $form->addFieldset ( "twofactor", array (
+					"legend" 	=> 	Mage::helper ("adminhtml")->__("Two-Factor Authentication"),
+				));
+
+				$preferenceStatus = $auth->getPreference () == $auth::PREFERENCE_DISABLED ? Mage::helper ("adminhtml")->__("2FA is currently disabled") : Mage::helper ("adminhtml")->__("2FA is currently enabled");
+
+				//after_element_html
+				$fieldset->addField ( "status", "text", array (
+					"name"      			=> 	"status",
+					"label"     			=> 	Mage::helper ("adminhtml")->__("Status"),
+					"onclick"				=> 	"alert ('hello');",
+					"disabled"  			=> 	true,
+					"value"					=> 	$preferenceStatus
+				));
+
+				if ( $auth->getPreference () == $auth::PREFERENCE_DISABLED ) {
+					$fieldset->addField ( "enable", "button", array (
+						"name"      			=> 	"enable",
+						"label"     			=> 	Mage::helper ("adminhtml")->__("Enable 2FA Account"),
+						"value"     			=> 	Mage::helper ("adminhtml")->__("Enable"),
+						"onclick"				=> 	"setLocation ('$enableUrl')",
+						"disabled"  			=> 	false,
+					));
+				}
+				else {
+					$fieldset->addField ( "disable", "button", array (
+						"name"      			=> 	"disable",
+						"label"     			=> 	Mage::helper ("adminhtml")->__("Disable 2FA Account"),
+						"value"     			=> 	Mage::helper ("adminhtml")->__("Disable"),
+						"onclick"				=> 	"setLocation ('$disableUrl')",
+						"disabled"  			=> 	false,
+					));
+				}
+				$fieldset->addField ( "reset", "button", array (
+					"name"      			=> 	"reset",
+					"label"     			=> 	Mage::helper ("adminhtml")->__("Reset 2FA Account"),
+					"value"     			=> 	Mage::helper ("adminhtml")->__("Reset"),
+					"onclick"				=> 	"setLocation ('$resetUrl')",
+					"disabled"  			=> 	false,
+					"class"					=>	"btn"
+				));
 			}
 		}
 

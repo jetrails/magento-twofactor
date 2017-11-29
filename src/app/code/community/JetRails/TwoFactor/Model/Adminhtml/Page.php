@@ -13,11 +13,13 @@
 
 		/**
 		 * These constants describe the controller routes to the different pages that are part of
-		 * this module.
+		 * this module.  This includes throughout the setup of 2FA and for account management.
 		 */
 		const PAGE_SETUP_SCAN       = "twofactor/setup/scan";
 		const PAGE_SETUP_BACKUP     = "twofactor/setup/backup";
 		const PAGE_SETUP_RESET      = "twofactor/setup/reset";
+		const PAGE_SETUP_ENABLE     = "twofactor/setup/enable";
+		const PAGE_SETUP_DISABLE    = "twofactor/setup/disable";
 		const PAGE_LOGIN_BLOCKED    = "twofactor/login/blocked";
 		const PAGE_LOGIN_VERIFY     = "twofactor/login/verify";
 

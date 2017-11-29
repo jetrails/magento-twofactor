@@ -10,7 +10,7 @@
 	<sections>
 		<jetrails_twofactor translate="label" module="twofactor" >
 			<class>separator-top</class>
-			<label>Two Factor Authentication</label>
+			<label>Two-Factor Authentication</label>
 			<tab>extensions</tab>
 			<sort_order>152</sort_order>
 			<show_in_default>1</show_in_default>
@@ -28,7 +28,7 @@
 					<expanded>1</expanded>
 					<fields>
 						<reset translate="label comment" module="twofactor" >
-							<label>Reset Two Factor Authentication</label>
+							<label>Reset Two-Factor Authentication</label>
 							<comment>Will be logged out and prompted to setup on next login</comment>
 							<frontend_type>button</frontend_type>
 							<frontend_model>twofactor/adminhtml_button_reset</frontend_model>

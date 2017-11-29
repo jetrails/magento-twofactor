@@ -84,7 +84,7 @@
 		 * is saved to determine whether or now to read it.  If one exists, then we decrypt it and
 		 * parse it.  If the IP address is not the same, the expiration time exceeds 7 days, or if
 		 * the time/pin combo does not match with the user's secret, then the cookie is deleted and
-		 * the user is forced to user the TFA page.  Otherwise the TFA process is handled for them.
+		 * the user is forced to user the 2FA page.  Otherwise the 2FA process is handled for them.
 		 * @return      bool                                        Does a valid live cookie exist?
 		 */
 		public function authenticate ( $uid ) {
