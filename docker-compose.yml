@@ -1,0 +1,58 @@
+version: "2"
+
+volumes:
+    persistant:
+
+services:
+    filesystem:
+        image: jetrails/magento:1.x-filesystem
+        volumes:
+            - ./staging:/var/www/html
+    webserver:
+        image: jetrails/magento:1.x-webserver
+        hostname: webserver.magento
+        volumes_from:
+            - filesystem
+        ports:
+            - "80:80"
+        links:
+            - database
+        environment:
+            - VIRTUAL_HOST=magento
+            - VIRTUAL_PORT=80
+            - HTTPS_METHOD=noredirect
+            - ENABLE_SENDMAIL=true
+    cron:
+        image: jetrails/magento:1.x-cron
+        hostname: cron.magento
+        working_dir: /var/www/html
+        command: /run-cron.sh
+        volumes_from:
+            - filesystem
+        environment:
+            - ENABLE_SENDMAIL=true
+        links:
+            - database
+    cli:
+        image: jetrails/magento:1.x-cli
+        hostname: cli.magento
+        working_dir: /var/www/html
+        command: /bin/true
+        volumes_from:
+            - filesystem
+        links:
+            - database
+        environment:
+            - MAGEREPO_EDITION=community
+            - MAGEREPO_RELEASE=1.9.3.6
+    database:
+        image: jetrails/magento:1.x-database
+        volumes:
+            - persistant:/var/lib/mysql
+        ports:
+            - 3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=magento
+            - MYSQL_USER=magento
+            - MYSQL_PASSWORD=magento
+            - MYSQL_DATABASE=magento

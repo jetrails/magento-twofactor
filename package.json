@@ -1,7 +1,7 @@
 {
 	"version": "1.0.9",
 	"name": "TwoFactor",
-	"description": "Two-factor authorization for admin accounts",
+	"description": "Two-factor authorization for Magento admin accounts",
 	"author": "Rafael Grigorian",
 	"company": "JetRails®",
 	"copyright": "JetRails®, all rights reserved",
@@ -18,12 +18,5 @@
 		"grunt-mkdir": "^1.0.0",
 		"grunt-replace": "^1.0.1",
 		"grunt-rsync": "^1.0.1"
-	},
-	"jetrailsDependencies": [],
-	"staging": {
-		"port": "22",
-		"user": "raffi",
-		"host": "localhost.com",
-		"dest": "/Users/raffi/Staging/magento/www"
 	}
 }

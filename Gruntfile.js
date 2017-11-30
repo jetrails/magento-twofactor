@@ -15,48 +15,23 @@ module.exports = function ( grunt ) {
 	grunt.task.registerTask ( "default", "preform a full build", [ "release" ]);
 
 	grunt.task.registerTask ( "deploy", "upload src contents to staging environment", function () {
-		// Make sure that staging object is set in package JSON file
-		if ( package.hasOwnProperty ( "staging" ) && package.staging.user.trim () != ""
-		&& package.staging.host.trim () != "" && package.staging.port.trim () != ""
-		&& package.staging.dest.trim () != "" ) {
-			// Initialize the rsync option object
-			var _rsync_options = {
-				args:       [ "-az", "-o", "-g", "-e 'ssh -p " + package.staging.port + "'" ],
-				exclude:    [],
-				recursive:  true
-			}
-			// Save it into grunt config
-			grunt.config.set ( "rsync.options", _rsync_options );
-			// Traverse through jetrails dependencies
-			package.jetrailsDependencies.forEach ( function ( dependency ) {
-				// Extract the dependency name
-				var name = dependency.match (/\/([a-zA-Z0-9-]*)\.git$/) [ 1 ].toLowerCase ();
-				// Initialize the rsync dependencies options
-				var _rsync_dependencies = {
-					src:        "lib/" + name + "/src/*",
-					dest:       package.staging.dest,
-					host:       package.staging.user + "@" + package.staging.host
-				}
-				// Configure the dependency rsync options
-				grunt.config.set ( "rsync." + name + ".options", _rsync_dependencies );
-				// Run the dependencies task
-				grunt.task.run ( "rsync:" + name + "" );
-			});
-			// Initialize the rsync staging options
-			var _rsync_staging = {
-				src:        "src/*",
-				dest:       package.staging.dest,
-				host:       package.staging.user + "@" + package.staging.host
-			}
-			// Save it into grunt config
-			grunt.config.set ( "rsync.staging.options", _rsync_staging );
-			// Run the task and upload the main source files
-			grunt.task.run ( "rsync:staging" );
-		}
-		// Otherwise, report that we cannot deploy
-		else {
-			grunt.log.writeln ( "could not find staging details in package.json" );
-		}
+		// Initialize the rsync option object
+		var _rsync_options = {
+			args:       [ "-az", "-o", "-g" ],
+			exclude:    [],
+			recursive:  true
+		};
+		// Save it into grunt config
+		grunt.config.set ( "rsync.options", _rsync_options );
+		// Initialize the rsync staging options
+		var _rsync_staging = {
+			src:        "src/*",
+			dest:       "staging/"
+		};
+		// Save it into grunt config
+		grunt.config.set ( "rsync.staging.options", _rsync_staging );
+		// Run the task and upload the main source files
+		grunt.task.run ( "rsync:staging" );
 	});
 
 	grunt.task.registerTask ( "stream", "watch src and lib folders, deploy on change", function () {
@@ -99,7 +74,7 @@ module.exports = function ( grunt ) {
 	grunt.task.registerTask ( "init", "initialize file structure", function () {
 		// If no arguments are passed set the default config
 		if ( arguments.length == 0 ) {
-			grunt.config.set ( "mkdir.execute.options.create", [ "src", "dist", "lib" ] );
+			grunt.config.set ( "mkdir.execute.options.create", [ "dist" ] );
 			grunt.task.run ( "mkdir:execute" );
 		}
 		// Check to see if there is one argument
@@ -131,30 +106,9 @@ module.exports = function ( grunt ) {
 		}
 	});
 
-	grunt.task.registerTask ( "resolve", "downloads jetrails dependency extensions", function () {
-		// Run the dependency command
-		grunt.task.run ( "init" );
-		// Loop through all the dependencies
-		package.jetrailsDependencies.forEach ( function ( dependency ) {
-			// Extract the dependency name
-			var name = dependency.match (/\/([a-zA-Z0-9-]*)\.git$/) [ 1 ].toLowerCase ();
-			// Check to see if we already cloned the repository
-			if ( grunt.file.exists ( "lib", name ) ) {
-				// Nuke it
-				grunt.task.run ( "nuke:lib" );
-			}
-			// Set the configuration, and clone it into lib
-			grunt.task.run ( "init:lib/" + name );
-			grunt.config.set ( "gitclone." + name + ".options.repository", dependency );
-			grunt.config.set ( "gitclone." + name + ".options.directory", "lib/" + name );
-			grunt.task.run ( "gitclone:" + name );
-		});
-	});
-
 	grunt.task.registerTask ( "release", "prepares file structure for github release", function () {
 		// Run the dependency tasks
 		grunt.task.run ( "init" );
-		grunt.task.run ( "resolve" );
 		// Change version numbers
 		grunt.task.run ( "version" );
 		// Clear dist folder
@@ -170,17 +124,6 @@ module.exports = function ( grunt ) {
 				src: 			[ "package.xml"]
 			}
 		];
-		// Traverse through jetrails dependencies
-		package.jetrailsDependencies.forEach ( function ( dependency ) {
-			// Extract the dependency name
-			var name = dependency.match (/\/([a-zA-Z0-9-]*)\.git$/) [ 1 ].toLowerCase ();
-			// Append to the files array
-			files.push ({
-				cwd:            "lib/" + name + "/src",
-				expand:         true,
-				src:            ["**"]
-			});
-		});
 		// Define the output file
 		var company = package.company.replace ( "®", "" );
 		var name = package.name.replace ( "-", "_" );
