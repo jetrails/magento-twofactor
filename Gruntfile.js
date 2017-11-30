@@ -135,8 +135,6 @@ module.exports = function ( grunt ) {
 		grunt.config.set ( "compress.module.files", files );
 		// Compress the module
 		grunt.task.run ( "compress:module" );
-		// Nuke the lib folder
-		grunt.task.run ( "nuke:lib" );
 	});
 
 };

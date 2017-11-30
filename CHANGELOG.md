@@ -61,4 +61,5 @@
 - 	Fixed "PHP syntax error: Can't use method return value in write context"
 
 ## Version 1.1.0
--	
+-	Added docker to repo
+-	Cleaned Grunt to necessary commands only
