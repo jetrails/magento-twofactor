@@ -5,7 +5,7 @@
 	 * config section of the admin area.  The reset button simply resets the currently logged in
 	 * user's state.  This class defines the HTML for the widget element, and it also un-binds it
 	 * from any store view.
-	 * @version         1.0.9
+	 * @version         1.0.10
 	 * @package         JetRails® TwoFactor
 	 * @category        Button
 	 * @author          Rafael Grigorian - JetRails®

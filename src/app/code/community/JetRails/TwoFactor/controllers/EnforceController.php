@@ -2,7 +2,7 @@
 
 	/**
 	 * EnforceController.php - 
-	 * @version         1.0.9
+	 * @version         1.0.10
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®

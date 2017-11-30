@@ -4,7 +4,7 @@
 	 * User.php - This block is meant to be used inline with the email template file.  It simply
 	 * has a method that is called to fill the plain text body portion of the HTML email.  This
 	 * block describes the message that the admin who's account is currently being used will see.
-	 * @version         1.0.9
+	 * @version         1.0.10
 	 * @package         JetRails® TwoFactor
 	 * @category        Email
 	 * @author          Rafael Grigorian - JetRails®
