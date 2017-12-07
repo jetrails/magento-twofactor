@@ -24,6 +24,21 @@
 		const STATE_VERIFY = 2;
 		const STATE_BLOCKED = 3;
 
+
+
+		/**
+		 *
+		 *
+		 *
+		 *
+		 *
+		 * 
+		 */
+		const ENFORCED_NO = 0;
+		const ENFORCED_YES = 1;
+
+
+
 		/**
 		 * These constants define the admin users preference whether to use 2FA or not.  Note that
 		 * if the role that the user is in is forced to use 2FA, then the admins preference does not
@@ -49,10 +64,10 @@
 		protected function _construct () {
 			// Initialize using twofactor authentication resource model
 			$this->_init ("twofactor/auth");
-			// Get the logged in user's id and set it within this model (ready to be saved / loaded)
-			$uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();
-			$this->load ( $uid );
-			$this->setId ( $uid );
+			// // Get the logged in user's id and set it within this model (ready to be saved / loaded)
+			// $uid = Mage::getSingleton ("admin/session")->getUser ()->getUserId ();
+			// $this->load ( $uid );
+			// $this->setId ( $uid );
 		}
 
 		/**
@@ -84,6 +99,42 @@
 			// Save changed data for the admin user
 			$this->save ();
 		}
+
+
+		/**
+		 *
+		 *
+		 *
+		 *
+		 *
+		 *
+		 *
+		 *
+		 *
+		 *
+		 *
+		 *
+		 * 
+		 */
+		public function getState () {
+			// If the state is not set, return scan stage
+			if ( parent::getState () === null ) {
+				return self::STATE_SCAN;
+			}
+			// Otherwise, return state as integer
+			return intval ( parent::getState () );
+		}
+
+		public function getEnforced () {
+			// If the enforced flag is not set, return that user is not enforced
+			if ( parent::getEnforced () === null ) {
+				return self::ENFORCED_NO;
+			}
+			// Otherwise, return state as integer
+			return intval ( parent::getEnforced () );
+		}
+
+
 
 		/**
 		 * This method gets the stored TOTP secret from the database and decrypts it before

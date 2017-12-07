@@ -40,7 +40,10 @@
 		 */
 		public function emailAllAdministrators ( $message ) {
 			// Get the authentication model and admin role model
-			$auth = Mage::getSingleton ("twofactor/auth");
+			$admin = Mage::getSingleton ("admin/session")->getUser ();
+			$auth = Mage::getModel ("twofactor/auth")
+				->load ( $admin->getUserId () )
+				->setId ( $admin->getUserId () );
 			$role = Mage::getModel ("admin/role");
 			// Get the role ID for administrator role
 			$roleId = $role

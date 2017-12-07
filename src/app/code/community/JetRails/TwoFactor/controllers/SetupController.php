@@ -33,7 +33,10 @@
 			// Check to see if a form was submitted
 			if ( $this->getRequest ()->getPost () ) {
 				// Get authentication model
-				$auth = Mage::getSingleton ("twofactor/auth");
+				$admin = Mage::getSingleton ("admin/session")->getUser ();
+				$auth = Mage::getModel ("twofactor/auth")
+					->load ( $admin->getUserId () )
+					->setId ( $admin->getUserId () );
 				// Check to see if the supplied pin is correct
 				if ( $auth->verify ( $this->getRequest ()->getPost ("pin") ) ) {
 					// Change state from setup to normal
@@ -75,7 +78,10 @@
 			if ( $this->getRequest ()->getPost () ) {
 				// Allow user to the backend
 				Mage::getSingleton ("admin/session")->setTwoFactorAllow ( true );
-				$auth = Mage::getSingleton ("twofactor/auth");
+				$admin = Mage::getSingleton ("admin/session")->getUser ();
+				$auth = Mage::getModel ("twofactor/auth")
+					->load ( $admin->getUserId () )
+					->setId ( $admin->getUserId () );
 				$auth->setState ( $auth::STATE_VERIFY );
 				$auth->save ();
 				// Redirect to admin saved startup page
@@ -87,55 +93,6 @@
 			// Load the layout and render setup page
 			$this->loadLayout ();
 			$this->renderLayout ();
-		}
-
-		/**
-		 * This action is only accessible when a user is fully authenticated.  The trigger for this
-		 * action can be found in the system config section of the admin area.  This action resets
-		 * the state of the authentication and logs the user out.  Once the user logs back in, they
-		 * will be prompted to setup authentication again.
-		 * @return      void
-		 */
-		public function resetAction () {
-			// Reset everything and save it
-			$auth = Mage::getSingleton ("twofactor/auth");
-			$auth->setBackupCodes ( array () );
-			$auth->setAttempts ( 0 );
-			$auth->setSecret ("");
-			$auth->setState ( $auth::STATE_SCAN );
-			$auth->save ();
-			// Log user out and try to redirect to startup page
-			$session = Mage::getSingleton ("admin/session");
-			$url = $session->getUser ()->getStartupPageUrl ();
-			$admin = Mage::getSingleton ("admin/session");
-			$admin->unsetAll ();
-			$admin->getCookie ()->delete ( $admin->getSessionName () );
-			return $this->_redirect ( $url );
-		}
-
-		public function enableAction () {
-			// Set the user preference to enable
-			$auth = Mage::getSingleton ("twofactor/auth");
-			$auth->setPreference ( $auth::PREFERENCE_ENABLE );
-			$auth->save ();
-			// Log user out and try to redirect to startup page
-			$session = Mage::getSingleton ("admin/session");
-			$url = $session->getUser ()->getStartupPageUrl ();
-			$admin = Mage::getSingleton ("admin/session");
-			$admin->unsetAll ();
-			$admin->getCookie ()->delete ( $admin->getSessionName () );
-			return $this->_redirect ( $url );
-		}
-
-		public function disableAction () {
-			// Set the user preference to enable
-			$auth = Mage::getSingleton ("twofactor/auth");
-			$auth->setPreference ( $auth::PREFERENCE_DISABLE );
-			$auth->setBackupCodes ( array () );
-			$auth->setAttempts ( 0 );
-			$auth->setSecret ("");
-			$auth->setState ( $auth::STATE_SCAN );
-			$auth->save ();
 		}
 
 	}

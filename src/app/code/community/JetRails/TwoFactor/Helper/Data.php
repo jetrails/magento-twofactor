@@ -20,24 +20,11 @@
 		 * @return      boolean                                 Should the user be authenticated
 		 */
 		public function isAllowed () {
-			// Allow users who's role includes twofactor authentication access to this controller
-			$session = Mage::getSingleton ("admin/session");
-			$resourceLookup = "admin/system/config/jetrails_twofactor";
-			// Check to see if the resource exists
-			if ( $session->getData ("acl")->has ( $resourceLookup ) ) {
-				// If it exists then check to see if user is allowed based on ACL
-				$resourceId = $session->getData ("acl")->get ( $resourceLookup )->getResourceId ();
-				return $session->isAllowed ( $resourceId );
-			}
-			else {
-				// Log user out and try to redirect to startup page
-				$url = $session->getUser ()->getStartupPageUrl ();
-				$admin = Mage::getSingleton ("admin/session");
-				$admin->unsetAll ();
-				$admin->getCookie ()->delete ( $admin->getSessionName () );
-				Mage::app ()->getResponse ()->setRedirect ( $url );
-				return false;
-			}
+			$admin = Mage::getSingleton ("admin/session")->getUser ();
+			$auth = Mage::getModel ("twofactor/auth");
+			$auth->load ( $admin->getUserId () );
+			$auth->setId ( $admin->getUserId () );
+			return $auth->getEnforced () === $auth::ENFORCED_YES;
 		}
 
 	}

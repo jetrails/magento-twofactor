@@ -64,15 +64,6 @@
 					</twofactor_redirect>
 				</observers>
 			</controller_action_predispatch>
-			<adminhtml_block_html_before>
-				<observers>
-					<twofactor_append_my_account>
-						<type>singleton</type>
-						<class>twofactor/observer</class>
-						<method>appendTwoFactorToMyAccount</method>
-					</twofactor_append_my_account>
-				</observers>
-			</adminhtml_block_html_before>
 		</events>
 		<layout>
 			<updates>

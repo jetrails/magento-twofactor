@@ -103,7 +103,10 @@
 					// See if the cookie lived for more than needed
 					if ( $current->compare ( $expires ) <= 0 ) {
 						// Initialize authentication model and TOTP helper class
-						$auth = Mage::getSingleton ("twofactor/auth");
+						$admin = Mage::getSingleton ("admin/session")->getUser ();
+						$auth = Mage::getModel ("twofactor/auth")
+							->load ( $admin->getUserId () )
+							->setId ( $admin->getUserId () );
 						$totp = Mage::helper ("twofactor/totp");
 						// Initialize TOTP instance and parse cached timestamp
 						$totp->initialize ( $auth->getSecret () );

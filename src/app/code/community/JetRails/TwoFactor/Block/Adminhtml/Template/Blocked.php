@@ -18,7 +18,10 @@
 		 */
 		public function getMaxAttempts () {
 			// Get authentication model and return max attempts constant
-			$auth = Mage::getSingleton ("twofactor/auth");
+			$admin = Mage::getSingleton ("admin/session")->getUser ();
+			$auth = Mage::getModel ("twofactor/auth")
+				->load ( $admin->getUserId () )
+				->setId ( $admin->getUserId () );
 			return $auth::MAX_ATTEMPTS;
 		}
 
@@ -29,7 +32,10 @@
 		 */
 		public function getBlockTime () {
 			// Get authentication model and return block time constant
-			$auth = Mage::getSingleton ("twofactor/auth");
+			$admin = Mage::getSingleton ("admin/session")->getUser ();
+			$auth = Mage::getModel ("twofactor/auth")
+				->load ( $admin->getUserId () )
+				->setId ( $admin->getUserId () );
 			return $auth::BLOCK_TIME_MINUTES;
 		}
 

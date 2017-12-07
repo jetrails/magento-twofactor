@@ -20,8 +20,10 @@
 		 */
 		public function getMessage () {
 			// Get the authentication model and admin user instance
-			$auth = Mage::getSingleton ("twofactor/auth");
-			$user = Mage::getSingleton ("admin/session")->getUser ();
+			$admin = Mage::getSingleton ("admin/session")->getUser ();
+			$auth = Mage::getModel ("twofactor/auth")
+				->load ( $admin->getUserId () )
+				->setId ( $admin->getUserId () );
 			// Return the formated message that will appear in the email body
 			return sprintf (
 				$this->__(
@@ -32,8 +34,8 @@
 					"tified about this block."
 				),
 				$auth::MAX_ATTEMPTS,
-				$user->getEmail (),
-				$user->getUserId (),
+				$admin->getEmail (),
+				$admin->getUserId (),
 				$auth->getLastAddress (),
 				$auth->getLastTimestamp (),
 				$auth::BLOCK_TIME_MINUTES

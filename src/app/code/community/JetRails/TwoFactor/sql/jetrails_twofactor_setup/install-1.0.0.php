@@ -21,11 +21,11 @@
 		"nullable" => false,
 		"default" => 0,
 	), "TOTP state" )
-	->addColumn ( "preference", Varien_Db_Ddl_Table::TYPE_SMALLINT, 1, array (
+	->addColumn ( "enforced", Varien_Db_Ddl_Table::TYPE_SMALLINT, 1, array (
 		"unsigned" => true,
 		"nullable" => false,
 		"default" => 0,
-	), "User 2FA Preference" )
+	), "2FA is Enforced" )
 	->addColumn ( "attempts", Varien_Db_Ddl_Table::TYPE_SMALLINT, 2, array (
 		"nullable" => false,
 		"unsigned" => true,

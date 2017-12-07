@@ -4,7 +4,7 @@
 	"description": "Two-factor authorization for Magento admin accounts",
 	"author": "Rafael Grigorian",
 	"company": "JetRails®",
-	"copyright": "JetRails®, all rights reserved",
+	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/jetrails/twofactor.git"

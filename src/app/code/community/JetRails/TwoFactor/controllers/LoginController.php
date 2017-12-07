@@ -32,13 +32,15 @@
 		 */
 		protected function _notifyAccountBlock () {
 			// Get the authentication and notify models, as well as the logged in admin user
-			$auth = Mage::getSingleton ("twofactor/auth");
 			$notify = Mage::getSingleton ("twofactor/notify");
-			$user = Mage::getSingleton ("admin/session")->getUser ();
+			$admin = Mage::getSingleton ("admin/session")->getUser ();
+			$auth = Mage::getModel ("twofactor/auth")
+				->load ( $admin->getUserId () )
+				->setId ( $admin->getUserId () );
 			// Append block as entry to the log
 			$notify->logAccountBlock (
-				$user->getEmail (),
-				$user->getId (),
+				$admin->getEmail (),
+				$admin->getId (),
 				$auth->getLastAddress ()
 			);
 			// Initialize admin and user messages
@@ -95,7 +97,10 @@
 		 */
 		public function verifyAction () {
 			// Get authentication model and register an attempt
-			$auth = Mage::getSingleton ("twofactor/auth");
+			$admin = Mage::getSingleton ("admin/session")->getUser ();
+			$auth = Mage::getModel ("twofactor/auth")
+				->load ( $admin->getUserId () )
+				->setId ( $admin->getUserId () );
 			// Check to see if a form was submitted
 			if ( $this->getRequest ()->getPost () ) {
 				// Register an attempt

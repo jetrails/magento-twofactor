@@ -20,7 +20,10 @@
 		 */
 		public function getMessage () {
 			// Get the authentication model
-			$auth = Mage::getSingleton ("twofactor/auth");
+			$admin = Mage::getSingleton ("admin/session")->getUser ();
+			$auth = Mage::getModel ("twofactor/auth")
+				->load ( $admin->getUserId () )
+				->setId ( $admin->getUserId () );
 			// Return the formated message that will appear in the email body
 			return sprintf (
 				$this->__(

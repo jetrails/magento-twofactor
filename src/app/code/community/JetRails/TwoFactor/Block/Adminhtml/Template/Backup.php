@@ -18,7 +18,10 @@
 		 */
 		public function getBackupCodes () {
 			// Get authentication model and return backup codes
-			$auth = Mage::getSingleton ("twofactor/auth");
+			$admin = Mage::getSingleton ("admin/session")->getUser ();
+			$auth = Mage::getModel ("twofactor/auth")
+				->load ( $admin->getUserId () )
+				->setId ( $admin->getUserId () );
 			return $auth->getBackupCodes ();
 		}
 

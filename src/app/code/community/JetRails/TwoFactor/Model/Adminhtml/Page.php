@@ -43,7 +43,10 @@
 		 */
 		public function getPageFromState ( $state ) {
 			// Get the authorization model
-			$auth = Mage::getSingleton ("twofactor/auth");
+			$admin = Mage::getSingleton ("admin/session")->getUser ();
+			$auth = Mage::getModel ("twofactor/auth")
+				->load ( $admin->getUserId () )
+				->setId ( $admin->getUserId () );
 			// Return a page route based on the passed state
 			switch ( $state ) {
 				case $auth::STATE_BACKUP:
