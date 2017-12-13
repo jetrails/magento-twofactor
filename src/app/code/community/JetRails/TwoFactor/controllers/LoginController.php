@@ -3,7 +3,7 @@
 	/**
 	 * LoginController.php - This controller contains all actions that relate to authenticating
 	 * their two-factor authentication account.  Actions that render the verification page as well
-	 * as the blocked page that a user will see on failed login are all encapsulated within this
+	 * as the banned page that a user will see on failed login are all encapsulated within this
 	 * controller.
 	 * @version         1.0.10
 	 * @package         JetRails® TwoFactor
@@ -21,42 +21,36 @@
 		 */
 		protected function _isAllowed () {
 			// Is module config in admin user's ACL
-			return Mage::helper ("twofactor")->isAllowed ();
+			return Mage::helper ("twofactor/data")->isAllowed ();
 		}
 
 		/**
 		 * This method is a helper function that simply logs when a user is banned.  It also
 		 * constructs the emails for the admin user that is logged in and all admin users in the
 		 * 'Administrator' role.  It then also sends out said emails.
+		 *
+		 *
+		 *
+		 *
+		 *
+		 * 
 		 * @return      void
 		 */
-		protected function _notifyAccountBlock () {
+		protected function _notifyAccountBan () {
 			// Get the authentication and notify models, as well as the logged in admin user
-			$notify = Mage::getSingleton ("twofactor/notify");
 			$admin = Mage::getSingleton ("admin/session")->getUser ();
-			$auth = Mage::getModel ("twofactor/auth")
-				->load ( $admin->getUserId () )
-				->setId ( $admin->getUserId () );
-			// Append block as entry to the log
-			$notify->logAccountBlock (
-				$admin->getEmail (),
-				$admin->getId (),
-				$auth->getLastAddress ()
+			$notify = Mage::getSingleton ("twofactor/notify");
+			$auth = Mage::getModel ("twofactor/auth");
+			$auth->load ( $admin->getUserId () );
+			$auth->setId ( $admin->getUserId () );
+			// Log this automatic ban
+			$notify->log (
+				$notify::LOG_AUTOMATIC_BAN,
+				array ( $admin->getUsername (), $auth->getLastAddress () )
 			);
-			// Initialize admin and user messages
-			$adminMessage = $this
-				->getLayout ()
-				->createBlock ("twofactor/adminhtml_email_admin")
-				->setTemplate ("twofactor/email.phtml")
-				->toHtml ();
-			$userMessage = $this
-				->getLayout ()
-				->createBlock ("twofactor/adminhtml_email_user")
-				->setTemplate ("twofactor/email.phtml")
-				->toHtml ();
 			// Send the emails to the administrators and the user
-			$notify->emailAllAdministrators ( $adminMessage );
-			$notify->emailUser ( $userMessage );
+			$notify->emailAllAdministrators ();
+			$notify->emailUser ();
 		}
 
 		/**
@@ -78,10 +72,10 @@
 
 		/**
 		 * This action simply renders out the page structure that is defined in twofactor.xml under
-		 * the jetrails_twofactor_login_blocked handle.
+		 * the jetrails_twofactor_login_banned handle.
 		 * @return      void
 		 */
-		public function blockedAction () {
+		public function bannedAction () {
 			// Load layout and render it
 			$this->loadLayout ();
 			$this->renderLayout ();
@@ -97,10 +91,12 @@
 		 */
 		public function verifyAction () {
 			// Get authentication model and register an attempt
+			$data = Mage::helper ("twofactor/data");
 			$admin = Mage::getSingleton ("admin/session")->getUser ();
-			$auth = Mage::getModel ("twofactor/auth")
-				->load ( $admin->getUserId () )
-				->setId ( $admin->getUserId () );
+			$state = Mage::getModel ("twofactor/state");
+			$auth = Mage::getModel ("twofactor/auth");
+			$auth->load ( $admin->getUserId () );
+			$auth->setId ( $admin->getUserId () );
 			// Check to see if a form was submitted
 			if ( $this->getRequest ()->getPost () ) {
 				// Register an attempt
@@ -121,7 +117,7 @@
 						}
 						// Reset the number of attempts, and allow access to admin area
 						$auth->setAttempts ( 0 );
-						$auth->setState ( $auth::STATE_VERIFY );
+						$auth->setState ( $state::VERIFY );
 						$auth->save ();
 						Mage::getSingleton ("admin/session")->setTwoFactorAllow ( true );
 						// Redirect page to the startup page for admin area
@@ -159,11 +155,11 @@
 					}
 				}
 				// Only attach an error if we aren't on our last attempt
-				if ( $auth->getAttempts () < $auth::MAX_ATTEMPTS ) {
+				if ( $auth->getAttempts () < $data->getData () ["ban_attempts"] ) {
 					// Attach fail message to session
 					$pin = $this->getRequest ()->getPost ("pin");
 					$type = !empty ( $pin ) ? "pin" : "code";
-					$attempts = $auth::MAX_ATTEMPTS - $auth->getAttempts ();
+					$attempts = $data->getData () ["ban_attempts"] - $auth->getAttempts ();
 					$value = intval ( $this->getRequest ()->getPost ( $type ) );
 					$value = str_pad ( $value, $type === "pin" ? 6 : 8, "0", STR_PAD_LEFT );
 					$message = $this->__("invalid authentication attempt, %d attempt(s) left");
@@ -176,10 +172,10 @@
 					Mage::getSingleton ("core/session")->addError ( json_encode ( $message ) );
 				}
 			}
-			// Check to see if current admin user if blocked
-			if ( $auth->getState () == $auth::STATE_BLOCKED ) {
-				// Notify about account block and redirect (observer will block)
-				$this->_notifyAccountBlock ();
+			// Check to see if current admin user if banned
+			if ( $auth->getState () == $state::BANNED ) {
+				// Notify about account ban and redirect (observer will ban)
+				$this->_notifyAccountBan ();
 				return $this->_redirectToStartUpPage ( false );
 			}
 			// Load the layout and render setup page

@@ -21,6 +21,11 @@
 		'nullable' => false,
 		'default' => 0,
 	), "TOTP state" )
+	->addColumn ( "status", Varien_Db_Ddl_Table::TYPE_SMALLINT, 1, array (
+		'nullable' => false,
+		'unsigned' => true,
+		'default' => 0,
+	), "2FA Status" )
 	->addColumn ( "attempts", Varien_Db_Ddl_Table::TYPE_SMALLINT, 2, array (
 		'nullable' => false,
 		'unsigned' => true,

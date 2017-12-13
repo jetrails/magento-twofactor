@@ -3,7 +3,7 @@
 	/**
 	 * Observer.php - This class stores the observer method that is used and configured within the
 	 * config.xml file.  This observer fires before any adminhtml action gets executed.  This way if
-	 * a user is not authenticated, we can block access to those actions and redirect to the
+	 * a user is not authenticated, we can ban access to those actions and redirect to the
 	 * verification page.
 	 * @version         1.0.10
 	 * @package         JetRails® TwoFactor
@@ -59,14 +59,15 @@
 				$admin = Mage::getSingleton ("admin/session");
 				$page = Mage::getSingleton ("twofactor/page");
 				$cookie = Mage::helper ("twofactor/cookie");
-				$auth = Mage::getModel ("twofactor/auth")
-					->load ( $admin->getUser ()->getUserId () )
-					->setId ( $admin->getUser ()->getUserId () );
+				$state = Mage::getModel ("twofactor/state");
+				$auth = Mage::getModel ("twofactor/auth");
+				$auth->load ( $admin->getUser ()->getUserId () );
+				$auth->setId ( $admin->getUser ()->getUserId () );
 				// Get the TOTP state and admin user id
-				$state = $auth->getState ();
+				$userState = $auth->getState ();
 				$uid = $auth->getId ();
 				// If in scan state and we didn't refresh secret for session, then refresh it
-				if ( $auth->getState () == $auth::STATE_SCAN && !$admin->getTwoFactorSetup () ) {
+				if ( $userState == $state::SCAN && !$admin->getTwoFactorSetup () ) {
 					// Generate new secret for session
 					$totp = Mage::helper ("twofactor/totp");
 					$totp->initialize ();
@@ -75,25 +76,23 @@
 					$auth->save ();
 					$admin->setTwoFactorSetup ( true );
 				}
-				// Set a boolean for routes that are allowed when authenticated
-				$allowedOnAuthed = !in_array ( $route, [ $page::PAGE_SETUP_RESET, $page::PAGE_SETUP_ENABLE, $page::PAGE_SETUP_DISABLE ] ) && !in_array ( $controller, [ "configure", "manage" ] );
 				// Session is not authenticated, or is authenticated but not in verify state
-				if ( $admin->getTwoFactorAllow () !== true || $state != $auth::STATE_VERIFY ) {
+				if ( $admin->getTwoFactorAllow () !== true || $userState != $state::VERIFY ) {
 					// Allow state based routes to allow for state based pages
-					if ( $page->isRouteAllowed ( $route, $state ) ) return;
+					if ( $page->isRouteAllowed ( $route, $userState ) ) return;
 					// If the state is not verify, then unset session flag
-					if ( $state != $auth::STATE_VERIFY ) $admin->unsTwoFactorAllow ();
+					if ( $userState != $state::VERIFY ) $admin->unsTwoFactorAllow ();
 					// If there is a cookie and it is valid, then allow access to admin area
-					if ( $cookie->authenticate ( $uid ) && $state != $auth::STATE_BLOCKED ) {
+					if ( $cookie->authenticate ( $uid ) && $userState != $state::BANNED ) {
 						// Allow access to admin area and allow dispatch to continue
 						return $admin->setTwoFactorAllow ( true );
 					}
 					// Get appropriate page based on state and redirect
-					$redirectRoute = $page->getPageFromState ( $state );
+					$redirectRoute = $page->getPageFromState ( $userState );
 					$this->_redirectByRoute ( $observer, $redirectRoute );
 				}
-				// Session is authenticated, state verified, allow reset and admin config controller
-				else if ( $frontname === "twofactor" && $allowedOnAuthed ) {
+				// Session is authenticated, state verified, don't allow login and setup controllers
+				else if ( $frontname === "twofactor" && in_array ( $controller, [ "setup", "login" ] ) ) {
 					// Redirect user to their saved startup page
 					$redirectRoute = $admin->getUser ()->getStartupPageUrl ();
 					$this->_redirectByRoute ( $observer, $redirectRoute );

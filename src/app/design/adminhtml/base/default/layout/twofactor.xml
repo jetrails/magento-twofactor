@@ -16,11 +16,11 @@
 				template="twofactor/logout.phtml" />
 			<block
 				name="content"
-				type="twofactor/adminhtml_template_verify"
+				type="twofactor/template_verify"
 				template="twofactor/verify.phtml" />
 		</block>
 	</jetrails_twofactor_login_verify>
-	<jetrails_twofactor_login_blocked>
+	<jetrails_twofactor_login_banned>
 		<block
 			name="root"
 			type="core/template"
@@ -31,10 +31,10 @@
 				template="twofactor/logout.phtml" />
 			<block
 				name="content"
-				type="twofactor/adminhtml_template_blocked"
-				template="twofactor/blocked.phtml" />
+				type="twofactor/template_banned"
+				template="twofactor/banned.phtml" />
 		</block>
-	</jetrails_twofactor_login_blocked>
+	</jetrails_twofactor_login_banned>
 	<jetrails_twofactor_setup_scan>
 		<block
 			name="root"
@@ -50,7 +50,7 @@
 				template="twofactor/logout.phtml" />
 			<block
 				name="content"
-				type="twofactor/adminhtml_template_scan"
+				type="twofactor/template_scan"
 				template="twofactor/scan.phtml" />
 		</block>
 	</jetrails_twofactor_setup_scan>
@@ -65,7 +65,7 @@
 				template="twofactor/logout.phtml" />
 			<block
 				name="content"
-				type="twofactor/adminhtml_template_backup"
+				type="twofactor/template_backup"
 				template="twofactor/backup.phtml" />
 		</block>
 	</jetrails_twofactor_setup_backup>

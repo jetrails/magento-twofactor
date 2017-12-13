@@ -11,7 +11,7 @@
 			$auth->setId ( $row->getUserId () );
 
 			$timestamp = $auth->getLastTimestamp ();
-			return $timestamp === null ? "-" : $timestamp;
+			return $timestamp === null ? "-" : Mage::getModel ("core/date")->date ( "m/d/Y h:i:s A", strtotime ( $timestamp ) );
 		}
 
 	}

@@ -1,3 +1,15 @@
+<?php
+
+    /**
+     * verify.phtml - 
+     * @version         1.0.10
+     * @package         JetRails® TwoFactor
+     * @category        Template
+     * @author          Rafael Grigorian - JetRails®
+     * @copyright       JetRails®, all rights reserved
+     */
+
+?>
 <div class="twofactor-badge" >2FA</div>
 <div class="twofactor-container row center" >
 	<div class="card col s12" >
@@ -70,7 +82,10 @@
 							id="remember"
 						/>
 						<label for="remember" >
-							<?php echo $this->__("Remember for 7 days") ?>
+							<?php echo sprintf (
+								$this->__("Remember for %d days"),
+								$this->getRememberMe () )
+							?>
 						</label>
 					</p>
 				</div>

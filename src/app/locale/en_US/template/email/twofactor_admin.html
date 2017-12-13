@@ -19,14 +19,14 @@
 					<center>
 						<img
 							style="width: 200px;"
-							src="<?php echo $this->getSkinUrl ('images/twofactor/logo.png') ?>"
+							src="{{skin url='images/twofactor/logo.png' _area='adminhtml'}}"
 						/>
 					</center>
 				</td>
 			</tr>
 			<tr>
 				<td style="padding: 50px;" >
-					<?php echo $this->getMessage () ?>
+					{{var ban_attempts}} unsuccessful two-factor authentication attempts have been made for '{{var username}}' on {{var base_url}}. Last detected authentication attempt was detected from '{{var last_address}}' at '{{var last_timestamp}} UTC'. A {{var ban_time}} minute ban has been set to the account. The account in question and all other admins in the 'Administrator' role have been notified about this ban.
 				</td>
 			</tr>
 		</table>

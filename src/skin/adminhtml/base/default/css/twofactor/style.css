@@ -1,4 +1,4 @@
-/* JetRails TwoFactor Authentication - Element Classes */
+/* JetRails Two-Factor Authentication - Element Classes */
 
 body {
 	background:                         #EDECEC;
@@ -13,8 +13,8 @@ body {
 	position:                           absolute;
 	top:                                30px;
 	right:                              30px;
-	background: 						#58595B !important;
-	font-weight: 						600;
+	background:                         #58595B !important;
+	font-weight:                        600;
 }
 
 .twofactor-container {
@@ -25,44 +25,44 @@ body {
 }
 
 .twofactor-badge {
-    position:							absolute;
-    font-size:							1em;
-    height:								1em;
-    width:								50px;
-    line-height:						1em;
-    padding:							10px;
-    box-sizing:							content-box;
-    text-align:							center;
-    font-weight:						600;
-    transform:							rotate(-90deg);
-    left:								50%;
-    margin-left:						-284px;
-    margin-top:							75px;
-    color:								#FFF;
-    background:							#58595B;
-    box-shadow:							0 2px 2px 0 rgba( 0, 0, 0, 0.14 ),
-    									0 1px 5px 0 rgba( 0, 0, 0, 0.12 ),
-    									0 3px 1px -2px rgba( 0, 0, 0, 0.2 );
+	position:                           absolute;
+	font-size:                          1em;
+	height:                             1em;
+	width:                              50px;
+	line-height:                        1em;
+	padding:                            10px;
+	box-sizing:                         content-box;
+	text-align:                         center;
+	font-weight:                        600;
+	transform:                          rotate(-90deg);
+	left:                               50%;
+	margin-left:                        -284px;
+	margin-top:                         75px;
+	color:                              #FFF;
+	background:                         #58595B;
+	box-shadow:                         0 2px 2px 0 rgba( 0, 0, 0, 0.14 ),
+										0 1px 5px 0 rgba( 0, 0, 0, 0.12 ),
+										0 3px 1px -2px rgba( 0, 0, 0, 0.2 );
 }
 
 /* Change MaterializeCSS colors */
 
 html {
-	font-family: 						"Open Sans", Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: 			antialiased;
-	-moz-osx-font-smoothing: 			grayscale;
-	line-height: 						1.75em;
-	font-weight: 						400;
+	font-family:                        "Open Sans", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing:             antialiased;
+	-moz-osx-font-smoothing:            grayscale;
+	line-height:                        1.75em;
+	font-weight:                        400;
 }
 
 a {
 	color:                              #58595B;
-	font-weight: 						600;
+	font-weight:                        600;
 }
 
 .light-blue.darken-1 {
 	background:                         #89BB40 !important;
-	font-weight: 						600;
+	font-weight:                        600;
 }
 
 .form-tab {
@@ -83,7 +83,7 @@ a {
 
 .tabs .tab a {
 	color:                              #58595B;
-	font-weight: 						600;
+	font-weight:                        600;
 }
 
 .tabs .tab.disabled a,
@@ -92,7 +92,7 @@ a {
 }
 
 .tabs-fixed-width {
-	width:          					370px;
+	width:                              370px;
 }
 
 .input-field textarea:focus + label {

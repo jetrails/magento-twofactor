@@ -2,7 +2,7 @@
 
 	/**
 	 * Cookie.php - This helper class contains functions that deal with cookie creation, deletion,
-	 * and authentication.  This cookie class is used to aid in the "remember for 7 days"
+	 * and authentication.  This cookie class is used to aid in the "remember for x days"
 	 * functionality.
 	 * @version         1.0.10
 	 * @package         JetRails® TwoFactor
@@ -48,24 +48,34 @@
 		/**
 		 * This function creates a cookie based on the passed parameter.  These parameters are
 		 * encoded to a JSON string, then encrypted with the store's encryption key.  The expiration
-		 * for the cookie is set to 7 days.  We store the IP address, current time, and pin for
+		 * for the cookie is set to x days.  We store the IP address, current time, and pin for
 		 * current time.  These values are used to validate that we made this cookie and cannot be
 		 * forged.  We also check that the IP address is the same and the expiration time is valid
 		 * so the cookie cannot be tampered with.
+		 *
+		 *
+		 *
+		 *
+		 *
+		 *
+		 * 
 		 * @return      void
 		 */
 		public function create ( $time, $pin, $address ) {
+
+			$data = Mage::helper ("twofactor/data");
+
 			// Create the content for the cookie
 			$value = Mage::helper ("core")->encrypt ( json_encode ( array (
-				"timestamp"     =>      $time,
-				"pin"           =>      $pin,
-				"address"       =>      $address
+				"timestamp" => $time,
+				"pin" => $pin,
+				"address" => $address
 			)));
 			// Create cookie hash for identity
 			Mage::getSingleton ("core/cookie")->set (
 				$this->_createUserHash (),
 				$value,
-				60 * 60 * 24 * 7
+				60 * 60 * 24 * intval ( $data->getData () ["remember_me"] )
 			);
 		}
 
@@ -82,13 +92,14 @@
 		/**
 		 * This function is used to authenticate the login process for the user.  We see if a cookie
 		 * is saved to determine whether or now to read it.  If one exists, then we decrypt it and
-		 * parse it.  If the IP address is not the same, the expiration time exceeds 7 days, or if
+		 * parse it.  If the IP address is not the same, the expiration time exceeds x days, or if
 		 * the time/pin combo does not match with the user's secret, then the cookie is deleted and
 		 * the user is forced to user the 2FA page.  Otherwise the 2FA process is handled for them.
 		 * @return      bool                                        Does a valid live cookie exist?
 		 */
 		public function authenticate ( $uid ) {
-			// Load the cookie
+			// Load the cookie and load helper class
+			$data = Mage::helper ("twofactor/data");
 			$cookie = $this->_load ();
 			// Check to see if that the cookie exists
 			if ( $cookie !== false ) {
@@ -96,17 +107,17 @@
 				$cached = json_decode ( Mage::helper ("core")->decrypt ( $cookie ) );
 				// Check to see that the IP address still matches
 				if ( Mage::helper ("core/http")->getRemoteAddr () === $cached->address ) {
-					// Calculate the timestamp for 7 days after creation
+					// Calculate the timestamp for x days after creation
 					$current = new Zend_Date ();
 					$expires = new Zend_Date ( $cached->timestamp );
-					$expires->addDay ( 7 );
+					$expires->addDay ( intval ( $data->getData () ["remember_me"] ) );
 					// See if the cookie lived for more than needed
 					if ( $current->compare ( $expires ) <= 0 ) {
 						// Initialize authentication model and TOTP helper class
 						$admin = Mage::getSingleton ("admin/session")->getUser ();
-						$auth = Mage::getModel ("twofactor/auth")
-							->load ( $admin->getUserId () )
-							->setId ( $admin->getUserId () );
+						$auth = Mage::getModel ("twofactor/auth");
+						$auth->load ( $admin->getUserId () );
+						$auth->setId ( $admin->getUserId () );
 						$totp = Mage::helper ("twofactor/totp");
 						// Initialize TOTP instance and parse cached timestamp
 						$totp->initialize ( $auth->getSecret () );

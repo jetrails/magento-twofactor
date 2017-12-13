@@ -20,7 +20,7 @@
 	<global>
 		<blocks>
 			<twofactor>
-				<class>JetRails_TwoFactor_Block</class>
+				<class>JetRails_TwoFactor_Block_Adminhtml</class>
 			</twofactor>
 		</blocks>
 		<helpers>
@@ -52,6 +52,20 @@
 				</connection>
 			</jetrails_twofactor_setup>
 		</resources>
+		<template>
+			<email>
+				<twofactor_user translate="label" model="twofactor" >
+					<label>2FA Ban Notice (User)</label>
+					<file>twofactor_user.html</file>
+					<type>html</type>
+				</twofactor_user>
+				<twofactor_admin translate="label" model="twofactor" >
+					<label>2FA Ban Notice (Admin)</label>
+					<file>twofactor_admin.html</file>
+					<type>html</type>
+				</twofactor_admin>
+			</email>
+		</template>
 	</global>
 	<adminhtml>
 		<events>
@@ -82,4 +96,13 @@
 			</modules>
 		</translate>
 	</adminhtml>
+	<default>
+		<twofactor>
+			<general>
+				<remember_me>7</remember_me>
+				<ban_attempts>10</ban_attempts>
+				<ban_time>10</ban_time>
+			</general>
+		</twofactor>
+	</default>
 </config>

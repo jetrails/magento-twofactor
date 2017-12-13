@@ -1,3 +1,15 @@
+<?php
+
+    /**
+     * banned.phtml - 
+     * @version         1.0.10
+     * @package         JetRails® TwoFactor
+     * @category        Template
+     * @author          Rafael Grigorian - JetRails®
+     * @copyright       JetRails®, all rights reserved
+     */
+
+?>
 <div class="twofactor-badge" >2FA</div>
 <div class="twofactor-container row center" >
 	<div class="card col s12" >
@@ -11,7 +23,7 @@
 				</object>
 			</div>
 			<div class="row" >
-				<h5 class="col s12 center-align" >You are temporarily blocked!</h5>
+				<h5 class="col s12 center-align" >You are temporarily banned!</h5>
 			</div>
 			<div class="row" >
 				<p class="col s12 left-align" >
@@ -21,8 +33,8 @@
 							" maximum number of failed attempts that is allowed is %s in a span o" .
 							"f %s minutes."
 						),
-						$this->getMaxAttempts (),
-						$this->getBlockTime ()
+						$this->getBanAttempts (),
+						$this->getBanTime ()
 					)?>
 				</p>
 			</div>
@@ -30,11 +42,11 @@
 				<p class="col s12 left-align" >
 					<?php echo sprintf (
 						$this->__(
-							"If you are the owner of this account and you are accidentally blocke" .
-							"d, it's okay! Just wait %s minutes and you can try to authenticate a" .
-							"gain."
+							"If you are the owner of this account and you are accidentally banned" .
+							", it's okay! Just wait %s minutes and you can try to authenticate ag" .
+							"ain."
 						),
-						$this->getBlockTime ()
+						$this->getBanTime ()
 					)?>
 				</p>
 			</div>

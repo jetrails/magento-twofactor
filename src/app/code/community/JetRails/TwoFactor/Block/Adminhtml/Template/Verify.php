@@ -12,6 +12,18 @@
 	class JetRails_TwoFactor_Block_Adminhtml_Template_Verify extends Mage_Adminhtml_Block_Template {
 
 		/**
+		 * This method gets and instance of the helper data class for this module.  Using this
+		 * object, we get the configured number of days a use should be authenticated for if the
+		 * "Remember me option is selected".
+		 * @return      int                                     Remember me duration
+		 */
+		public function getRememberMe () {
+			// Get the data helper instance, and return remember me duration
+			$data = Mage::helper ("twofactor/data");
+			return $data->getData () ["remember_me"];
+		}
+
+		/**
 		 * This method returns the correct action url for the form which is defined in the template.
 		 * @return      string                                  Form action URL
 		 */

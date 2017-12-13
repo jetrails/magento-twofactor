@@ -17,12 +17,11 @@
 		 * @return      string                                      The user's TOTP secret
 		 */
 		public function getSecret () {
-			// Get authentication model
+			// Get authentication model, and return TOTP secret
 			$admin = Mage::getSingleton ("admin/session")->getUser ();
-			$auth = Mage::getModel ("twofactor/auth")
-				->load ( $admin->getUserId () )
-				->setId ( $admin->getUserId () );
-			// Return secret saved in authentication model
+			$auth = Mage::getModel ("twofactor/auth");
+			$auth->load ( $admin->getUserId () );
+			$auth->setId ( $admin->getUserId () );
 			return $auth->getSecret ();
 		}
 
@@ -34,9 +33,9 @@
 		public function getQRCode () {
 			// Load the TOTP helper class and authentication model
 			$admin = Mage::getSingleton ("admin/session")->getUser ();
-			$auth = Mage::getModel ("twofactor/auth")
-				->load ( $admin->getUserId () )
-				->setId ( $admin->getUserId () );
+			$auth = Mage::getModel ("twofactor/auth");
+			$auth->load ( $admin->getUserId () );
+			$auth->setId ( $admin->getUserId () );
 			$totp = Mage::helper ("twofactor/totp");
 			// Load the email from admin session and get a secret
 			$email = Mage::getSingleton ("admin/session")->getUser ()->getEmail ();

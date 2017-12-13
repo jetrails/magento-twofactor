@@ -34,15 +34,16 @@
 			if ( $this->getRequest ()->getPost () ) {
 				// Get authentication model
 				$admin = Mage::getSingleton ("admin/session")->getUser ();
-				$auth = Mage::getModel ("twofactor/auth")
-					->load ( $admin->getUserId () )
-					->setId ( $admin->getUserId () );
+				$state = Mage::getModel ("twofactor/state");
+				$auth = Mage::getModel ("twofactor/auth");
+				$auth->load ( $admin->getUserId () );
+				$auth->setId ( $admin->getUserId () );
 				// Check to see if the supplied pin is correct
 				if ( $auth->verify ( $this->getRequest ()->getPost ("pin") ) ) {
 					// Change state from setup to normal
 					$auth->registerAttempt ();
 					$auth->setAttempts ( 0 );
-					$auth->setState ( $auth::STATE_BACKUP );
+					$auth->setState ( $state::BACKUP );
 					$auth->save ();
 					// Redirect page to the startup page for admin area
 					$session = Mage::getSingleton ("admin/session");
@@ -79,10 +80,11 @@
 				// Allow user to the backend
 				Mage::getSingleton ("admin/session")->setTwoFactorAllow ( true );
 				$admin = Mage::getSingleton ("admin/session")->getUser ();
-				$auth = Mage::getModel ("twofactor/auth")
-					->load ( $admin->getUserId () )
-					->setId ( $admin->getUserId () );
-				$auth->setState ( $auth::STATE_VERIFY );
+				$state = Mage::getModel ("twofactor/state");
+				$auth = Mage::getModel ("twofactor/auth");
+				$auth->load ( $admin->getUserId () );
+				$auth->setId ( $admin->getUserId () );
+				$auth->setState ( $state::VERIFY );
 				$auth->save ();
 				// Redirect to admin saved startup page
 				$session = Mage::getSingleton ("admin/session");

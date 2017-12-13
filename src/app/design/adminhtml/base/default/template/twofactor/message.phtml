@@ -1,3 +1,15 @@
+<?php
+
+    /**
+     * message.phtml - 
+     * @version         1.0.10
+     * @package         JetRails® TwoFactor
+     * @category        Template
+     * @author          Rafael Grigorian - JetRails®
+     * @copyright       JetRails®, all rights reserved
+     */
+
+?>
 <?php foreach ( $this->getMessagesBlock ()->getMessages () as $message ): ?>
 	<script>addError ( "<?php echo addslashes ( $message->getText () ) ?>" );</script>
 <?php endforeach ?>

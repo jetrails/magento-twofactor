@@ -13,15 +13,15 @@
 
 		/**
 		 * This method simply interfaces with the authentication model and returns an array of
-		 * backup codes.
+		 * backup codes for the admin user that is currently logged in with the current session.
 		 * @return      array                                   List of backup codes that are set
 		 */
 		public function getBackupCodes () {
 			// Get authentication model and return backup codes
 			$admin = Mage::getSingleton ("admin/session")->getUser ();
-			$auth = Mage::getModel ("twofactor/auth")
-				->load ( $admin->getUserId () )
-				->setId ( $admin->getUserId () );
+			$auth = Mage::getModel ("twofactor/auth");
+			$auth->load ( $admin->getUserId () );
+			$auth->setId ( $admin->getUserId () );
 			return $auth->getBackupCodes ();
 		}
 
