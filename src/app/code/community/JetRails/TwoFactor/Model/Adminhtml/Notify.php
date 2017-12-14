@@ -77,7 +77,7 @@
 				$template->setSenderEmail ( Mage::getStoreConfig ("trans_email/ident_general/email") );
 				$template->setSenderName ("JetRails 2FA");
 				$template->setType ("html");
-				$template->setTemplateSubject ( Mage::helper ("twofactor")->__("Authentication Ban Notice") );
+				$template->setTemplateSubject ( Mage::helper ("twofactor")->__("Temporary 2FA Ban Notice") );
 				$test = $template->send ( $user->getEmail (), $fullName,
 					array (
 						"base_url" => Mage::getBaseUrl ( Mage_Core_Model_Store::URL_TYPE_WEB ),
@@ -121,7 +121,7 @@
 			$template->setSenderEmail ( Mage::getStoreConfig ("trans_email/ident_general/email") );
 			$template->setSenderName ("JetRails 2FA");
 			$template->setType ("html");
-			$template->setTemplateSubject ( Mage::helper ("twofactor")->__("Authentication Ban Notice") );
+			$template->setTemplateSubject ( Mage::helper ("twofactor")->__("Your 2FA is Temporarily Banned") );
 			$template->send ( $user->getEmail (), $fullName,
 				array (
 					"base_url" => Mage::getBaseUrl ( Mage_Core_Model_Store::URL_TYPE_WEB ),

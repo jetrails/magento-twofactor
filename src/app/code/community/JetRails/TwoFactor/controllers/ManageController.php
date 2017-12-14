@@ -50,6 +50,7 @@
 			$this->_title ( $this->__("Manage 2FA Accounts") );
 			// Load layout, add the content, set active tab, and render layout
 			$this->loadLayout ();
+			$this->_initLayoutMessages ("admin/session");
 			$this->_setActiveMenu ("jetrails/twofactor");
 			$this->_addContent ( $this->getLayout ()->createBlock ("twofactor/manage_container") );
 			$this->renderLayout ();
@@ -90,7 +91,7 @@
 				Mage::helper ("twofactor")->__("Successfully enabled 2FA on selected accounts")
 			);
 			//
-			$this->_redirect ( $page::PAGE_CONFIGURE_INDEX );
+			$this->_redirect ( $page::PAGE_MANAGE_INDEX );
 		}
 
 		public function disableAction () {
@@ -119,7 +120,7 @@
 				Mage::helper ("twofactor")->__("Successfully disabled 2FA on selected accounts")
 			);
 			//
-			$this->_redirect ( $page::PAGE_CONFIGURE_INDEX );
+			$this->_redirect ( $page::PAGE_MANAGE_INDEX );
 		}
 
 		public function unbanAction () {
@@ -153,7 +154,7 @@
 				Mage::helper ("twofactor")->__("Successfully removed temp ban on selected accounts")
 			);
 			//
-			$this->_redirect ( $page::PAGE_CONFIGURE_INDEX );
+			$this->_redirect ( $page::PAGE_MANAGE_INDEX );
 		}
 
 		public function resetAction () {
@@ -162,6 +163,8 @@
 			$notify = Mage::getModel ("twofactor/notify");
 			$state  = Mage::getModel ("twofactor/state");
 			$auth   = Mage::getModel ("twofactor/auth");
+			$totp 	= Mage::helper ("twofactor/totp");
+			$totp->initialize ();
 			//
 			$ids = $this->getRequest ()->getParam ("ids");
 			//
@@ -173,7 +176,7 @@
 					$auth->setId ( $id );
 					$auth->setBackupCodes ( array () );
 					$auth->setAttempts ( 0 );
-					$auth->setSecret ("");
+					$auth->setSecret ( $totp->getSecret () );
 					$auth->setState ( $state::SCAN );
 					$auth->save ();
 
@@ -186,7 +189,7 @@
 				Mage::helper ("twofactor")->__("Successfully reset 2FA accounts for selected accounts")
 			);
 			//
-			$this->_redirect ( $page::PAGE_CONFIGURE_INDEX );
+			$this->_redirect ( $page::PAGE_MANAGE_INDEX );
 		}
 
 	}

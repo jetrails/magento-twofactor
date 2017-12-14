@@ -54,7 +54,16 @@
 				// Allow the admin logout action
 				if ( $route === "admin/index/logout" ) return;
 				// If two-factor is not forced on role, then ignore everything
-				if ( !Mage::helper ("twofactor")->isAllowed () ) return;
+				if ( !Mage::helper ("twofactor")->isAllowed () ) {
+					// Check to see if setup or login controllers are being used
+					if ( $frontname === "twofactor" && in_array ( $controller, [ "setup", "login" ] ) ) {
+						// Redirect to default admin page
+						$admin = Mage::getSingleton ("admin/session");
+						$redirectRoute = $admin->getUser ()->getStartupPageUrl ();
+						return $this->_redirectByRoute ( $observer, $redirectRoute );
+					}
+					return;
+				}
 				// Get instances of objects
 				$admin = Mage::getSingleton ("admin/session");
 				$page = Mage::getSingleton ("twofactor/page");

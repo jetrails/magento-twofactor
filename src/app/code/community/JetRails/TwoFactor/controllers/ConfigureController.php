@@ -26,9 +26,9 @@
             // Loop through each value
             foreach ( $values as $value ) {
                 $valid = 
-                    strval ( intval ( $id ) ) == strval ( $id ) &&
-                    is_int ( intval ( $id ) ) &&
-                    intval ( $id ) > 0;
+                    strval ( intval ( $value ) ) == strval ( $value ) &&
+                    is_int ( intval ( $value ) ) &&
+                    intval ( $value ) > 0;
                 if ( !$valid ) return false;
             }
             // By default return true
@@ -45,6 +45,7 @@
             $this->_title ( $this->__("Configure 2FA Settings") );
             // Load layout, add the content, set active tab, and render layout
             $this->loadLayout ();
+            $this->_initLayoutMessages ("admin/session");
             $this->_setActiveMenu ("jetrails/twofactor");
             $this->_addContent ( $this->getLayout ()->createBlock ("twofactor/configure_edit") );
             $this->renderLayout ();

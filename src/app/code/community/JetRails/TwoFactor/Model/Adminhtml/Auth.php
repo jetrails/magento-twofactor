@@ -206,7 +206,7 @@
 				// Get the current timestamp and calculate the expire timestamp
 				$current = new Zend_Date ();
 				$expires = new Zend_Date ( $this->getLastTimestamp (), Zend_Date::ISO_8601 );
-				$expires->addMinute ( $data->getData () ["ban_time"] );
+				$expires->addMinute ( intval ( $data->getData () ["ban_time"] ) );
 				// Check to see if the ban expired
 				if ( $current->compare ( $expires ) > -1 ) {
 					// Change the state to be not banned and reset attempts
