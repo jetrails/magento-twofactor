@@ -1,34 +1,200 @@
 <!DOCTYPE html>
 
 <html>
-	<body style="
-			background:     #F1F1F1;
-			margin:         0px;
-			padding:        100px;
-		" >
-		<table
-			style="
-				margin-left:    auto;
-				margin-right:   auto;
-				width:          500px;
-				background:     #FFF;
-				border:         solid 1px #D2D2D2;
-			" >
+	<head>
+		<meta charset="utf-8" >
+		<meta name="viewport" content="width=device-width" >
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+		<meta name="x-apple-disable-message-reformatting" >
+		<style>
+
+			body {
+				width:                          100%;
+				margin:                         0px;
+				font-family:                    sans-serif;
+				font-size:                      14px;
+			}
+
+			.content {
+				width:                          100%;
+				max-width:                      680px;
+				margin:                         auto auto;
+				background:                     #FFFFFF;
+				padding:                        40px 0px;
+			}
+
+			.logo {
+				width:                          50%;
+				margin-left:                    25%;
+			}
+
+			.title {
+				font-weight:                    bold;
+				text-transform:                 uppercase;
+				font-size:                      1.5em;
+			}
+
+			.message {
+				text-align:                     left;
+				font-size:                      1.2em;
+			}
+
+			b {
+				color:                          #58595B;
+			}
+
+			a {
+				text-decoration:                none;
+			}
+
+			td > p {
+				margin:                         auto;
+				width:                          90%;
+				max-width:                      680px;
+				text-align:                     center;
+				margin-top:                     30px;
+			}
+
+			.details {
+				background:                     #F5F5F5;
+				width:                          90%;
+				margin:                         30px auto 0px auto;
+				font-size:                      1.2em;
+				padding:                        10px 0px 0px 0px;
+			}
+
+			.details tr > td {
+				padding:                        2px 15px;
+				width:                          50%;
+			}
+
+			.button {
+				margin:                         auto;
+				background:                     #89BB40;
+				color:                          #FFFFFF;
+				text-transform:                 uppercase;
+				border-radius:                  5px;
+				padding:                        15px;
+				width:                          200px;
+				text-align:                     center;
+				font-size:                      1.1em;
+				cursor:                         pointer;
+				transition:                     all 500ms;
+			}
+
+			.button:hover {
+				background:                     #699B20;
+			}
+
+			.footer {
+				padding:                        40px;
+				background:                     #58595B;
+				text-align:                     center;
+				font-size:                      0.9em;
+				font-weight:                    100;
+			}
+
+			.footer p {
+				margin:                         auto;
+				width:                          95%;
+				max-width:                      680px;
+				color:                          #FFFFFF;
+			}
+
+			.spacer {
+				padding:                        20px;
+			}
+
+			@media screen and ( max-width: 760px ) {
+
+				.content {
+					max-width:                  100%;
+				}
+
+				.spacer {
+					padding:                    0px;
+					display:                    none;
+				}
+
+				.details {
+					width:                      100%;
+				}
+
+				.details tr > td {
+					padding:                        2px 5%;
+				}
+
+				.footer {
+					background:                 #282F38;
+				}
+
+				.logo {
+					margin-left:                10%;
+					width:                      80%;
+				}
+
+			}
+
+		</style>
+	</head>
+	<body style="background-color: #282F38;" >
+		<div class="spacer" >&nbsp;</div>
+		<table class="content" cellpadding="0" cellspacing="0" >
 			<tr>
-				<td style="padding: 50px 50px 0 50px;" >
-					<center>
-						<img
-							style="width: 200px;"
-							src="{{skin url='images/twofactor/logo.png' _area='adminhtml'}}"
-						/>
-					</center>
+				<td>
+					<img class="logo" alt="logo" src="http://static.raffi.io/jetrails/logo.png" />
 				</td>
 			</tr>
 			<tr>
-				<td style="padding: 50px;" >
-					Your Magento account for {{var base_url}} has been banned after {{var ban_attempts}} failed two-factor authentication attempts. Additional emails have been sent to administrators regarding this failed authentication attempt. If this was you, try logging into the system in {{var ban_time}} minutes. If this was not you, please contact your system administrators immediately.
+				<td>
+					<p class="title" >Your 2FA is Temporarily Banned</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p class="message" >
+						Your Magento admin account for
+						<a href="{{var base_url}}" >{{var base_url}}</a> has been banned after
+						{{var ban_attempts}} failed 2FA attempts. Additional emails have been sent
+						to administrators regarding this failed authentication attempt. If this was
+						you, try logging into the system in {{var ban_time}} minutes. If this was
+						not you, please contact your system administrators immediately.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table class="details" cellspacing="0" cellpadding="0" >
+						<tr>
+							<td><b>Banned User:</b></td>
+							<td>{{var username}}</td>
+						</tr>
+						<tr>
+							<td><b>Banned On:</b></td>
+							<td>{{var last_timestamp_date}}</td>
+						</tr>
+						<tr>
+							<td><b>Banned At:</b></td>
+							<td>{{var last_timestamp_time}}</td>
+						</tr>
+						<tr>
+							<td><b>Failed Attempts:</b></td>
+							<td>{{var ban_attempts}} attempts</td>
+						</tr>
+						<tr>
+							<td><b>Ban Duration:</b></td>
+							<td>{{var ban_time}} minutes</td>
+						</tr>
+					</table>
 				</td>
 			</tr>
 		</table>
+		<div class="spacer" ></div>
+		<div class="footer" >
+			<p>
+				Copyright &copy; 2017 JETRAILS. All Rights Reserved.
+			</p>
+		</div>
+		<div class="spacer" >&nbsp;</div>
 	</body>
 </html>

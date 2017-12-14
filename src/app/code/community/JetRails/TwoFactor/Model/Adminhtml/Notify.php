@@ -65,6 +65,10 @@
 				// Load the data helper class and get user instance
 				$data = Mage::helper ("twofactor/data");
 				$user = Mage::getModel ("admin/user")->load ( $roleUser->getUserId () );
+				// Format timestamp date and time
+				$timestamp = $auth->getLastTimestamp ();
+				$timestampDate = $timestamp === null ? "-" : Mage::getModel ("core/date")->date ( "m/d/Y", strtotime ( $timestamp ) );
+				$timestampTime = $timestamp === null ? "-" : Mage::getModel ("core/date")->date ( "h:i:s A", strtotime ( $timestamp ) );
 				// Construct the user contact's full name
 				$fullName  = ucfirst ( $user->getFirstname () ) . " ";
 				$fullName .= ucfirst ( $user->getLastname () );
@@ -80,7 +84,8 @@
 						"ban_attempts" => $data->getData () ["ban_attempts"],
 						"ban_time" => $data->getData () ["ban_time"],
 						"last_address" => $auth->getLastAddress (),
-						"last_timestamp" => $auth->getTimestamp (),
+						"last_timestamp_date" => $timestampDate,
+						"last_timestamp_time" => $timestampTime,
 						"username" => $admin->getUsername ()
 					)
 				);
@@ -98,9 +103,19 @@
 			// Load the data helper class and get user instance
 			$data = Mage::helper ("twofactor/data");
 			$user = Mage::getSingleton ("admin/session")->getUser ();
+
+			//
+			$auth = Mage::getModel ("twofactor/auth");
+			$auth->load ( $user->getUserId () );
+			$auth->setId ( $user->getUserId () );
+
 			// Construct the user contact's full name
 			$fullName  = ucfirst ( $user->getFirstname () ) . " ";
 			$fullName .= ucfirst ( $user->getLastname () );
+			// Format timestamp date and time
+			$timestamp = $auth->getLastTimestamp ();
+			$timestampDate = $timestamp === null ? "-" : Mage::getModel ("core/date")->date ( "m/d/Y", strtotime ( $timestamp ) );
+			$timestampTime = $timestamp === null ? "-" : Mage::getModel ("core/date")->date ( "h:i:s A", strtotime ( $timestamp ) );
 			// Construct and send out ban notice email to user
 			$template = Mage::getModel ("core/email_template")->loadDefault ("twofactor_user");
 			$template->setSenderEmail ( Mage::getStoreConfig ("trans_email/ident_general/email") );
@@ -110,8 +125,11 @@
 			$template->send ( $user->getEmail (), $fullName,
 				array (
 					"base_url" => Mage::getBaseUrl ( Mage_Core_Model_Store::URL_TYPE_WEB ),
+					"last_timestamp_date" => $timestampDate,
+					"last_timestamp_time" => $timestampTime,
 					"ban_attempts" => $data->getData () ["ban_attempts"],
 					"ban_time" => $data->getData () ["ban_time"],
+					"username" => $user->getUsername ()
 				)
 			);
 		}
