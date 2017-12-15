@@ -147,18 +147,17 @@
 			</tr>
 			<tr>
 				<td>
-					<p class="title" >Your 2FA is Temporarily Banned</p>
+					<p class="title" >Your Magento Admin Account is Locked</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<p class="message" >
 						Your Magento admin account for
-						<a href="{{var base_url}}" >{{var base_url}}</a> has been banned after
-						{{var ban_attempts}} failed 2FA attempts. Additional emails have been sent
-						to administrators regarding this failed authentication attempt. If this was
-						you, try logging into the system in {{var ban_time}} minutes. If this was
-						not you, please contact your system administrators immediately.
+						<a href="{{var base_url}}" >{{var base_url}}</a> has been locked out after
+						{{var ban_attempts}} failed 2FA attempts. Email notices have been sent to 
+						Magento administrators regarding this failed authentication attempt. Please
+						contact your system administrator immediately.
 					</p>
 				</td>
 			</tr>
@@ -166,15 +165,15 @@
 				<td>
 					<table class="details" cellspacing="0" cellpadding="0" >
 						<tr>
-							<td><b>Banned User:</b></td>
+							<td><b>Username:</b></td>
 							<td>{{var username}}</td>
 						</tr>
 						<tr>
-							<td><b>Banned On:</b></td>
+							<td><b>Date:</b></td>
 							<td>{{var last_timestamp_date}}</td>
 						</tr>
 						<tr>
-							<td><b>Banned At:</b></td>
+							<td><b>Time:</b></td>
 							<td>{{var last_timestamp_time}}</td>
 						</tr>
 						<tr>

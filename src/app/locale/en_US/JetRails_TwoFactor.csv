@@ -44,6 +44,8 @@
 "Successfully reset 2FA accounts for selected accounts","Successfully reset 2FA accounts for selected accounts"
 "Successfully saved settings","Successfully saved settings"
 "Temporary 2FA Ban Notice","Temporary 2FA Ban Notice"
+"2FA ban notice for user ","2FA ban notice for user "
+"Your Magento admin account is locked","Your Magento admin account is locked"
 "Temporary Ban Duration","Temporary Ban Duration"
 "The 8-digit codes below serve as backup codes.  If you lose access to your authentication device, you can still get into your account using these codes.  Please print out these codes and keep them in a safe location.  Each code can be utilized one time only.","The 8-digit codes below serve as backup codes.  If you lose access to your authentication device, you can still get into your account using these codes.  Please print out these codes and keep them in a safe location.  Each code can be utilized one time only."
 "To confirm that you set up your authentication successfully, enter in the 6-digit time sensitive pin associated with your account.","To confirm that you set up your authentication successfully, enter in the 6-digit time sensitive pin associated with your account."
