@@ -43,6 +43,8 @@
 		 * @return      void
 		 */
 		public function preAdminHtml ( Varien_Event_Observer $observer ) {
+			// Load the page model
+			$page = Mage::getSingleton ("twofactor/page");
 			// Check to make sure an admin is logged in
 			if ( Mage::getSingleton ("admin/session")->isLoggedIn () ) {
 				// Initialize routing information
@@ -56,7 +58,7 @@
 				// If two-factor is not forced on role, then ignore everything
 				if ( !Mage::helper ("twofactor")->isAllowed () ) {
 					// Check to see if setup or login controllers are being used
-					if ( $frontname === "twofactor" && in_array ( $controller, [ "setup", "login" ] ) ) {
+					if ( $page->isForbiddenRoutesAfterAuth ( $frontname, $controller ) ) {
 						// Redirect to default admin page
 						$admin = Mage::getSingleton ("admin/session");
 						$redirectRoute = $admin->getUser ()->getStartupPageUrl ();
@@ -66,7 +68,6 @@
 				}
 				// Get instances of objects
 				$admin = Mage::getSingleton ("admin/session");
-				$page = Mage::getSingleton ("twofactor/page");
 				$cookie = Mage::helper ("twofactor/cookie");
 				$state = Mage::getModel ("twofactor/state");
 				$auth = Mage::getModel ("twofactor/auth");
@@ -101,7 +102,7 @@
 					$this->_redirectByRoute ( $observer, $redirectRoute );
 				}
 				// Session is authenticated, state verified, don't allow login and setup controllers
-				else if ( $frontname === "twofactor" && in_array ( $controller, [ "setup", "login" ] ) ) {
+				else if ( $page->isForbiddenRoutesAfterAuth ( $frontname, $controller ) ) {
 					// Redirect user to their saved startup page
 					$redirectRoute = $admin->getUser ()->getStartupPageUrl ();
 					$this->_redirectByRoute ( $observer, $redirectRoute );

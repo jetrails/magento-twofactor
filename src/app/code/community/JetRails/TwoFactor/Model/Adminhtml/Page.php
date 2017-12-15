@@ -74,4 +74,17 @@
 			}
 		}
 
+		/**
+		 * This method takes in a frontname and controller and returns if the route is forbidden for
+		 * a user that is already authenticated.
+		 * @param       string              frontname           The frontname to evaluate
+		 * @param       string              controller          The controller to evaluate
+		 * @return      boolean                                 Is the route forbidden?
+		 */
+		public function isForbiddenRoutesAfterAuth ( $frontname, $controller ) {
+			// Return if the controller is forbidden
+			$allowed = array ( "setup", "login" );
+			return $frontname === "twofactor" && in_array ( $controller, $allowed );
+		}
+
 	}
