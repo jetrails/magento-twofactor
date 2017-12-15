@@ -12,6 +12,7 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks ("grunt-mkdir");
 	grunt.loadNpmTasks ("grunt-rsync");
 
+	// Register the default task
 	grunt.task.registerTask ( "default", "preform a full build", [ "release" ]);
 
 	grunt.task.registerTask ( "deploy", "upload src contents to staging environment", function () {
@@ -35,6 +36,8 @@ module.exports = function ( grunt ) {
 	});
 
 	grunt.task.registerTask ( "stream", "watch src and lib folders, deploy on change", function () {
+		// Run the deploy command first
+		grunt.task.run ( "deploy" );
 		// Initialize the watch task options
 		grunt.config.set ( "watch.module.files", [ "src/**/*", "lib/*/src/**/*" ] );
 		grunt.config.set ( "watch.module.tasks", [ "deploy" ] );
@@ -82,10 +85,6 @@ module.exports = function ( grunt ) {
 			grunt.config.set ( "mkdir.execute.options.create", [ arguments [ 0 ] ] );
 			grunt.task.run ( "mkdir:execute" );
 		}
-		// Warn user if there is more than one argument
-		else {
-			grunt.log.writeln ( this.name + ": No argument or one argument is valid" );
-		}
 	});
 
 	grunt.task.registerTask ( "nuke", "clear generated file structure", function () {
@@ -100,20 +99,14 @@ module.exports = function ( grunt ) {
 			grunt.config.set ( "clean.execute", paths );
 			grunt.task.run ( "clean:execute" );
 		}
-		// Warn user if there is more than one argument
-		else {
-			grunt.log.writeln ( this.name + ": No argument or one argument is valid" );
-		}
 	});
 
 	grunt.task.registerTask ( "release", "prepares file structure for github release", function () {
-		// Run the dependency tasks
+		// Run dependency tasks
 		grunt.task.run ( "init" );
-		// Change version numbers
 		grunt.task.run ( "version" );
-		// Clear dist folder
 		grunt.task.run ( "nuke:dist" );
-		// Initialize the files array for compression
+		// Define which files to compress
 		var files = [
 			{
 				cwd:            "src",
@@ -124,13 +117,13 @@ module.exports = function ( grunt ) {
 				src: 			[ "package.xml"]
 			}
 		];
-		// Define the output file
+		// Define the output filename
 		var company = package.company.replace ( "®", "" );
 		var name = package.name.replace ( "-", "_" );
 		var version = package.version;
-		var _output = company + "_" + name + "-" + version + ".tgz";
-		// Define other options
-		grunt.config.set ( "compress.module.options.archive", "dist/" + _output );
+		var output = company + "_" + name + "-" + version + ".tgz";
+		// Define compress settings
+		grunt.config.set ( "compress.module.options.archive", "dist/" + output );
 		grunt.config.set ( "compress.module.options.mode", "tgz" );
 		grunt.config.set ( "compress.module.files", files );
 		// Compress the module
