@@ -86,7 +86,8 @@
 						"last_address" => $auth->getLastAddress (),
 						"last_timestamp_date" => $timestampDate,
 						"last_timestamp_time" => $timestampTime,
-						"username" => $admin->getUsername ()
+						"username" => $admin->getUsername (),
+						"year" => date ("Y")
 					)
 				);
 			}
@@ -129,7 +130,8 @@
 					"last_timestamp_time" => $timestampTime,
 					"ban_attempts" => $data->getData () ["ban_attempts"],
 					"ban_time" => $data->getData () ["ban_time"],
-					"username" => $user->getUsername ()
+					"username" => $user->getUsername (),
+					"year" => date ("Y")
 				)
 			);
 		}
