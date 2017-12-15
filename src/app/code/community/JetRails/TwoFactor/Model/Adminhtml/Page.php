@@ -13,16 +13,9 @@
 
 		/**
 		 * These constants describe the controller routes to the different pages that are part of
-		 * this module.  This includes throughout the setup of 2FA and for account management.
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 * 
+		 * this module.  This includes throughout the setup of 2FA and for account management.  This
+		 * also includes all the controller routes that are defined for the manage and configure
+		 * controllers that only super admins have access to.
 		 */
 		const PAGE_SETUP_SCAN       = "twofactor/setup/scan";
 		const PAGE_SETUP_BACKUP     = "twofactor/setup/backup";
@@ -31,15 +24,14 @@
 		const PAGE_SETUP_DISABLE    = "twofactor/setup/disable";
 		const PAGE_LOGIN_BANNED     = "twofactor/login/banned";
 		const PAGE_LOGIN_VERIFY     = "twofactor/login/verify";
-		const PAGE_MANAGE_INDEX		= "twofactor/manage/index";
-		const PAGE_MANAGE_GRID		= "twofactor/manage/grid";
-		const PAGE_MANAGE_UNBAN		= "twofactor/manage/unban";
-		const PAGE_MANAGE_ENABLE	= "twofactor/manage/enable";
-		const PAGE_MANAGE_DISABLE	= "twofactor/manage/disable";
-		const PAGE_MANAGE_RESET		= "twofactor/manage/reset";
-		const PAGE_CONFIGURE_INDEX	= "twofactor/configure/index";
-		const PAGE_CONFIGURE_SAVE	= "twofactor/configure/save";
-
+		const PAGE_MANAGE_INDEX     = "twofactor/manage/index";
+		const PAGE_MANAGE_GRID      = "twofactor/manage/grid";
+		const PAGE_MANAGE_UNBAN     = "twofactor/manage/unban";
+		const PAGE_MANAGE_ENABLE    = "twofactor/manage/enable";
+		const PAGE_MANAGE_DISABLE   = "twofactor/manage/disable";
+		const PAGE_MANAGE_RESET     = "twofactor/manage/reset";
+		const PAGE_CONFIGURE_INDEX  = "twofactor/configure/index";
+		const PAGE_CONFIGURE_SAVE   = "twofactor/configure/save";
 
 		/**
 		 * This method takes in a controller route and an authorization state, which is defined in

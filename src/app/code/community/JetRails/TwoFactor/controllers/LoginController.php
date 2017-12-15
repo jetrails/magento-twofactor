@@ -28,12 +28,6 @@
 		 * This method is a helper function that simply logs when a user is banned.  It also
 		 * constructs the emails for the admin user that is logged in and all admin users in the
 		 * 'Administrator' role.  It then also sends out said emails.
-		 *
-		 *
-		 *
-		 *
-		 *
-		 * 
 		 * @return      void
 		 */
 		protected function _notifyAccountBan () {

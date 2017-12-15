@@ -52,19 +52,14 @@
 		 * current time.  These values are used to validate that we made this cookie and cannot be
 		 * forged.  We also check that the IP address is the same and the expiration time is valid
 		 * so the cookie cannot be tampered with.
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 * 
+		 * @param       integer             time                Exact time for authentication
+		 * @param       integer             pin                 Current verification pin
+		 * @param       integer             address             The IP address of the client
 		 * @return      void
 		 */
 		public function create ( $time, $pin, $address ) {
-
+			// Load the data helper instance
 			$data = Mage::helper ("twofactor/data");
-
 			// Create the content for the cookie
 			$value = Mage::helper ("core")->encrypt ( json_encode ( array (
 				"timestamp" => $time,
@@ -95,6 +90,7 @@
 		 * parse it.  If the IP address is not the same, the expiration time exceeds x days, or if
 		 * the time/pin combo does not match with the user's secret, then the cookie is deleted and
 		 * the user is forced to user the 2FA page.  Otherwise the 2FA process is handled for them.
+		 * @param       integer             uid                     User id to authenticate with
 		 * @return      bool                                        Does a valid live cookie exist?
 		 */
 		public function authenticate ( $uid ) {

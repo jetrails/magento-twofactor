@@ -16,24 +16,9 @@
 	class JetRails_TwoFactor_Model_Adminhtml_Auth extends Mage_Core_Model_Abstract {
 
 		/**
-		 * This constructor simply makes sure that it sets the user id for the model to be equal to
-		 * the user id of the logged in admin user.  For this very reason, this model should not be
-		 * used unless explicitly checking that the admin user is logged in.  Through the model,
-		 * places like the observer class, these checks are made.
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 * 
+		 * This constructor simply links up this model with the resource model class.  The path that
+		 * is passed to the init function is treated as a resource path and the resource model is
+		 * loaded.
 		 */
 		protected function _construct () {
 			// Initialize using twofactor authentication resource model
@@ -74,26 +59,14 @@
 			$this->save ();
 		}
 
-
 		/**
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 *
-		 * 
+		 * This method evaluates the currently loaded user and it simply returns the user's state.
+		 * If the state is not defined then by default, the SCAN state is returned.
+		 * @return      integer                                 State value for loaded user
 		 */
 		public function getState () {
-
+			// Load the state model
 			$state = Mage::getModel ("twofactor/state");
-
 			// If the state is not set, return scan stage
 			if ( parent::getState () === null ) {
 				return $state::SCAN;
@@ -102,6 +75,11 @@
 			return intval ( parent::getState () );
 		}
 
+		/**
+		 * This method evaluates the currently loaded user and it simply returns the user's status.
+		 * If the status is not defined then by default, the ENABLED status is returned.
+		 * @return      integer                                 Status value for loaded user
+		 */
 		public function getStatus () {
 			$status = Mage::getModel ("twofactor/status");
 			// If 2FA is not enabled for user then default is enabled
@@ -111,8 +89,6 @@
 			// Otherwise, return state as integer
 			return intval ( parent::getStatus () );
 		}
-
-
 
 		/**
 		 * This method gets the stored TOTP secret from the database and decrypts it before
@@ -197,10 +173,9 @@
 		 * @return      boolean                                 Is user banned, or ban expired?
 		 */
 		public function isBanned () {
-			
+			// Load the state model and the data helper
 			$data = Mage::helper ("twofactor/data");
 			$state = Mage::getModel ("twofactor/state");
-
 			// First things first, make sure the user is indeed banned
 			if ( $this->getState () == $state::BANNED ) {
 				// Get the current timestamp and calculate the expire timestamp

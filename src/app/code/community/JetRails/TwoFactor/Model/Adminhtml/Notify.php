@@ -13,21 +13,19 @@
 	class JetRails_TwoFactor_Model_Adminhtml_Notify extends Mage_Core_Model_Abstract {
 
 		/**
-		 * @var
+		 * These constants define the module's custom log file name as well as all the different log
+		 * messages that a user can append into that log file.
 		 */
-		const LOG_FILENAME 			= "jetrails.twofactor.log";
-		const LOG_AUTOMATIC_BAN 	= "Automatically banned user '%s' while on IP address '%s'";
-		const LOG_MANUAL_UNBAN 		= "User '%s' manually removed temp ban for user '%s'";
-		const LOG_MANUAL_ENABLE 	= "User '%s' manually enabled 2FA for user '%s'";
-		const LOG_MANUAL_DISABLE 	= "User '%s' manually disabled 2FA for user '%s'";
-		const LOG_MANUAL_RESET 		= "User '%s' manually reset 2FA for user '%s'";
+		const LOG_FILENAME          = "jetrails.twofactor.log";
+		const LOG_AUTOMATIC_BAN     = "Automatically banned user '%s' while on IP address '%s'";
+		const LOG_MANUAL_UNBAN      = "User '%s' manually removed temp ban for user '%s'";
+		const LOG_MANUAL_ENABLE     = "User '%s' manually enabled 2FA for user '%s'";
+		const LOG_MANUAL_DISABLE    = "User '%s' manually disabled 2FA for user '%s'";
+		const LOG_MANUAL_RESET      = "User '%s' manually reset 2FA for user '%s'";
 
 		/**
-		 *
-		 *
-		 *
-		 *
-		 * 
+		 * This method takes in the log message type and the values to merge with the message. It
+		 * then simply logs it into the module specific log file.
 		 */
 		public function log ( $type = "", $values = array () ) {
 			// Construct the message and append to custom log file
@@ -36,11 +34,9 @@
 		}
 
 		/**
-		 * This method finds all users in the 'Administrators' role, gets their contact information
-		 * and sends the supplied message to them.
-		 *
-		 *
-		 * 
+		 * This method loads the twofactor_admin email template and sends it to every user that
+		 * belongs to the Administrator role. Proper data is also passed to the template in order
+		 * to give the admin user sufficient information.
 		 * @return      void
 		 */
 		public function emailAllAdministrators () {
@@ -94,22 +90,19 @@
 		}
 
 		/**
-		 * This method takes in an HTML message and sends it to the current logged in user's email.
-		 * This is to notify the rightful user that their account may be compromised.
-		 *
-		 *
+		 * This method loads the twofactor_user email template and sends it to the currently logged
+		 * in user. Proper data is also passed to the template in order to give the user sufficient
+		 * information.
 		 * @return      void
 		 */
 		public function emailUser () {
 			// Load the data helper class and get user instance
 			$data = Mage::helper ("twofactor/data");
 			$user = Mage::getSingleton ("admin/session")->getUser ();
-
-			//
+			// Load the authentication model that belongs with logged in user
 			$auth = Mage::getModel ("twofactor/auth");
 			$auth->load ( $user->getUserId () );
 			$auth->setId ( $user->getUserId () );
-
 			// Construct the user contact's full name
 			$fullName  = ucfirst ( $user->getFirstname () ) . " ";
 			$fullName .= ucfirst ( $user->getLastname () );
