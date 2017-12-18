@@ -5,7 +5,7 @@
 	 * their two-factor authentication account.  Actions that render the verification page as well
 	 * as the banned page that a user will see on failed login are all encapsulated within this
 	 * controller.
-	 * @version         1.0.10
+	 * @version         1.1.0
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®

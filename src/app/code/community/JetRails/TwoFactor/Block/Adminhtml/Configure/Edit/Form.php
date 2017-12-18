@@ -3,7 +3,7 @@
 	/**
 	 * Form.php - This class initializes the form, field-set, and form fields that will exist on the
 	 * configure page.  All information is set in the _prepareForm method.
-	 * @version         1.0.10
+	 * @version         1.1.0
 	 * @package         JetRails® TwoFactor
 	 * @category        Edit
 	 * @author          Rafael Grigorian - JetRails®

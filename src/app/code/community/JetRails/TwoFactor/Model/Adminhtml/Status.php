@@ -5,7 +5,7 @@
 	 * This basically means if the status is set to enabled for a user, then two-factor
 	 * authentication is enforced for the user.  The values as they relate to the user can be found
 	 * in the authentication model.
-	 * @version         1.0.10
+	 * @version         1.1.0
 	 * @package         JetRails® TwoFactor
 	 * @category        Model
 	 * @author          Rafael Grigorian - JetRails®
