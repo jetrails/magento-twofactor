@@ -33,3 +33,7 @@ All JetRails® extensions use __Grunt__ as a build system.  Grunt is a package t
 | `deploy`   | Will upload dependencies and source code to a staging server.  Credentials to this server can be configured in the __package.json__ file under the _staging_ attribute.                         |
 | `stream`   | Will watch the __lib__ and __src__ folders for any changes. Once a change occurs it will run the __deploy__ task.                                                                               |
 |            | The default task is aliased to run the __release__ task.                                                                                                                                        |
+
+Docker Enviorment
+=============================
+This project comes with a `docker-compose.yml` file, which can be used to spin up a Magento CE enviorment.
