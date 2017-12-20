@@ -1,4 +1,4 @@
-<h1 align="center" >Two-Factor Authentication</h1>
+<p align="center" ><img width="410px" src="http://static.raffi.io/jetrails/twofactor/logo.svg" /></p>
 <p align="center" >
 	<img src="https://img.shields.io/badge/Magento-1.x-green.svg?style=for-the-badge" />
 	<img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
