@@ -1,8 +1,9 @@
-<h1 align="center" >JetRails® - Two-Factor Authentication</h1>
+<p align="center" ><img height="50px" src="http://static.raffi.io/jetrails/logo.svg" /></p>
+<h1 align="center" >Two-Factor Authentication</h1>
 <p align="center" >
-	<img src="https://img.shields.io/badge/Magento-1.x-orange.svg?style=for-the-badge" />
-	<img src="https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge" />
-	<img src="https://img.shields.io/badge/Version-1.1.0-orange.svg?style=for-the-badge" />
+	<img src="https://img.shields.io/badge/Magento-1.x-green.svg?style=for-the-badge" />
+	<img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
+	<img src="https://img.shields.io/badge/Version-1.1.0-green.svg?style=for-the-badge" />
 </p>
 </br></br>
 
