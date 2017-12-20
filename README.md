@@ -22,11 +22,11 @@ This module is available on the <a href="https://marketplace.magento.com/jetrail
 
 Compatibility
 =============================
-Please refer to `COMPATIBILITY.md` to see which versions of Magento this extension was tested on and proved to be compatible with.
+Please refer to [COMPATIBILITY.md](COMPATIBILITY.md) to see which versions of Magento this extension was tested on and proved to be compatible with.
 
 Documentation
 =============================
-The user guide can be found in the _doc_ folder.  The user guide goes through the installation process as well as explains all the features that comes with this plugin.  The archive file can be found in the __dist__ folder or can be downloaded alongside the releases.
+The user guide can be found in the [doc](doc) folder.  The user guide goes through the installation process as well as explains all the features that comes with this plugin.  The archive file can be found in the [dist](dist) folder or can be downloaded alongside the releases.
 
 Build System
 =============================
@@ -42,4 +42,4 @@ All JetRails® extensions use __Grunt__ as a build system.  Grunt is a package t
 
 Docker Enviorment
 =============================
-This project comes with a `docker-compose.yml` file, which can be used to spin up a Magento CE 1.x enviorment. In order to use docker, please make sure you have **Docker** and **Docker Compose** installed. Typing `docker-compose up -d` will spin up the enviroment while typeing `docker-compose down` will spin it down. If you run docker for the first time, make sure you download and install Magento using the following commands: `docker-compose run cli download.sh` and `docker-compose run webserver install.sh`.  Spinning up a docker instance will create a **staging** directory.
+This project comes with a [docker-compose.yml](docker-compose.yml) file, which can be used to spin up a Magento CE 1.x enviorment. In order to use docker, please make sure you have **Docker** and **Docker Compose** installed. Typing `docker-compose up -d` will spin up the enviroment while typeing `docker-compose down` will spin it down. If you run docker for the first time, make sure you download and install Magento using the following commands: `docker-compose run cli download.sh` and `docker-compose run webserver install.sh`.  Spinning up a docker instance will create a **staging** directory.
