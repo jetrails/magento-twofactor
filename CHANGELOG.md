@@ -68,3 +68,4 @@
 -   Made failed attempts configurable
 -   Made ban duration configurable
 -   Added a manage 2FA accounts page for super admins
+-   Improved email templates
