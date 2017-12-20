@@ -36,4 +36,4 @@ All JetRails® extensions use __Grunt__ as a build system.  Grunt is a package t
 
 Docker Enviorment
 =============================
-This project comes with a `docker-compose.yml` file, which can be used to spin up a Magento CE enviorment.
+This project comes with a `docker-compose.yml` file, which can be used to spin up a Magento CE 1.x enviorment. In order to use docker, please make sure you have **Docker** and **Docker Compose** installed. Typing `docker-compose up -d` will spin up the enviroment while typeing `docker-compose down` will spin it down. If you run docker for the first time, make sure you download and install Magento using the following commands: `docker-compose run cli download.sh` and `docker-compose run webserver install.sh`.  Spinning up a docker instance will create a **staging** directory.
