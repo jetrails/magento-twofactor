@@ -1,10 +1,10 @@
-<p align="center" ><img width="410px" src="http://static.raffi.io/jetrails/twofactor/logo.svg" /></p>
+<p align="center" ><img width="200px" src="http://static.raffi.io/jetrails/twofactor/logo.svg" /></p>
 <p align="center" >
 	<img src="https://img.shields.io/badge/Magento-1.x-green.svg?style=for-the-badge" />
 	<img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
 	<img src="https://img.shields.io/badge/Version-1.1.0-green.svg?style=for-the-badge" />
 </p>
-</br></br>
+<hr/>
 
 The JetRails 2FA plugin adds an extra layer of security to your Magento store.  User-based 2FA enablement ensures that admin users are following best security practices.
 
