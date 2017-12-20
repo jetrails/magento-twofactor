@@ -4,21 +4,27 @@
 	<img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
 	<img src="https://img.shields.io/badge/Version-1.1.0-green.svg?style=for-the-badge" />
 </p>
-<hr/>
+</br>
 
-The JetRails 2FA plugin adds an extra layer of security to your Magento store.  User-based 2FA enablement ensures that admin users are following best security practices.
+About
+=============================
+This module is available on the <a href="https://marketplace.magento.com/jetrails-jetrails-twofactor.html" ><b>Magento Marketplace</b></a>. The JetRails 2FA plugin adds an extra layer of security to your Magento store.  User-based 2FA enablement ensures that admin users are following best security practices.
 
--	Backup codes as an alternate authentication method
--	Force 2FA usage based on Magento role
--	Remember authentication for 7 days
--	Send email to account owner and admins on account block
-- 	Brute force protection (10 min. block between 10 failed attempts)
+- A Master Administrator can require 2FA to be utilized by specific users.
+- Usage for 2FA can be enforced and required for log-in.
+- Once you use the 2FA to login, there is an option to bypass authentication for a pre-configured number of days.
+- A Master Administrator can overlook every user's authentication process.
+- In case of lost or misplaced 2FA account, backup codes are available as an alternate method for authentication.
+- In case of an attempted account breach, prevention protocols are in place via Brute-force protection, which will temporarily block the account.
+- The threshold for the number of failed authentication attempts before a ban is configurable as well as the number of minutes is temporarily banned for.
+- An automatic instantaneous alert will be sent to the account owner and store admins informing them of an attempted breach. Any security warning will be logged with any relevant data such as the offender's IP address.
+- The 2FA account can be setup for devices (something they have) using the Google Authenticator app, which is available for every platform including <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605" >iPhone</a> and <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" >Android</a>.
 
 Compatibility
 =============================
 Please refer to `COMPATIBILITY.md` to see which versions of Magento this extension was tested on and proved to be compatible with.
 
-User Guide
+Documentation
 =============================
 The user guide can be found in the _doc_ folder.  The user guide goes through the installation process as well as explains all the features that comes with this plugin.  The archive file can be found in the __dist__ folder or can be downloaded alongside the releases.
 
