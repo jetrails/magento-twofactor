@@ -16,7 +16,7 @@ This module is available on the <a href="https://marketplace.magento.com/jetrail
 - A Master Administrator can overlook every user's authentication process.
 - In case of lost or misplaced 2FA account, backup codes are available as an alternate method for authentication.
 - In case of an attempted account breach, prevention protocols are in place via Brute-force protection, which will temporarily block the account.
-- The threshold for the number of failed authentication attempts before a ban is configurable as well as the number of minutes is temporarily banned for.
+- The threshold for the number of failed authentication attempts before a ban is configurable as well as the duration the user is temporarily banned for.
 - An automatic instantaneous alert will be sent to the account owner and store admins informing them of an attempted breach. Any security warning will be logged with any relevant data such as the offender's IP address.
 - The 2FA account can be setup for devices (something they have) using the Google Authenticator app, which is available for every platform including <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605" >iPhone</a> and <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" >Android</a>.
 
