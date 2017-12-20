@@ -8,7 +8,7 @@
 
 About
 =============================
-This module is available on the <a href="https://marketplace.magento.com/jetrails-jetrails-twofactor.html" ><b>Magento Marketplace</b></a>. The JetRails 2FA plugin adds an extra layer of security to your Magento store.  User-based 2FA enablement ensures that admin users are following best security practices.
+This module is available on the <a href="https://marketplace.magento.com/jetrails-jetrails-twofactor.html" ><b>Magento Marketplace</b></a>. The JetRails 2FA plugin adds an extra layer of security to your Magento store.  User-based 2FA enablement ensures that admin users are following best security practices. This module has the following features:
 
 - A Master Administrator can require 2FA to be utilized by specific users.
 - Usage for 2FA can be enforced and required for log-in.
@@ -26,11 +26,11 @@ Please refer to [COMPATIBILITY.md](COMPATIBILITY.md) to see which versions of Ma
 
 Documentation
 =============================
-The user guide can be found in the [doc](doc) folder.  The user guide goes through the installation process as well as explains all the features that comes with this plugin.  The archive file can be found in the [dist](dist) folder or can be downloaded alongside the releases.
+The user guide can be found in the [doc](doc) folder.  The user guide goes through the installation process as well as explains all the features that comes with this plugin.
 
 Build System
 =============================
-All JetRails® extensions use __Grunt__ as a build system.  Grunt is a package that can be easily downloaded using __NPM__.  Once this repository is cloned, run `npm install grunt -g` followed by `npm install` to install Grunt and all Grunt modules used within this build system.  Please refer to the following table for a description of some useful grunt build commands. A typical grunt command takes the following form: `grunt task:argument`.
+All JetRails® modules use __Grunt__ as a build system.  Grunt is a package that can be easily downloaded using __NPM__.  Once this repository is cloned, run `npm install grunt -g` followed by `npm install` to install Grunt and all Grunt modules used within this build system.  Please refer to the following table for a description of some useful grunt build commands. A typical grunt command takes the following form: `grunt task:argument`.
 
 | Task       | Description                                                                                                                                                                                     |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,6 +40,6 @@ All JetRails® extensions use __Grunt__ as a build system.  Grunt is a package t
 | `stream`   | Will watch the __lib__ and __src__ folders for any changes. Once a change occurs it will run the __deploy__ task.                                                                               |
 |            | The default task is aliased to run the __release__ task.                                                                                                                                        |
 
-Docker Enviorment
+Docker Environment
 =============================
-This project comes with a [docker-compose.yml](docker-compose.yml) file, which can be used to spin up a Magento CE 1.x enviorment. In order to use docker, please make sure you have **Docker** and **Docker Compose** installed. Typing `docker-compose up -d` will spin up the enviroment while typeing `docker-compose down` will spin it down. If you run docker for the first time, make sure you download and install Magento using the following commands: `docker-compose run cli download.sh` and `docker-compose run webserver install.sh`.  Spinning up a docker instance will create a **staging** directory.
+This project comes with a [docker-compose.yml](docker-compose.yml) file, which can be used to spin up a Magento CE 1.x environment. In order to use docker, please make sure you have **Docker** and **Docker Compose** installed. For information about configuring this docker environment, please refer to it's Github repository which can be found [here](https://github.com/jetrails/docker-magento).
