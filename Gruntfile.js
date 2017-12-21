@@ -118,10 +118,9 @@ module.exports = function ( grunt ) {
 			}
 		];
 		// Define the output filename
-		var company = package.company.replace ( "®", "" );
-		var name = package.name.replace ( "-", "_" );
+		var namespace = package.namespace;
 		var version = package.version;
-		var output = company + "_" + name + "-" + version + ".tgz";
+		var output = namespace + "-" + version + ".tgz";
 		// Define compress settings
 		grunt.config.set ( "compress.module.options.archive", "dist/" + output );
 		grunt.config.set ( "compress.module.options.mode", "tgz" );
