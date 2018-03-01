@@ -4,7 +4,7 @@
 	 * Edit.php - This class exists to simply tell Magento's grid system where to look for the
 	 * proper controller for the configure page.  It also specifies the proper block group within
 	 * the constructor.
-	 * @version         1.1.0
+	 * @version         1.1.1
 	 * @package         JetRails® TwoFactor
 	 * @category        Configure
 	 * @author          Rafael Grigorian - JetRails®

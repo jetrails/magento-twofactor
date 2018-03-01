@@ -5,7 +5,7 @@
 	 * This basically means that based on the state of authentication, we can redirect user's to the
 	 * proper pages to ensure that their two-factor authentication accounts are setup. The values as
 	 * they relate to the user can be found in the authentication model.
-	 * @version         1.1.0
+	 * @version         1.1.1
 	 * @package         JetRails® TwoFactor
 	 * @category        Model
 	 * @author          Rafael Grigorian - JetRails®

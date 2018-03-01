@@ -5,7 +5,7 @@
 	 * config.xml file.  This observer fires before any adminhtml action gets executed.  This way if
 	 * a user is not authenticated, we can ban access to those actions and redirect to the
 	 * verification page.
-	 * @version         1.1.0
+	 * @version         1.1.1
 	 * @package         JetRails® TwoFactor
 	 * @category        Model
 	 * @author          Rafael Grigorian - JetRails®

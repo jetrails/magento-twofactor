@@ -4,7 +4,7 @@
 	 * Cookie.php - This helper class contains functions that deal with cookie creation, deletion,
 	 * and authentication.  This cookie class is used to aid in the "remember for x days"
 	 * functionality.
-	 * @version         1.1.0
+	 * @version         1.1.1
 	 * @package         JetRails® TwoFactor
 	 * @category        Helper
 	 * @author          Rafael Grigorian - JetRails®
@@ -61,7 +61,7 @@
 			// Load the data helper instance
 			$data = Mage::helper ("twofactor/data");
 			// Create the content for the cookie
-			$value = Mage::helper ("core")->encrypt ( json_encode ( array (
+			$value = Mage::getSingleton ("core/encryption")->encrypt ( json_encode ( array (
 				"timestamp" => $time,
 				"pin" => $pin,
 				"address" => $address
@@ -100,7 +100,7 @@
 			// Check to see if that the cookie exists
 			if ( $cookie !== false ) {
 				// Decrypt the contents of cookie
-				$cached = json_decode ( Mage::helper ("core")->decrypt ( $cookie ) );
+				$cached = json_decode ( Mage::getSingleton ("core/encryption")->decrypt ( $cookie ) );
 				// Check to see that the IP address still matches
 				if ( Mage::helper ("core/http")->getRemoteAddr () === $cached->address ) {
 					// Calculate the timestamp for x days after creation

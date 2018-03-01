@@ -43,8 +43,8 @@ services:
         links:
             - database
         environment:
-            - MAGEREPO_EDITION=community
-            - MAGEREPO_RELEASE=1.9.3.7
+            - MAGEREPO_EDITION=enterprise
+            - MAGEREPO_RELEASE=1.14.3.8
     database:
         image: jetrails/magento:1.x-database
         volumes:

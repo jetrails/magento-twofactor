@@ -7,7 +7,7 @@
 	 * passed TOTP pin, and registers failed authentication attempts.  In addition the constants
 	 * that are defined within this class are used throughout the module and are accessed
 	 * statically.
-	 * @version         1.1.0
+	 * @version         1.1.1
 	 * @package         JetRails® TwoFactor
 	 * @category        Model
 	 * @author          Rafael Grigorian - JetRails®
@@ -101,7 +101,7 @@
 			// If the secret is not null
 			if ( $secret !== null ) {
 				// Decrypt and return the secret
-				return Mage::helper ("core")->decrypt ( $secret );
+				return Mage::getSingleton ("core/encryption")->decrypt ( $secret );
 			}
 			// Otherwise, return null
 			return null;
@@ -115,7 +115,7 @@
 		 */
 		public function setSecret ( $secret ) {
 			// Before saving to databases, encrypt the TOTP secret
-			parent::setSecret ( Mage::helper ("core")->encrypt ( $secret ) );
+			parent::setSecret ( Mage::getSingleton ("core/encryption")->encrypt ( $secret ) );
 		}
 
 		/**
@@ -129,7 +129,7 @@
 			// If the value is not null and defined
 			if ( $codes !== null ) {
 				// Decrypt the values and turn into a PHP array
-				$codes = Mage::helper ("core")->decrypt ( $codes );
+				$codes = Mage::getSingleton ("core/encryption")->decrypt ( $codes );
 				return json_decode ( $codes );
 			}
 			// Otherwise, return an empty array
@@ -145,7 +145,7 @@
 		public function setBackupCodes ( $codes ) {
 			// Encode as JSON, encrypt, store into database
 			$codes = json_encode ( $codes );
-			$codes = Mage::helper ("core")->encrypt ( $codes );
+			$codes = Mage::getSingleton ("core/encryption")->encrypt ( $codes );
 			parent::setBackupCodes ( $codes );
 		}
 
