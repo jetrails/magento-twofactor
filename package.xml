@@ -2,21 +2,11 @@
 
 <package>
     <name>JetRails_TwoFactor</name>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <stability>stable</stability>
-    <license uri="https://opensource.org/licenses/MIT" >MIT License (MIT)</license>
+    <license uri="https://opensource.org/licenses/MIT">MIT License (MIT)</license>
     <channel>community</channel>
-    <compatible/>
     <extends/>
-    <date>2017-12-18</date>
-    <time>17:26:25</time>
-    <authors>
-        <author>
-            <name>Rafael Grigorian</name>
-            <user>jetrails</user>
-            <email>development@jetrails.com</email>
-        </author>
-    </authors>
     <summary>The JetRails 2FA plugin adds an extra layer of security to your Magento store.  User-based 2FA enablement ensures that admin users are following best security practices.</summary>
     <description>
         Your Magento storefront is vulnerable. Eliminate your security risk by downloading the JetRails Two-factor authentication module. Two-factor authentication, also known as 2FA, is a critical component for Magento security and is used widely by Magento backend admin users. Authentication is a security process to verify a user's identity. Authentication consists of three factors; something they know (ie. password), something they have (ie. phone), or something they are (ie. fingerprint).
@@ -24,7 +14,7 @@
         This plugin works with "something they know" and "something they have". A Magento admin user that has the JetRails 2FA plugin enabled will not only be authenticated with "something they know", which would be their admin username and password, but they will also authenticate with "something they have", such as their phone or tablet.
         Once the JetRails 2FA plugin is installed for your Magento store and an admin successfully logs into their account, the JetRails 2FA plugin will prompt the user to set up their 2FA account. The typical user enrollment process takes up to five minutes including installation of the Google Authenticator application on their device. For more information on using the JetRails 2FA plugin, make sure to read the user guide which offers visual step-by-step instructions.
         2FA has become an industry standard and is implemented using the Time-Based One-Time Password (TOTP) algorithm. In developing this plugin, RFC-6238 was used for reference. Since 2FA gives an extra layer of protection to Magento’s authentication process, it is vital to every Magento installation.
-        
+
         This plugin comes with the following features and benefits:
 
         - A Master Administrator can require 2FA to be utilized by specific users.
@@ -37,15 +27,20 @@
         - The duration of a user's temporary ban is configurable.
         - An automatic instantaneous alert will be sent to the account owner and store admins informing them of an attempted breach. Any security warning will be logged with any relevant data such as the offender's IP address.
         - The 2FA account can be setup for devices (something they have) using the Google Authenticator app, which is available for every platform including iPhone and Android.
-    </description>
+   	</description>
     <notes>
-        - Changed from role based to user based 2FA enforcement
-        - Made remember me duration configurable
-        - Made failed attempts configurable
-        - Made ban duration configurable
-        - Added a manage 2FA accounts page for super admins
-        - Improved email templates
-    </notes>
-    <contents><target name="magecommunity"><dir name="JetRails"><dir name="TwoFactor"><dir name="Block"><dir name="Adminhtml"><dir name="Configure"><dir name="Edit"><file name="Form.php" hash="044ebab5fd86fe998df2c228b80dd50a"/></dir><file name="Edit.php" hash="5fc543d7a6955a7258b9fcaf8427074b"/></dir><dir name="Manage"><dir name="Container"><file name="Grid.php" hash="d3b064be9f9d8a284ffee26084d7df76"/></dir><file name="Container.php" hash="a6fde5de7745a4e4bea55ce12d872864"/></dir><dir name="Renderer"><dir name="Manage"><file name="Address.php" hash="eb6465368f2b7f6303529a1460204a4e"/><file name="State.php" hash="2b5f7605be775880b7162b0eaebb096b"/><file name="Status.php" hash="d033a6110dcc778f6d2480b1668bc436"/><file name="Timestamp.php" hash="a2bcbc63c2e1d1ad7fa04ca1fcf0776c"/></dir></dir><dir name="Template"><file name="Backup.php" hash="091bc82a54d6e53e5a797940c981b8c2"/><file name="Banned.php" hash="cffd81d1d3baac3381e596bab7546c5e"/><file name="Scan.php" hash="c61f3755c74e327bf84d63097c2054d0"/><file name="Verify.php" hash="89c57269f0369e8e037c79aeeb0c2f4c"/></dir></dir></dir><dir name="Helper"><file name="Cookie.php" hash="bcd2a02dc5043681664b2c762d640639"/><file name="Data.php" hash="9ec8e84c2c8a3ca14acb94ec7417e18c"/><file name="TOTP.php" hash="3db0a47fad6c7a16c9fcfd3e65186a12"/></dir><dir name="Model"><dir name="Adminhtml"><file name="Auth.php" hash="f069d5fe6d0513ad9a53cfc9677d6f7d"/><file name="Notify.php" hash="051e08c9432b90a464af51bdf7229a5b"/><file name="Observer.php" hash="9abbd949fc1cc9d40af1f9b58eb8446c"/><file name="Page.php" hash="5dd3dce29193848544d59cc0fae35a6a"/><dir name="Resource"><file name="Auth.php" hash="fb4b1590bc2771727c63db2a332e9559"/></dir><file name="State.php" hash="69cc7932949127029fc0f7aa0ac66f79"/><file name="Status.php" hash="61d157a9cc1a1307d3a720579f532265"/></dir></dir><dir name="controllers"><file name="ConfigureController.php" hash="92b73e566d19fc8f62bd0705c24c81fc"/><file name="LoginController.php" hash="156ea8227703c9f3ded40161d212ba51"/><file name="ManageController.php" hash="e072bd92868a2eb39cca932f0c8c029c"/><file name="SetupController.php" hash="fee01dd7b10ca492dbb19c9353f097cc"/></dir><dir name="etc"><file name="adminhtml.xml" hash="0914f1f9c3ce622f9ee0917bb19f79c8"/><file name="config.xml" hash="4555e7240cf7fe088e869bdd1279617e"/></dir><dir name="sql"><dir name="jetrails_twofactor_setup"><file name="install-1.1.0.php" hash="269944fd553e6baf6262b289e7d22bd2"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="base"><dir name="default"><dir name="layout"><file name="twofactor.xml" hash="39b9b81dc72709f809f251aa18267386"/></dir><dir name="template"><dir name="twofactor"><file name="backup.phtml" hash="086c15aca8fb13c89a4a66298309b9c4"/><file name="banned.phtml" hash="6ec9fd13cf5beb4854a0096ad82758c8"/><file name="logout.phtml" hash="a7cac17f4e56bd766dcecc40dbca95f1"/><file name="message.phtml" hash="b094f8b27952cedbaf3812365f6ef5dd"/><file name="page.phtml" hash="4d49f01d14d394d18dfa6909692bdf0d"/><file name="scan.phtml" hash="456e10c4c1098406b7f1a3b5fd68a20f"/><file name="verify.phtml" hash="5d7eefc8a1ef211b837a2b45ebc61af4"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="JetRails_TwoFactor.xml" hash="961b142a2296369463931d0262e66bd5"/></dir></target><target name="magelocale"><dir name="en_US"><file name="JetRails_TwoFactor.csv" hash="d1105f81a8d84463befeb386bd333bc2"/><dir name="template"><dir name="email"><file name="twofactor_admin.html" hash="527a6d57f936c4ff9cf51638a5d36c52"/><file name="twofactor_user.html" hash="e303989b2f2f9b860653ab6f0052b137"/></dir></dir></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="base"><dir name="default"><dir name="css"><dir name="twofactor"><file name="style.css" hash="c0866c446e70ac48fe3d159c7d37ec54"/></dir></dir><dir name="images"><dir name="twofactor"><file name="logo.png" hash="5ab953a16a402b9b98cc7a89e9bd1970"/><file name="logo.svg" hash="cf29753c31d7fd8f6ca28dd16a381e33"/></dir></dir><dir name="js"><dir name="twofactor"><file name="functions.js" hash="7709682c7bfe9c07cf3adce12b3238bc"/></dir></dir></dir></dir></dir></target></contents>
+        -   Added enterprise compatibility
+   </notes>
+    <authors>
+		<author>
+			<name>Rafael Grigorian</name>
+			<user>jetrails</user>
+			<email>development@jetrails.com</email>
+		</author>
+	</authors>
+    <date>2018-03-01</date>
+    <time>23:30:32</time>
+    <contents><target name="mageskin"><dir name="adminhtml"><dir name="base"><dir name="default"><dir name="css"><dir name="twofactor"><file name="style.css" hash="c0866c446e70ac48fe3d159c7d37ec54"/></dir></dir><dir name="js"><dir name="twofactor"><file name="functions.js" hash="7709682c7bfe9c07cf3adce12b3238bc"/></dir></dir><dir name="images"><dir name="twofactor"><file name="logo.png" hash="5ab953a16a402b9b98cc7a89e9bd1970"/><file name="logo.svg" hash="cf29753c31d7fd8f6ca28dd16a381e33"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="JetRails_TwoFactor.xml" hash="961b142a2296369463931d0262e66bd5"/></dir></target><target name="magelocale"><dir name="en_US"><file name="JetRails_TwoFactor.csv" hash="d1105f81a8d84463befeb386bd333bc2"/><dir name="template"><dir name="email"><file name="twofactor_admin.html" hash="527a6d57f936c4ff9cf51638a5d36c52"/><file name="twofactor_user.html" hash="e303989b2f2f9b860653ab6f0052b137"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="base"><dir name="default"><dir name="layout"><file name="twofactor.xml" hash="39b9b81dc72709f809f251aa18267386"/></dir><dir name="template"><dir name="twofactor"><file name="backup.phtml" hash="099d38371a555515bcb5e02c7b1b002f"/><file name="banned.phtml" hash="8ca4707aa41f89ed298f18f3d84d0a5e"/><file name="logout.phtml" hash="5c54443f5d71097c6efb6223cc653a1a"/><file name="message.phtml" hash="aadf3271ca1e4b72239934b417a6aaa7"/><file name="page.phtml" hash="9798cdcc6eb3a0655892b8a682f37884"/><file name="scan.phtml" hash="56e150f604b60cca45ec15f2df702523"/><file name="verify.phtml" hash="62311ea26b1e574b4ae52c6ea81dd581"/></dir></dir></dir></dir></dir></target><target name="magecommunity"><dir name="JetRails"><dir name="TwoFactor"><dir name="Block"><dir name="Adminhtml"><dir name="Configure"><dir name="Edit"><file name="Form.php" hash="d5aae3fcf47fdc59b0501b338096cfc6"/></dir><file name="Edit.php" hash="5e8edc34e463a7500922164722a451e8"/></dir><dir name="Manage"><dir name="Container"><file name="Grid.php" hash="a5d49cc5a0cf3860f076e132266503cc"/></dir><file name="Container.php" hash="c3146c7cf5ab9eed40c4e6dcfd4c1b52"/></dir><dir name="Renderer"><dir name="Manage"><file name="Address.php" hash="c3d9e91acfc5a06b1a8e616e154805ad"/><file name="State.php" hash="5ba0533d1aabf96be72e1aca92da70f6"/><file name="Status.php" hash="b6955ee8f894a478d6bc24759535ddb5"/><file name="Timestamp.php" hash="13e3719dc9d966cdcb0525d25ac9ef2b"/></dir></dir><dir name="Template"><file name="Backup.php" hash="b9d5619abd321b2d9a2acddb37d8e35b"/><file name="Banned.php" hash="e9729958c661a0174a88d29a8e52a4e1"/><file name="Scan.php" hash="692f8d87926acb5d6acefeedc0ebaecb"/><file name="Verify.php" hash="0169b6cfab037947079408b9e00f8f55"/></dir></dir></dir><dir name="Helper"><file name="Cookie.php" hash="561231505f7a42142a2ed13b224dde30"/><file name="Data.php" hash="e26f66838846a95ba546f763d4f57dc4"/><file name="TOTP.php" hash="444e01701412af7aa4b17345dbf7f2ac"/></dir><dir name="Model"><dir name="Adminhtml"><file name="Auth.php" hash="ddab41d938e7441e5c2662caa9cdb915"/><file name="Notify.php" hash="1c01b2a253dcd8312a50611d32a00b96"/><file name="Observer.php" hash="5d576d65217039368fc4c30677fdd89f"/><file name="Page.php" hash="a859a37a25693a370a2ec8ee9aa6a4fc"/><dir name="Resource"><file name="Auth.php" hash="a1bfe833b6adcedf5018e7f38c540f81"/></dir><file name="State.php" hash="99a13570698c9007cb2231c4fae5c925"/><file name="Status.php" hash="d7992181aeb454a08255c0da4ecc1fef"/></dir></dir><dir name="controllers"><file name="ConfigureController.php" hash="3420d84ffa53762af034ec6290941b25"/><file name="LoginController.php" hash="65e8bf6860fc5f6eba5cdbf01141e370"/><file name="ManageController.php" hash="c3155865d965f4a9f749545eb37ab0b2"/><file name="SetupController.php" hash="3fc01315cf5f0c3ab0cde718c842942a"/></dir><dir name="etc"><file name="adminhtml.xml" hash="0914f1f9c3ce622f9ee0917bb19f79c8"/><file name="config.xml" hash="2b8471016c99f3b0a1d68f5d6737e94f"/></dir><dir name="sql"><dir name="jetrails_twofactor_setup"><file name="install-1.1.0.php" hash="269944fd553e6baf6262b289e7d22bd2"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>5.6.0</max></php></required></dependencies>
 </package>
