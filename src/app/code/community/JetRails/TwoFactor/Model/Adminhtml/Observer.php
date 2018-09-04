@@ -53,8 +53,11 @@
 				$controller = $request->getControllerName ();
 				$action = $request->getActionName ();
 				$route = "$frontname/$controller/$action";
+				// Get current admin front name
+				$adminFrontName = Mage::getConfig ()
+					->getNode ("admin/routers/adminhtml/args/frontName");
 				// Allow the admin logout action
-				if ( $route === "admin/index/logout" ) return;
+				if ( $route === "$adminFrontName/index/logout" ) return;
 				// If two-factor is not forced on role, then ignore everything
 				if ( !Mage::helper ("twofactor")->isAllowed () ) {
 					// Check to see if setup or login controllers are being used
