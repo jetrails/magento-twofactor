@@ -1,3 +1,6 @@
 .DS_Store
+/.docker-sync/
 /node_modules/
-/staging/
+/public_html/
+/build/
+/dist/
