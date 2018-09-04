@@ -11,7 +11,7 @@
 	 * @author          Rafael Grigorian - JetRails®
 	 * @copyright       JetRails®, all rights reserved
 	 */
-	class JetRails_TwoFactor_Helper_TOTP extends Mage_Core_Helper_Abstract {
+	class JetRails_TwoFactor_Helper_Totp extends Mage_Core_Helper_Abstract {
 
 		/**
 		 * This is the base 32 alphabet.  It is used to generate a random secret; it is also used
