@@ -1,13 +1,16 @@
-<h1 align="center" >Two-Factor Authentication</h1>
-<p align="center" >
-	<img src="https://img.shields.io/badge/Magento-1.x-orange.svg?style=for-the-badge" />
-	<img src="https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge" />
-	<img src="https://img.shields.io/badge/Version-1.1.1-orange.svg?style=for-the-badge" />
-</p>
-</br>
+# Magento — Two-Factor Authentication
+> The JetRails 2FA plugin adds an extra layer of security to your Magento store. User based 2FA enablement ensures that admin users are following best security practices.
 
-About
-=============================
+![](https://img.shields.io/badge/Magento-1-orange.svg?style=for-the-badge)
+![](https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge)
+![](https://img.shields.io/badge/Version-1.1.1-orange.svg?style=for-the-badge)
+![](https://img.shields.io/badge/Stability-Stable-orange.svg?style=for-the-badge)
+
+<p align="center" >
+	<img src="docs/images/preview.png" width="100%" />
+</p>
+
+## About
 This module is available on the <a href="https://marketplace.magento.com/jetrails-jetrails-twofactor.html" ><b>Magento Marketplace</b></a>. The JetRails 2FA plugin adds an extra layer of security to your Magento store.  User-based 2FA enablement ensures that admin users are following best security practices. This module has the following features:
 
 - A Master Administrator can require 2FA to be utilized by specific users.
@@ -21,26 +24,24 @@ This module is available on the <a href="https://marketplace.magento.com/jetrail
 - An automatic instantaneous alert will be sent to the account owner and store admins informing them of an attempted breach. Any security warning will be logged with any relevant data such as the offender's IP address.
 - The 2FA account can be setup for devices (something they have) using the Google Authenticator app, which is available for every platform including <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605" >iPhone</a> and <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" >Android</a>.
 
-Compatibility
-=============================
+## Compatibility
 Please refer to [COMPATIBILITY.md](COMPATIBILITY.md) to see which versions of Magento this extension was tested on and proved to be compatible with.
 
-Documentation
-=============================
-The user guide can be found in the [doc](doc) folder.  The user guide goes through the installation process as well as explains all the features that comes with this plugin.
+## Documentation
+The user guide can be found in the [docs](docs) folder.  The user guide goes through the installation process as well as explains all the features that comes with this plugin. For furthur support, please email [development@jetrails.com](mailto://development@jetrails.com).
 
-Build System
-=============================
-All JetRails® modules use __Grunt__ as a build system.  Grunt is a package that can be easily downloaded using __NPM__.  Once this repository is cloned, run `npm install grunt -g` followed by `npm install` to install Grunt and all Grunt modules used within this build system.  Please refer to the following table for a description of some useful grunt build commands. A typical grunt command takes the following form: `grunt task:argument`.
+## Build System
+This extension uses __Gulp__ as it's build system.  Gulp is a package that can be easily downloaded using __NPM__ or __Yarn__.  Once this repository is cloned, run `npm install gulp -g` followed by `npm install` or `yarn install` to install Gulp and all Gulp modules used within this build system.  Please refer to the following table for a description of some useful Gulp commands. A typical Gulp command takes the following form: `gulp <command>`.
 
-| Task       | Description                                                                                                                                                                                     |
-|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `version`  | Updates the version number in all __php__ and __xml__ files with the one defined in __package.json__.                                                                                           |
-| `release`  | This command first runs __init__ and then __resolve__.  It then compresses the source and dependencies and outputs the archive in __dist__.  This command gets the repo ready for a git commit. |
-| `deploy`   | Will upload dependencies and source code to a staging server.  Credentials to this server can be configured in the __package.json__ file under the _staging_ attribute.                         |
-| `stream`   | Will watch the __lib__ and __src__ folders for any changes. Once a change occurs it will run the __deploy__ task.                                                                               |
-|            | The default task is aliased to run the __release__ task.                                                                                                                                        |
+| Command   | Description                                                                             |
+|-----------|-----------------------------------------------------------------------------------------|
+|   `init`  | Creates build, staging, and distribution directories                                    |
+|  `clean`  | Deletes build and distribution directories                                              |
+|   `bump`  | Bumps version number in source files to reflect version found in package.json           |
+|  `build`  | Builds and copies files from source directory to the build directory                    |
+|  `deploy` | Copies files from build directory to the staging directory                              |
+|  `watch`  | Watches files in source directory and executes `deploy` on file change                  |
+| `package` | Updates package.xml with file hashes and packages extension into distribution directory |
 
-Docker Environment
-=============================
-This project comes with a [docker-compose.yml](docker-compose.yml) and a [docker-sync.yml](docker-sync.yml) file, which can be used to spin up a Magento 1 environment. In order to use docker, please make sure you have **Docker**, **Docker Compose**, and **Docker Sync** installed. For information about configuring this docker environment, please refer to it's Github repository which can be found [here](https://github.com/jetrails/docker-magento-alpine).
+## Docker Environment
+This project comes with a [docker-compose.yml](docker-compose.yml) and a [docker-sync.yml](docker-sync.yml) file, which can be used to spin up a Magento 1 development environment. In order to use docker, please make sure you have **Docker**, **Docker Compose**, and **Docker Sync** installed. For information about configuring this docker environment, please refer to it's Github repository which can be found [here](https://github.com/jetrails/docker-magento-alpine).
