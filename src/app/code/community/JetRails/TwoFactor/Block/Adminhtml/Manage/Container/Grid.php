@@ -4,7 +4,7 @@
 	 * Grid.php - This class defines what collection to use for the grid collection.  It also
 	 * defines all the columns for the grid widget.  Additionally it defines all the mass-action
 	 * options for the widget grid.
-	 * @version         1.1.1
+	 * @version         1.1.2
 	 * @package         JetRails® TwoFactor
 	 * @category        Container
 	 * @author          Rafael Grigorian - JetRails®

@@ -3,7 +3,7 @@
 <config>
 	<modules>
 		<JetRails_TwoFactor>
-			<version>1.1.1</version>
+			<version>1.1.2</version>
 		</JetRails_TwoFactor>
 	</modules>
 	<admin>

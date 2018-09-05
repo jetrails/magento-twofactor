@@ -72,3 +72,9 @@
 
 ## Version 1.1.1
 -   Added enterprise compatibility
+
+## Version 1.1.2
+-   Refreshing config cache when saving 2fa settings
+-   Fixed logout not working for custom admin frontend
+-   TOTP class now being loaded properly on case-sensitive systems
+-   Moved all controller actions to live under admin route

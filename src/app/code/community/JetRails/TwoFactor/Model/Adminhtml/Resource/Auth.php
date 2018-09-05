@@ -4,7 +4,7 @@
 	 * Auth.php - This class is the resource model for the authentication model.  There is not much
 	 * going on here other than the standard setup.  The database table and primary column is
 	 * defined in the constructor and auto incrementing primary key on data save is disabled.
-	 * @version         1.1.1
+	 * @version         1.1.2
 	 * @package         JetRails® TwoFactor
 	 * @category        Resource Model
 	 * @author          Rafael Grigorian - JetRails®

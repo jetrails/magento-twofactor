@@ -3,7 +3,7 @@
 	/**
 	 * Backup.php - This template block is used in hand with the associated template file and it
 	 * is used to prepare information for the template file.
-	 * @version         1.1.1
+	 * @version         1.1.2
 	 * @package         JetRails® TwoFactor
 	 * @category        Template
 	 * @author          Rafael Grigorian - JetRails®

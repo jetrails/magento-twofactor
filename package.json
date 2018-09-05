@@ -1,5 +1,5 @@
 {
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"name": "magento-twofactor",
 	"description": "User based 2FA enablement for admin users in Magento 1.x",
 	"author": "Rafael Grigorian",
