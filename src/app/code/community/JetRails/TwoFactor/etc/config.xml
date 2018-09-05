@@ -8,13 +8,13 @@
 	</modules>
 	<admin>
 		<routers>
-			<jetrails_twofactor>
-				<use>admin</use>
+			<adminhtml>
 				<args>
-					<module>JetRails_TwoFactor</module>
-					<frontName>twofactor</frontName>
+					<modules>
+						<JetRails_TwoFactor before="Mage_Adminhtml" >JetRails_TwoFactor</JetRails_TwoFactor>
+					</modules>
 				</args>
-			</jetrails_twofactor>
+			</adminhtml>
 		</routers>
 	</admin>
 	<global>

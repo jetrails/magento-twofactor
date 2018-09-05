@@ -92,7 +92,7 @@
 				// Session is not authenticated, or is authenticated but not in verify state
 				if ( $admin->getTwoFactorAllow () !== true || $userState != $state::VERIFY ) {
 					// Allow state based routes to allow for state based pages
-					if ( $page->isRouteAllowed ( $route, $userState ) ) return;
+					if ( $page->isRouteAllowed ( "adminhtml/$controller/$action", $userState ) ) return;
 					// If the state is not verify, then unset session flag
 					if ( $userState != $state::VERIFY ) $admin->unsTwoFactorAllow ();
 					// If there is a cookie and it is valid, then allow access to admin area

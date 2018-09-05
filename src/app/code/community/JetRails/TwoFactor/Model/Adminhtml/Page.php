@@ -17,21 +17,21 @@
 		 * also includes all the controller routes that are defined for the manage and configure
 		 * controllers that only super admins have access to.
 		 */
-		const PAGE_SETUP_SCAN       = "twofactor/setup/scan";
-		const PAGE_SETUP_BACKUP     = "twofactor/setup/backup";
-		const PAGE_SETUP_RESET      = "twofactor/setup/reset";
-		const PAGE_SETUP_ENABLE     = "twofactor/setup/enable";
-		const PAGE_SETUP_DISABLE    = "twofactor/setup/disable";
-		const PAGE_LOGIN_BANNED     = "twofactor/login/banned";
-		const PAGE_LOGIN_VERIFY     = "twofactor/login/verify";
-		const PAGE_MANAGE_INDEX     = "twofactor/manage/index";
-		const PAGE_MANAGE_GRID      = "twofactor/manage/grid";
-		const PAGE_MANAGE_UNBAN     = "twofactor/manage/unban";
-		const PAGE_MANAGE_ENABLE    = "twofactor/manage/enable";
-		const PAGE_MANAGE_DISABLE   = "twofactor/manage/disable";
-		const PAGE_MANAGE_RESET     = "twofactor/manage/reset";
-		const PAGE_CONFIGURE_INDEX  = "twofactor/configure/index";
-		const PAGE_CONFIGURE_SAVE   = "twofactor/configure/save";
+		const PAGE_SETUP_SCAN       = "adminhtml/twofactor_setup/scan";
+		const PAGE_SETUP_BACKUP     = "adminhtml/twofactor_setup/backup";
+		const PAGE_SETUP_RESET      = "adminhtml/twofactor_setup/reset";
+		const PAGE_SETUP_ENABLE     = "adminhtml/twofactor_setup/enable";
+		const PAGE_SETUP_DISABLE    = "adminhtml/twofactor_setup/disable";
+		const PAGE_LOGIN_BANNED     = "adminhtml/twofactor_login/banned";
+		const PAGE_LOGIN_VERIFY     = "adminhtml/twofactor_login/verify";
+		const PAGE_MANAGE_INDEX     = "adminhtml/twofactor_manage/index";
+		const PAGE_MANAGE_GRID      = "adminhtml/twofactor_manage/grid";
+		const PAGE_MANAGE_UNBAN     = "adminhtml/twofactor_manage/unban";
+		const PAGE_MANAGE_ENABLE    = "adminhtml/twofactor_manage/enable";
+		const PAGE_MANAGE_DISABLE   = "adminhtml/twofactor_manage/disable";
+		const PAGE_MANAGE_RESET     = "adminhtml/twofactor_manage/reset";
+		const PAGE_CONFIGURE_INDEX  = "adminhtml/twofactor_configure/index";
+		const PAGE_CONFIGURE_SAVE   = "adminhtml/twofactor_configure/save";
 
 		/**
 		 * This method takes in a controller route and an authorization state, which is defined in
@@ -82,9 +82,12 @@
 		 * @return      boolean                                 Is the route forbidden?
 		 */
 		public function isForbiddenRoutesAfterAuth ( $frontname, $controller ) {
+			// Get current admin front name
+			$adminFrontName = Mage::getConfig ()
+				->getNode ("admin/routers/adminhtml/args/frontName");
 			// Return if the controller is forbidden
-			$allowed = array ( "setup", "login" );
-			return $frontname === "twofactor" && in_array ( $controller, $allowed );
+			$allowed = array ( "twofactor_setup", "twofactor_login" );
+			return $frontname === "$adminFrontName" && in_array ( $controller, $allowed );
 		}
 
 	}

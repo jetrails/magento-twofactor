@@ -35,10 +35,8 @@
 		 * @return      void
 		 */
 		public function registerAttempt ( $increment = true ) {
-
 			$data = Mage::helper ("twofactor/data");
 			$state = Mage::getModel ("twofactor/state");
-
 			// Get the current timestamp and client IP address
 			$timestamp = ( new Zend_Date () )->toString ("YYYY-MM-dd HH:mm:ss");
 			$address = Mage::helper ("core/http")->getRemoteAddr ();

@@ -11,7 +11,7 @@
 	 * @author          Rafael Grigorian - JetRails®
 	 * @copyright       JetRails®, all rights reserved
 	 */
-	class JetRails_TwoFactor_ConfigureController extends Mage_Adminhtml_Controller_Action {
+	class JetRails_TwoFactor_Twofactor_ConfigureController extends Mage_Adminhtml_Controller_Action {
 
 		/**
 		 * This method simply asks Magento's ACL if the logged in user is allowed to see the
@@ -92,6 +92,8 @@
 				Mage::getSingleton ("admin/session")->addSuccess (
 					Mage::helper ("twofactor")->__("Successfully saved settings")
 				);
+				// Invalidate config cache
+				Mage::app ()->getCacheInstance ()->cleanType ("config");
 			}
 			else {
 				// Attach an error message to the session

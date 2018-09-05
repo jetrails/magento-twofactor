@@ -11,7 +11,7 @@
 	 * @author          Rafael Grigorian - JetRails®
 	 * @copyright       JetRails®, all rights reserved
 	 */
-	class JetRails_TwoFactor_LoginController extends Mage_Adminhtml_Controller_Action {
+	class JetRails_TwoFactor_Twofactor_LoginController extends Mage_Adminhtml_Controller_Action {
 
 		/**
 		 * This method asks the data helper to determine if the logged in admin user is allowed to

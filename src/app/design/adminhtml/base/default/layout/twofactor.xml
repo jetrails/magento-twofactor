@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <layout>
-	<jetrails_twofactor_login_verify>
+	<adminhtml_twofactor_login_verify>
 		<block
 			name="root"
 			type="core/template"
@@ -19,8 +19,8 @@
 				type="twofactor/template_verify"
 				template="twofactor/verify.phtml" />
 		</block>
-	</jetrails_twofactor_login_verify>
-	<jetrails_twofactor_login_banned>
+	</adminhtml_twofactor_login_verify>
+	<adminhtml_twofactor_login_banned>
 		<block
 			name="root"
 			type="core/template"
@@ -34,8 +34,8 @@
 				type="twofactor/template_banned"
 				template="twofactor/banned.phtml" />
 		</block>
-	</jetrails_twofactor_login_banned>
-	<jetrails_twofactor_setup_scan>
+	</adminhtml_twofactor_login_banned>
+	<adminhtml_twofactor_setup_scan>
 		<block
 			name="root"
 			type="core/template"
@@ -53,8 +53,8 @@
 				type="twofactor/template_scan"
 				template="twofactor/scan.phtml" />
 		</block>
-	</jetrails_twofactor_setup_scan>
-	<jetrails_twofactor_setup_backup>
+	</adminhtml_twofactor_setup_scan>
+	<adminhtml_twofactor_setup_backup>
 		<block
 			name="root"
 			type="core/template"
@@ -68,5 +68,5 @@
 				type="twofactor/template_backup"
 				template="twofactor/backup.phtml" />
 		</block>
-	</jetrails_twofactor_setup_backup>
+	</adminhtml_twofactor_setup_backup>
 </layout>
