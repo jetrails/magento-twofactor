@@ -78,3 +78,6 @@
 -   Fixed logout not working for custom admin frontend
 -   TOTP class now being loaded properly on case-sensitive systems
 -   Moved all controller actions to live under admin route
+
+## Version 1.1.3
+-   Fixed GH-7, password lifetime issue with Enterprise_Pci module on EE

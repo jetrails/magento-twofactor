@@ -3,7 +3,7 @@
 	/**
 	 * Page.php - This class contains the page route constants that are used throughout the module.
 	 * It also contains methods that link the state to the associated route.
-	 * @version         1.1.2
+	 * @version         1.1.3
 	 * @package         JetRails® TwoFactor
 	 * @category        Model
 	 * @author          Rafael Grigorian - JetRails®

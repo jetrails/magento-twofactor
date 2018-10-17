@@ -4,7 +4,7 @@
 	 * State.php - This class is a renderer class that is used with the grid widget's columns.
 	 * These classes are used to load information from the authentication model using the admin
 	 * user's id.
-	 * @version         1.1.2
+	 * @version         1.1.3
 	 * @package         JetRails® TwoFactor
 	 * @category        Manage
 	 * @author          Rafael Grigorian - JetRails®

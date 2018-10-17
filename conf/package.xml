@@ -30,10 +30,7 @@
 		- The 2FA account can be setup for devices (something they have) using the Google Authenticator app, which is available for every platform including iPhone and Android.
 	</description>
 	<notes>
-		- Refreshing config cache when saving 2fa settings
-		- Fixed logout not working for custom admin frontend
-		- TOTP class now being loaded properly on case-sensitive systems
-		- Moved all controller actions to live under admin route
+		- Fixed GH-7, password lifetime issue with Enterprise_Pci module on EE
 	</notes>
 	<authors>
 		<author>
