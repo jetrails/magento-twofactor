@@ -41,6 +41,11 @@
 					</auth>
 				</entities>
 			</twofactor_resource>
+			<enterprise_pci>
+				<rewrite>
+					<observer>JetRails_TwoFactor_Model_Adminhtml_Rewrite_Observer</observer>
+				</rewrite>
+			</enterprise_pci>
 		</models>
 		<resources>
 			<jetrails_twofactor_setup>
@@ -78,6 +83,15 @@
 					</twofactor_redirect>
 				</observers>
 			</controller_action_predispatch>
+			<admin_user_authenticate_after>
+				<observers>
+					<twofactor_redirect_after_auth>
+						<type>singleton</type>
+						<class>twofactor/observer</class>
+						<method>preAdminHtml</method>
+					</twofactor_redirect_after_auth>
+				</observers>
+			</admin_user_authenticate_after>
 		</events>
 		<layout>
 			<updates>
