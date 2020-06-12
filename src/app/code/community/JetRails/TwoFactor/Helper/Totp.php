@@ -99,7 +99,7 @@
 			// Traverse $length times, to get random base32 encoding
 			for ( $i = 0; $i < $length; $i++ ) {
 				// Append a random number from base32 alphabet
-				$secret .= $this->alphabet [ mt_rand ( 0, strlen ( $this->alphabet ) - 1 ) ];
+				$secret .= $this->alphabet [ random_int ( 0, strlen ( $this->alphabet ) - 1 ) ];
 			}
 			// Return the resulting secret
 			return $secret;
