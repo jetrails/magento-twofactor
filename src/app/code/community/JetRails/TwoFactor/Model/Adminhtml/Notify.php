@@ -89,6 +89,7 @@
 				);
 				$test = $template->send ( $user->getEmail (), $fullName,
 					array (
+						"base_admin_url" => Mage::getUrl ("adminhtml"),
 						"base_url" => Mage::getBaseUrl ( Mage_Core_Model_Store::URL_TYPE_WEB ),
 						"ban_attempts" => $data->getData () ["ban_attempts"],
 						"ban_time" => $data->getData () ["ban_time"],
