@@ -4,7 +4,7 @@
 	 * Container.php - This class exists to simply tell Magento's grid system where to look for the
 	 * proper controller for the configure page.  It also specifies the proper block group within
 	 * the constructor.
-	 * @version         1.1.3
+	 * @version         1.1.4
 	 * @package         JetRails® TwoFactor
 	 * @category        Manage
 	 * @author          Rafael Grigorian - JetRails®

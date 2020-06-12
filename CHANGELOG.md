@@ -81,3 +81,8 @@
 
 ## Version 1.1.3
 -   Fixed GH-7, password lifetime issue with Enterprise_Pci module on EE
+
+## Version 1.1.4
+-   Fixed GH-11, Admin Base URL Missing From Admin Email
+-   Fixed GH-12, Email Is Sent To Inactive Admin Users On Ban
+-   Fixed GH-13, Replace 'mt_rand' With 'random_int'

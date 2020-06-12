@@ -3,7 +3,7 @@
 	/**
 	 * Verify.php - This function aids the Verify template.  This block offers helpful function that
 	 * are used within the template, such as suppling the form action and stylesheet URL.
-	 * @version         1.1.3
+	 * @version         1.1.4
 	 * @package         JetRails® TwoFactor
 	 * @category        Template
 	 * @author          Rafael Grigorian - JetRails®

@@ -5,7 +5,7 @@
 	 * here in order to ensure 2FA authentication before forcing admin password change. The Pci
 	 * module is only available for EE versions of Magento and therefore this observer will only
 	 * run on enterprise versions of Magento.
-	 * @version         1.1.3
+	 * @version         1.1.4
 	 * @package         JetRails® TwoFactor
 	 * @category        Model
 	 * @author          Rafael Grigorian - JetRails®
