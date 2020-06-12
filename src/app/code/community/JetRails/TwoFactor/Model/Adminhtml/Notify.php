@@ -61,6 +61,10 @@
 				// Load the data helper class and get user instance
 				$data = Mage::helper ("twofactor/data");
 				$user = Mage::getModel ("admin/user")->load ( $roleUser->getUserId () );
+				// Do not send email if user is inactive
+				if ( !$user->getIsActive () ) {
+					continue;
+				}
 				// Format timestamp date and time
 				$timestamp = $auth->getLastTimestamp ();
 				$timestampDate = "-";
