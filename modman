@@ -1,0 +1,17 @@
+src/app/code/community/JetRails/TwoFactor/                                app/code/community/JetRails/TwoFactor/
+src/app/design/adminhtml/base/default/layout/twofactor.xml               app/design/adminhtml/base/default/layout/twofactor.xml
+src/app/design/adminhtml/base/default/template/twofactor/backup.phtml    app/design/adminhtml/base/default/template/twofactor/backup.phtml
+src/app/design/adminhtml/base/default/template/twofactor/banned.phtml    app/design/adminhtml/base/default/template/twofactor/banned.phtml
+src/app/design/adminhtml/base/default/template/twofactor/logout.phtml    app/design/adminhtml/base/default/template/twofactor/logout.phtml
+src/app/design/adminhtml/base/default/template/twofactor/message.phtml   app/design/adminhtml/base/default/template/twofactor/message.phtml
+src/app/design/adminhtml/base/default/template/twofactor/page.phtml      app/design/adminhtml/base/default/template/twofactor/page.phtml
+src/app/design/adminhtml/base/default/template/twofactor/scan.phtml      app/design/adminhtml/base/default/template/twofactor/scan.phtml
+src/app/design/adminhtml/base/default/template/twofactor/verify.phtml    app/design/adminhtml/base/default/template/twofactor/verify.phtml
+src/app/etc/modules/JetRails_TwoFactor.xml                               app/etc/modules/JetRails_TwoFactor.xml
+src/app/locale/en_US/JetRails_TwoFactor.csv                              app/locale/en_US/JetRails_TwoFactor.csv
+src/app/locale/en_US/template/email/twofactor_admin.html                 app/locale/en_US/template/email/twofactor_admin.html
+src/app/locale/en_US/template/email/twofactor_user.html                  app/locale/en_US/template/email/twofactor_user.html
+src/skin/adminhtml/base/default/css/twofactor/style.css                  skin/adminhtml/base/default/css/twofactor/style.css
+src/skin/adminhtml/base/default/images/twofactor/logo.png                skin/adminhtml/base/default/images/twofactor/logo.png
+src/skin/adminhtml/base/default/images/twofactor/logo.svg                skin/adminhtml/base/default/images/twofactor/logo.svg
+src/skin/adminhtml/base/default/js/twofactor/functions.js                skin/adminhtml/base/default/js/twofactor/functions.js
