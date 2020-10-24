@@ -1,4 +1,4 @@
-src/app/code/community/JetRails/TwoFactor/                                app/code/community/JetRails/TwoFactor/
+src/app/code/community/JetRails/TwoFactor/                               app/code/community/JetRails/TwoFactor/
 src/app/design/adminhtml/base/default/layout/twofactor.xml               app/design/adminhtml/base/default/layout/twofactor.xml
 src/app/design/adminhtml/base/default/template/twofactor/backup.phtml    app/design/adminhtml/base/default/template/twofactor/backup.phtml
 src/app/design/adminhtml/base/default/template/twofactor/banned.phtml    app/design/adminhtml/base/default/template/twofactor/banned.phtml

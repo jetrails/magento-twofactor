@@ -1,17 +1,17 @@
 {
-    "name": "jetrails/magento-twofactor",
-    "description": "User based 2FA enablement for admin users in Magento 1.x",
-    "type": "magento-module",
-    "version": "1.1.4",
-    "license": "MIT",
-    "homepage": "https://github.com/jetrails/magento-twofactor",
+	"name": "jetrails/magento-twofactor",
+	"description": "User based 2FA enablement for admin users in Magento 1.x",
+	"type": "magento-module",
+	"version": "1.1.4",
+	"license": "MIT",
+	"homepage": "https://github.com/jetrails/magento-twofactor",
 	"authors": [
 		{
 			"name": "Rafael Grigorian",
 			"email": "me@raffi.io"
 		}
 	],
-    "require": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+	"require": {
+		"magento-hackathon/magento-composer-installer": "*"
+	}
 }
