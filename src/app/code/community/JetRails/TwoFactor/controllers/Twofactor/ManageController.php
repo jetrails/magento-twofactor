@@ -216,6 +216,7 @@
 			$state  = Mage::getModel ("twofactor/state");
 			$auth   = Mage::getModel ("twofactor/auth");
 			$totp   = Mage::helper ("twofactor/totp");
+			$admin = Mage::getSingleton ("admin/session");
 			$totp->initialize ();
 			// Get all the ids that were passed to action
 			$ids = $this->getRequest ()->getParam ("ids");
@@ -233,6 +234,12 @@
 					$auth->save ();
 					// Log the success of this action
 					$this->_log ( $notify::LOG_MANUAL_RESET, $id );
+					
+					// if this user is current user, setTwoFactorSetup to false, so codes are re-generated
+					// @see JetRails_TwoFactor_Model_Adminhtml_Observer:83
+					if ($id == $admin->getUser()->getId()) {
+                    	$admin->setTwoFactorSetup ( false );
+                    }
 				}
 			}
 			// Attach a success message to the admin session
