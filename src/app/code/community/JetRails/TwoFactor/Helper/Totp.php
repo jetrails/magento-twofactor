@@ -148,7 +148,7 @@
 
 		/**
 		 * This function simply takes in information as parameters and generates a request to
-		 * Google's chart's API to generate a QR code.  These QR codes are used for account setup
+		 * quickchart.io's chart's API to generate a QR code. These QR codes are used for account setup
 		 * for TOTP authentication.
 		 * @param       string         email              The email to assign account to
 		 * @param       string         issuer             The issuer of the account
@@ -159,12 +159,11 @@
 		public function QRCode ( $email, $issuer, $secret, $size = 200 ) {
 			// Create the standard TOTP URI using the secret, issuer, and user/host
 			$uri  = "otpauth://totp/$email?secret=" . $secret . "&issuer=" . $issuer;
-			// Create the Google QR code GET request
-			$url  = "https://chart.googleapis.com/chart";
-			$url .= "?cht=qr";
-			$url .= "&chs=" . $size;
-			$url .= "&chl=" . urlencode ( $uri );
-			$url .= "&chld=H|0";
+			// Create the quickchart.io QR code GET request
+			$url  = "https://quickchart.io/";
+			$url .= "qr";
+			$url .= "?text=" . urlencode ( $uri );
+			$url .= "&width=" . $size . "&height=" . $size;
 			// Return the URL to the QR barcode
 			return $url;
 		}
