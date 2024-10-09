@@ -1,3 +1,9 @@
+## OpenMage
+
+| Release |  Test Date |  Status |    Tester Name   |
+|:-------:|:----------:|:-------:|:----------------:|
+| 20.10.2 | 10/09/2024 | SUCCESS | Marco Gruhl |
+
 ## Magento Open Source 1.x
 
 | Release |  Test Date |  Status |    Tester Name   |
