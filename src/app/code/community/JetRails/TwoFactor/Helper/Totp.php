@@ -164,6 +164,7 @@
 			$url .= "qr";
 			$url .= "?text=" . urlencode ( $uri );
 			$url .= "&width=" . $size . "&height=" . $size;
+			$url .= "&margin=1";
 			// Return the URL to the QR barcode
 			return $url;
 		}
