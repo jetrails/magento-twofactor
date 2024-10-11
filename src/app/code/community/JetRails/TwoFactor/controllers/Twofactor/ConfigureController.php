@@ -5,7 +5,7 @@
 	 * be found in the "JetRails/Two-Factor Authentication" menu tab.  It handles the rendering of
 	 * that page as well as all the actions that are submitted with the grid container that the
 	 * index action renders.
-	 * @version         1.1.4
+	 * @version         1.1.5
 	 * @package         JetRails® TwoFactor
 	 * @category        Controllers
 	 * @author          Rafael Grigorian - JetRails®

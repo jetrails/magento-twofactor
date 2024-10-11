@@ -3,7 +3,7 @@
 
 ![](https://img.shields.io/badge/Magento-1-orange.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge)
-![](https://img.shields.io/badge/Version-1.1.4-orange.svg?style=for-the-badge)
+![](https://img.shields.io/badge/Version-1.1.5-orange.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/Stability-Stable-orange.svg?style=for-the-badge)
 
 <p align="center" >

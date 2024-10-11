@@ -7,7 +7,7 @@
 	 * user. This class also contains methods to get the configuration data which are extracted
 	 * using Magento's getConfig method and supplying the with the XPATH constants which are defined
 	 * internally.
-	 * @version         1.1.4
+	 * @version         1.1.5
 	 * @package         JetRails® TwoFactor
 	 * @category        Helper
 	 * @author          Rafael Grigorian - JetRails®

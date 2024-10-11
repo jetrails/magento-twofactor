@@ -86,3 +86,6 @@
 -   Fixed GH-11, Admin Base URL Missing From Admin Email
 -   Fixed GH-12, Email Is Sent To Inactive Admin Users On Ban
 -   Fixed GH-13, Replace 'mt_rand' With 'random_int'
+
+## Version 1.1.5
+-   Merged PR-28, Replacing QR code provider, thanks @marcogruhl!

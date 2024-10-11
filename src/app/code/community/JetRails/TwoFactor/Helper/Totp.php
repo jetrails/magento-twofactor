@@ -5,7 +5,7 @@
 	 * pins.  It is very flexible and can be initialized to different sized secrets and pins.
 	 * Although the default values conform to the generally accepted configuration for 2FA.  Apps
 	 * such as Authy and Google Authenticator use the default configuration.
-	 * @version         1.1.4
+	 * @version         1.1.5
 	 * @package         JetRails® TwoFactor
 	 * @category        Helper
 	 * @author          Rafael Grigorian - JetRails®
