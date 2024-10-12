@@ -11,7 +11,7 @@
 </p>
 
 ## About
-This module is available on the <a href="https://marketplace.magento.com/jetrails-jetrails-twofactor.html" ><b>Magento Marketplace</b></a>. The JetRails 2FA plugin adds an extra layer of security to your Magento store.  User-based 2FA enablement ensures that admin users are following best security practices. This module has the following features:
+The JetRails 2FA plugin adds an extra layer of security to your Magento store.  User-based 2FA enablement ensures that admin users are following best security practices. This module has the following features:
 
 - A Master Administrator can require 2FA to be utilized by specific users.
 - Usage of 2FA can be enforced and required for log in.
