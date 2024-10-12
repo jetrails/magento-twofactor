@@ -1,3 +1,9 @@
+## OpenMage
+
+| Release |  Test Date |  Status |    Tester Name   |
+|:-------:|:----------:|:-------:|:----------------:|
+| 2.10    | 10/11/2024 | SUCCESS | @marcogruhl      |
+
 ## Magento Open Source 1.x
 
 | Release |  Test Date |  Status |    Tester Name   |
